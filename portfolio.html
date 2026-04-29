@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portfolio — Ramsey Financial Group</title>
+<meta name="description" content="The Ramsey Financial Group portfolio — ten active projects across space, water, AgTech, AI, energy, and international reconstruction finance, plus three decades of prior positions." />
+
+<!-- Fonts: Fraunces (serif display) + Inter (geometric sans body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================================
+     RFG PORTFOLIO INDEX — v1
+     Inherits the design system from the homepage mockup.
+     ============================================================ */
+
+  :root {
+    --ink:           #0F1A14;
+    --forest:        #1B3A2E;
+    --forest-deep:   #0D2620;
+    --forest-tint:   #2A5043;
+    --burgundy:      #7A2E2A;
+    --burgundy-deep: #5A1F1C;
+    --bone:          #F4EFE6;
+    --bone-soft:     #EBE4D6;
+    --sand:          #D9CFB8;
+    --rule:          #C4B99D;
+    --mute:          #5A5A52;
+
+    --serif: 'Fraunces', 'Canela', Georgia, serif;
+    --sans:  'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --container: 1280px;
+    --edge-pad:  clamp(20px, 4vw, 56px);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--bone);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding-left: var(--edge-pad);
+    padding-right: var(--edge-pad);
+  }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--forest);
+  }
+  .eyebrow.accent { color: var(--burgundy); }
+
+  /* ============ Top Bar ============ */
+  .topbar {
+    background: var(--forest-deep);
+    color: var(--bone);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 10px 0;
+    font-weight: 500;
+  }
+  .topbar .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .topbar span { opacity: 0.75; }
+  .topbar .top-right a { margin-left: 20px; opacity: 0.85; }
+  .topbar .top-right a:hover { opacity: 1; }
+
+  @media (max-width: 680px) {
+    .topbar .top-left { display: none; }
+    .topbar .wrap { justify-content: center; }
+    .topbar .top-right a { margin: 0 10px; }
+  }
+
+  /* ============ Nav ============ */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bone);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    gap: 40px;
+  }
+  .brand {
+    font-family: var(--serif);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-mark {
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid var(--forest);
+    position: relative;
+    transform: rotate(45deg);
+  }
+  .brand-mark::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    background: var(--burgundy);
+  }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.05; }
+  .brand-text .top {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mute);
+    font-family: var(--sans);
+    font-weight: 500;
+  }
+  .brand-text .name {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--forest);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.2s ease;
+  }
+  .nav-links a:hover { color: var(--forest); }
+  .nav-links a.current { color: var(--forest); }
+  .nav-links a.current::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--burgundy);
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 0;
+    height: 1px;
+    background: var(--burgundy);
+    transition: width 0.25s ease;
+  }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border: 1px solid var(--forest);
+    color: var(--forest);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--forest); color: var(--bone); }
+
+  .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 8px; }
+  .nav-toggle span { display: block; width: 24px; height: 1.5px; background: var(--ink); margin: 5px 0; }
+
+  @media (max-width: 1020px) {
+    .nav-links, .nav-cta { display: none; }
+    .nav-toggle { display: block; }
+  }
+
+  /* ============ Page Header ============ */
+  .page-header {
+    padding: clamp(80px, 10vw, 140px) 0 clamp(40px, 5vw, 72px);
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::before {
+    content: '';
+    position: absolute;
+    right: -8%;
+    top: 10%;
+    width: 440px;
+    height: 440px;
+    border: 1px solid var(--rule);
+    transform: rotate(45deg);
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  .page-header .wrap { position: relative; z-index: 2; }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-bottom: 36px;
+    font-weight: 500;
+  }
+  .breadcrumb a { color: var(--mute); transition: color 0.2s ease; }
+  .breadcrumb a:hover { color: var(--forest); }
+  .breadcrumb .sep { color: var(--rule); }
+  .breadcrumb .current { color: var(--ink); }
+
+  .page-header h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(48px, 7.5vw, 96px);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 40px;
+    max-width: 14ch;
+  }
+  .page-header h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--forest);
+  }
+
+  .page-header-meta {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 80px;
+    align-items: end;
+    padding-top: 40px;
+    border-top: 1px solid var(--rule);
+  }
+  @media (max-width: 900px) {
+    .page-header-meta { grid-template-columns: 1fr; gap: 32px; }
+  }
+  .page-lede {
+    font-family: var(--sans);
+    font-size: clamp(17px, 1.3vw, 20px);
+    line-height: 1.6;
+    color: var(--mute);
+    max-width: 58ch;
+  }
+  .page-lede strong { color: var(--ink); font-weight: 500; }
+
+  .page-counts {
+    display: flex;
+    gap: 48px;
+    justify-self: end;
+  }
+  @media (max-width: 900px) { .page-counts { justify-self: start; } }
+
+  .count {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .count-num {
+    font-family: var(--serif);
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--forest);
+    letter-spacing: -0.015em;
+  }
+  .count-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mute);
+    font-weight: 500;
+  }
+
+  /* ============ Section Dividers ============ */
+  .section-divider {
+    padding: clamp(60px, 8vw, 96px) 0 clamp(32px, 4vw, 48px);
+    border-top: 1px solid var(--rule);
+  }
+  .section-divider .wrap {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 40px;
+    align-items: center;
+  }
+  @media (max-width: 780px) {
+    .section-divider .wrap { grid-template-columns: 1fr; gap: 16px; }
+    .section-divider .section-num { display: none; }
+  }
+
+  .section-num {
+    font-family: var(--serif);
+    font-size: 14px;
+    font-style: italic;
+    color: var(--burgundy);
+    letter-spacing: 0.1em;
+  }
+  .section-title-block h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3.5vw, 42px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .section-title-block h2 em { font-style: italic; color: var(--forest); font-weight: 300; }
+  .section-title-block p {
+    font-size: 15px;
+    color: var(--mute);
+    line-height: 1.55;
+    max-width: 58ch;
+  }
+  .section-count {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mute);
+    white-space: nowrap;
+    padding: 8px 16px;
+    border: 1px solid var(--rule);
+  }
+
+  /* ============ Portfolio Grid — larger, more editorial than the homepage ============ */
+  .portfolio-section { padding-bottom: clamp(40px, 5vw, 80px); }
+
+  /* Sector filter — sits above the active projects grid */
+  .sector-filter {
+    padding: 32px 0 12px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 56px;
+  }
+  .sector-filter-label {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 18px;
+    opacity: 0.75;
+  }
+  .sector-filter-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .sector-btn {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 10px 18px;
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--rule);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .sector-btn:hover { border-color: var(--forest); color: var(--forest); }
+  .sector-btn.active {
+    background: var(--forest);
+    color: var(--bone);
+    border-color: var(--forest);
+  }
+  .sector-btn .count {
+    margin-left: 8px;
+    font-size: 10px;
+    opacity: 0.7;
+  }
+
+  /* Prominent platform card (used for Space Fund highlight) */
+  .platform-feature {
+    grid-column: 1 / -1;
+    background: var(--forest-deep);
+    color: var(--bone);
+    border: 1px solid var(--forest-deep);
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+  }
+  .platform-feature:hover { border-color: var(--burgundy); transform: translateY(-2px); }
+  @media (max-width: 900px) {
+    .platform-feature { grid-template-columns: 1fr; }
+  }
+  .platform-feature-body {
+    padding: 44px 44px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .platform-feature-flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+  }
+  .platform-feature-flag::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--burgundy);
+  }
+  .platform-feature-name {
+    font-family: var(--serif);
+    font-size: clamp(32px, 3.5vw, 44px);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--bone);
+  }
+  .platform-feature-name em { font-style: italic; color: var(--sand); font-weight: 300; }
+  .platform-feature-tagline {
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.45;
+    color: var(--bone);
+    font-style: italic;
+    padding: 16px 0 16px 20px;
+    border-left: 2px solid var(--burgundy);
+    margin-top: 4px;
+  }
+  .platform-feature-summary {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--bone);
+    opacity: 0.78;
+  }
+  .platform-feature-meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    border-top: 1px solid rgba(244,239,230,0.15);
+    margin-top: 8px;
+  }
+  .platform-feature-stat .num {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--sand);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .platform-feature-stat .label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--bone);
+    opacity: 0.6;
+  }
+  .platform-feature-thumb {
+    background: linear-gradient(135deg, #1B3A2E 0%, #0D2620 100%);
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+  }
+  .platform-feature-thumb::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(244,239,230,0.14) 0%, transparent 35%),
+      radial-gradient(circle at 70% 70%, rgba(122,46,42,0.18) 0%, transparent 45%);
+  }
+  .platform-feature-thumb::after {
+    content: '';
+    position: absolute;
+    right: -15%; top: -15%;
+    width: 70%; height: 70%;
+    border: 1px solid rgba(244,239,230,0.18);
+    transform: rotate(45deg);
+  }
+  .platform-feature-thumb-label {
+    position: absolute;
+    bottom: 16px; left: 16px;
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--bone);
+    opacity: 0.65;
+    z-index: 2;
+  }
+
+  /* ============ Exits / Successful Exits section ============ */
+  .exits {
+    background: var(--forest-deep);
+    color: var(--bone);
+    padding: clamp(80px, 10vw, 120px) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .exits::before {
+    content: '';
+    position: absolute;
+    left: -10%; top: -20%;
+    width: 600px; height: 600px;
+    border: 1px solid rgba(244,239,230,0.08);
+    transform: rotate(45deg);
+    pointer-events: none;
+  }
+  .exits .wrap { position: relative; z-index: 2; }
+  .exits-head {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    margin-bottom: 56px;
+    align-items: end;
+  }
+  @media (max-width: 900px) {
+    .exits-head { grid-template-columns: 1fr; gap: 24px; align-items: start; }
+  }
+  .exits-head-left .eyebrow { color: rgba(244,239,230,0.55); margin-bottom: 16px; }
+  .exits-head-left h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+    color: var(--bone);
+  }
+  .exits-head-left h2 em { font-style: italic; color: var(--sand); font-weight: 300; }
+  .exits-head-right p {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--bone);
+    opacity: 0.78;
+    max-width: 56ch;
+    padding-bottom: 8px;
+  }
+
+  .exits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(244,239,230,0.1);
+    padding: 2px;
+  }
+  @media (max-width: 900px) { .exits-grid { grid-template-columns: 1fr; } }
+
+  .exit-card {
+    background: var(--forest-deep);
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: background 0.25s ease;
+    cursor: default;
+  }
+  .exit-card:hover { background: var(--forest); }
+  .exit-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+  }
+  .exit-name {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    color: var(--bone);
+  }
+  .exit-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--bone);
+    opacity: 0.78;
+    flex: 1;
+  }
+  .exit-meta {
+    margin-top: 12px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(244,239,230,0.15);
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sand);
+  }
+  .exits-foot-note {
+    margin-top: 40px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(244,239,230,0.6);
+    max-width: 70ch;
+    font-style: italic;
+  }
+  .exits-foot-note strong { font-style: normal; color: var(--sand); font-weight: 500; }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  @media (max-width: 1100px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; } }
+  @media (max-width: 620px) { .portfolio-grid { grid-template-columns: 1fr; } }
+
+
+  /* Card-as-link reset — preserve card visual styling when <article> becomes <a> */
+  a.port-card,
+  a.platform-feature,
+  a.exit-card {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .port-card {
+    background: var(--bone-soft);
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+  }
+  .port-card:hover {
+    border-color: var(--forest);
+    transform: translateY(-2px);
+  }
+
+  .port-image {
+    aspect-ratio: 16 / 11;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--rule);
+  }
+  .port-image .placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 16px;
+    color: var(--bone);
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: 0.7;
+  }
+  .port-image .placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-size: 20px 20px;
+    background-image: linear-gradient(to right, rgba(244,239,230,0.06) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(244,239,230,0.06) 1px, transparent 1px);
+    z-index: 0;
+  }
+  .port-image .placeholder span { position: relative; z-index: 1; max-width: 90%; }
+
+  /* Individual card visual treatments — same system as homepage */
+  .port-axe .port-image  { background: linear-gradient(135deg, #4A6B5C 0%, #2A4738 100%); }
+  .port-axe .port-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 40%, rgba(244,239,230,0.15) 0%, transparent 30%),
+                radial-gradient(circle at 70% 70%, rgba(244,239,230,0.1) 0%, transparent 40%);
+  }
+
+  .port-karman .port-image { background: linear-gradient(180deg, #1B3A2E 0%, #0D2620 100%); }
+  .port-karman .port-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(to top, rgba(244,239,230,0.08) 1px, transparent 1px) 0 0 / 100% 24px,
+      linear-gradient(to right, rgba(244,239,230,0.05) 1px, transparent 1px) 0 0 / 24px 100%;
+  }
+
+  .port-eden .port-image { background: linear-gradient(120deg, #2F4F3F 0%, #1B3A2E 100%); }
+  .port-eden .port-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      repeating-linear-gradient(0deg, transparent 0 28px, rgba(244,239,230,0.08) 28px 29px),
+      repeating-linear-gradient(90deg, transparent 0 28px, rgba(244,239,230,0.06) 28px 29px);
+  }
+
+  .port-celestial .port-image { background: linear-gradient(160deg, #5A1F1C 0%, #2A1514 100%); }
+  .port-celestial .port-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(244,239,230,0.12) 0%, transparent 60%);
+  }
+
+  .port-wimberley .port-image { background: linear-gradient(135deg, #3F5A42 0%, #1B3A2E 100%); }
+  .port-wimberley .port-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 25% 30%, rgba(244,239,230,0.15), transparent 25%),
+                radial-gradient(circle at 75% 60%, rgba(244,239,230,0.1), transparent 20%),
+                radial-gradient(circle at 50% 85%, rgba(244,239,230,0.08), transparent 15%);
+  }
+
+  .port-ahura .port-image { background: linear-gradient(200deg, #0D2620 0%, #1B3A2E 60%, #2A5043 100%); }
+  .port-ahura .port-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(90deg, transparent 49.5%, rgba(244,239,230,0.1) 49.5%, rgba(244,239,230,0.1) 50.5%, transparent 50.5%),
+      linear-gradient(0deg, transparent 49.5%, rgba(244,239,230,0.1) 49.5%, rgba(244,239,230,0.1) 50.5%, transparent 50.5%);
+  }
+
+  .port-iran .port-image { background: linear-gradient(140deg, #7A2E2A 0%, #5A1F1C 100%); }
+  .port-iran .port-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: conic-gradient(from 45deg at 50% 50%, transparent 0deg, rgba(244,239,230,0.12) 45deg, transparent 90deg,
+                     rgba(244,239,230,0.08) 135deg, transparent 180deg, rgba(244,239,230,0.12) 225deg,
+                     transparent 270deg, rgba(244,239,230,0.08) 315deg, transparent 360deg);
+  }
+
+  .port-novaspark .port-image { background: linear-gradient(180deg, #2A5043 0%, #0D2620 100%); }
+  .port-novaspark .port-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 40% at 50% 40%, rgba(244,239,230,0.2), transparent 60%),
+                radial-gradient(ellipse 40% 20% at 50% 60%, rgba(122,46,42,0.3), transparent 60%);
+  }
+
+  .port-gulf .port-image { background: linear-gradient(145deg, #3A4A3E 0%, #1B3A2E 100%); }
+  .port-gulf .port-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(135deg, transparent 48%, rgba(244,239,230,0.08) 49%, rgba(244,239,230,0.08) 51%, transparent 52%) 0 0 / 60px 60px,
+      linear-gradient(45deg, transparent 48%, rgba(244,239,230,0.06) 49%, rgba(244,239,230,0.06) 51%, transparent 52%) 0 0 / 60px 60px;
+  }
+
+  .port-scs .port-image { background: linear-gradient(180deg, #1B3A2E 0%, #0D2620 100%); }
+  .port-scs .port-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(to bottom,
+        transparent 0%, transparent 20%,
+        rgba(244,239,230,0.08) 20%, rgba(244,239,230,0.08) 21%,
+        transparent 21%, transparent 40%,
+        rgba(244,239,230,0.1) 40%, rgba(244,239,230,0.1) 41%,
+        transparent 41%, transparent 60%,
+        rgba(244,239,230,0.12) 60%, rgba(244,239,230,0.12) 61%,
+        transparent 61%, transparent 80%,
+        rgba(122,46,42,0.25) 80%, rgba(122,46,42,0.25) 81%,
+        transparent 81%);
+  }
+
+  .port-body {
+    padding: 28px 26px 32px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .port-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--rule);
+    gap: 12px;
+  }
+  .port-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--forest);
+  }
+  .port-stage {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mute);
+    white-space: nowrap;
+  }
+  .port-name {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .port-summary {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--mute);
+    margin-bottom: 20px;
+    flex: 1;
+  }
+  .port-partners {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--forest);
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--rule);
+    opacity: 0.8;
+  }
+  .port-partners .label {
+    color: var(--mute);
+    font-weight: 500;
+    margin-right: 4px;
+  }
+  .port-more {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+  }
+  .port-card:hover .port-more { color: var(--burgundy); }
+  .port-card:hover .port-more svg { transform: translateX(4px); }
+  .port-more svg { transition: transform 0.25s ease; }
+
+  /* Special "platform" card — full width for Space Capital Stack and similar */
+  .port-card.platform {
+    grid-column: span 2;
+    flex-direction: row;
+  }
+  .port-card.platform .port-image {
+    aspect-ratio: auto;
+    width: 45%;
+    border-right: 1px solid var(--rule);
+    border-bottom: 0;
+  }
+  .port-card.platform .port-body {
+    width: 55%;
+    padding: 40px 36px;
+  }
+  .port-card.platform .port-name {
+    font-size: 32px;
+  }
+  .port-card.platform .port-summary {
+    font-size: 15.5px;
+  }
+  @media (max-width: 1100px) {
+    .port-card.platform { grid-column: span 2; }
+  }
+  @media (max-width: 900px) {
+    .port-card.platform {
+      grid-column: span 2;
+      flex-direction: column;
+    }
+    .port-card.platform .port-image {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      border-right: 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .port-card.platform .port-body { width: 100%; }
+  }
+  @media (max-width: 620px) {
+    .port-card.platform { grid-column: span 1; }
+  }
+
+  /* ============ Legacy Positions — simple text list ============ */
+  .legacy {
+    background: var(--bone-soft);
+    padding: clamp(72px, 10vw, 120px) 0 clamp(72px, 10vw, 120px);
+    border-top: 1px solid var(--rule);
+    margin-top: clamp(60px, 8vw, 96px);
+  }
+  .legacy-head {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    margin-bottom: 56px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  @media (max-width: 900px) { .legacy-head { grid-template-columns: 1fr; gap: 24px; } }
+
+  .legacy-head-left .eyebrow { margin-bottom: 16px; }
+  .legacy-head-left h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .legacy-head-left h2 em { font-style: italic; color: var(--forest); font-weight: 300; }
+  .legacy-head-right p {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--mute);
+    max-width: 58ch;
+  }
+
+  .legacy-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+  @media (max-width: 780px) { .legacy-list { grid-template-columns: 1fr; } }
+
+  .legacy-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 24px;
+    align-items: baseline;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .legacy-item:nth-last-child(-n+2):nth-child(2n+1),
+  .legacy-item:last-child {
+    /* keep bottom border across both columns */
+  }
+  @media (min-width: 781px) {
+    .legacy-list .legacy-item:nth-child(odd) { padding-right: 40px; border-right: 1px solid var(--rule); }
+    .legacy-list .legacy-item:nth-child(even) { padding-left: 40px; }
+  }
+
+  .legacy-name {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+    white-space: nowrap;
+  }
+  .legacy-desc {
+    font-size: 14px;
+    color: var(--mute);
+    line-height: 1.5;
+  }
+  .legacy-era {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--forest);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  @media (max-width: 520px) {
+    .legacy-item { grid-template-columns: 1fr auto; grid-template-rows: auto auto; }
+    .legacy-desc { grid-column: 1 / -1; }
+  }
+
+  .legacy-note {
+    margin-top: 48px;
+    padding: 28px 32px;
+    background: var(--bone);
+    border-left: 2px solid var(--burgundy);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--mute);
+    max-width: 76ch;
+  }
+  .legacy-note strong { color: var(--ink); font-weight: 500; }
+
+  /* ============ CTA Band before footer ============ */
+  .cta-band {
+    background: var(--forest-deep);
+    color: var(--bone);
+    padding: clamp(64px, 8vw, 96px) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-band::before {
+    content: '';
+    position: absolute;
+    left: -10%;
+    top: -50%;
+    width: 600px;
+    height: 600px;
+    border: 1px solid rgba(244,239,230,0.08);
+    transform: rotate(45deg);
+  }
+  .cta-band .wrap {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  @media (max-width: 900px) { .cta-band .wrap { grid-template-columns: 1fr; gap: 32px; } }
+
+  .cta-band .eyebrow { color: rgba(244,239,230,0.6); margin-bottom: 20px; }
+  .cta-band h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(32px, 4.5vw, 52px);
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+    color: var(--bone);
+  }
+  .cta-band h2 em { font-style: italic; color: var(--sand); font-weight: 300; }
+
+  .cta-actions { display: flex; flex-direction: column; gap: 14px; justify-self: end; }
+  @media (max-width: 900px) { .cta-actions { justify-self: start; width: 100%; } }
+
+  .cta-actions a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px 28px;
+    background: rgba(244,239,230,0.05);
+    border: 1px solid rgba(244,239,230,0.15);
+    color: var(--bone);
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    min-width: 340px;
+  }
+  @media (max-width: 900px) { .cta-actions a { min-width: 0; } }
+  .cta-actions a:hover {
+    background: var(--bone);
+    color: var(--forest-deep);
+    border-color: var(--bone);
+  }
+  .cta-actions a span.num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--sand);
+    margin-right: 6px;
+  }
+  .cta-actions a:hover span.num { color: var(--burgundy); }
+  .cta-actions a svg { transition: transform 0.25s ease; }
+  .cta-actions a:hover svg { transform: translateX(4px); }
+
+  /* ============ Footer ============ */
+  footer.site-footer {
+    background: var(--forest-deep);
+    color: var(--bone);
+    padding: 80px 0 40px;
+    border-top: 1px solid rgba(244,239,230,0.12);
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(244,239,230,0.12);
+  }
+  @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; } }
+  @media (max-width: 520px) { .footer-top { grid-template-columns: 1fr; } }
+
+  .foot-brand .brand-mark { border-color: var(--bone); }
+  .foot-brand .brand-text .top { color: rgba(244,239,230,0.55); }
+  .foot-brand .brand-text .name { color: var(--bone); }
+  .foot-brand p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgba(244,239,230,0.7);
+    margin-top: 20px;
+    max-width: 36ch;
+  }
+  .foot-address {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(244,239,230,0.55);
+    font-style: normal;
+  }
+
+  .foot-col h4 {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sand);
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .foot-col a {
+    font-size: 14px;
+    color: rgba(244,239,230,0.75);
+    transition: color 0.2s ease;
+  }
+  .foot-col a:hover { color: var(--bone); }
+
+  /* Footer crest mark — secondary identity */
+  .foot-crest {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(244,239,230,0.12);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .foot-crest-mark {
+    width: 56px; height: 64px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .foot-crest-mark svg { width: 100%; height: 100%; }
+  .foot-crest-text {
+    font-family: var(--serif);
+    font-size: 11px;
+    line-height: 1.5;
+    font-style: italic;
+    color: rgba(244,239,230,0.55);
+    letter-spacing: 0.04em;
+  }
+  .foot-crest-text strong {
+    display: block;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sand);
+    margin-bottom: 4px;
+  }
+
+  .footer-bottom {
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 12px;
+    color: rgba(244,239,230,0.5);
+  }
+  .footer-bottom .legal { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-bottom a:hover { color: var(--bone); }
+
+  /* Entrance animation */
+  @media (prefers-reduced-motion: no-preference) {
+    .page-header h1, .page-header-meta, .breadcrumb {
+      opacity: 0;
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .breadcrumb { animation-delay: 0.1s; }
+    .page-header h1 { animation-delay: 0.25s; }
+    .page-header-meta { animation-delay: 0.5s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+
+  .mockup-label {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    background: var(--burgundy);
+    color: var(--bone);
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    font-weight: 600;
+    z-index: 200;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="mockup-label">Mockup v2 · Portfolio Index</div>
+
+<!-- Top utility bar -->
+<div class="topbar">
+  <div class="wrap">
+    <span class="top-left">Houston, Texas · Established 1992 · Manager of the Leo B. Womack Family Trust</span>
+    <div class="top-right">
+      <a href="#">Ramsey RegA&nbsp;↗</a>
+      <a href="#">LinkedIn&nbsp;↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- Main navigation -->
+<nav class="nav">
+  <div class="wrap">
+    <a href="#" class="brand" aria-label="Ramsey Financial Group home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">
+        <span class="top">Ramsey</span>
+        <span class="name">Financial Group</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" class="current">Portfolio</a></li>
+      <li><a href="#">Space Capital Stack</a></li>
+      <li><a href="#">Team</a></li>
+      <li><a href="#">Thought Leadership</a></li>
+      <li><a href="#">Media</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <a href="#" class="nav-cta">Request an Introduction</a>
+    <button class="nav-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Page header -->
+<header class="page-header">
+  <div class="wrap">
+    <div class="breadcrumb">
+      <a href="#">Home</a>
+      <span class="sep">/</span>
+      <span class="current">Portfolio</span>
+    </div>
+    <h1>
+      The <em>portfolio.</em>
+    </h1>
+    <div class="page-header-meta">
+      <p class="page-lede">
+        Three institutional platforms — including Space Fund I &amp; II — eight active projects across <strong>seven verticals</strong>, a documented track record of realized exits, and three decades of prior positions. Every investment is <strong>co-invested</strong> alongside aligned family offices, angel networks, and institutional partners.
+      </p>
+      <div class="page-counts">
+        <div class="count">
+          <div class="count-num">3</div>
+          <div class="count-label">Platforms &amp; Funds</div>
+        </div>
+        <div class="count">
+          <div class="count-num">8</div>
+          <div class="count-label">Active Projects</div>
+        </div>
+        <div class="count">
+          <div class="count-num">30+</div>
+          <div class="count-label">Years</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= SECTION I: FUND VEHICLES & PLATFORMS ================= -->
+<div class="section-divider">
+  <div class="wrap">
+    <div class="section-num">Section I.</div>
+    <div class="section-title-block">
+      <h2>Fund vehicles <em>&amp; platforms.</em></h2>
+      <p>Multi-company structures we have built, anchored, or operate as principals. These are institutional-grade vehicles with their own dedicated properties, beginning with our flagship venture platform.</p>
+    </div>
+    <div class="section-count">03 Platforms</div>
+  </div>
+</div>
+
+<section class="portfolio-section">
+  <div class="wrap">
+    <div class="portfolio-grid">
+
+      <!-- Featured: Space Fund — prominent placement -->
+      <a class="platform-feature" aria-label="Space Fund I &amp; II — featured platform" href="projects/space-fund.html">
+        <div class="platform-feature-body">
+          <div class="platform-feature-flag">Featured Platform · Venture</div>
+          <h3 class="platform-feature-name">Space Fund <em>I &amp; II</em></h3>
+          <p class="platform-feature-tagline">
+            Space Fund 1 &amp; 2, managed by Meagan and Leo, has overperformed across every fund metric since inception.
+          </p>
+          <p class="platform-feature-summary">
+            Two early-stage venture funds investing across the space economy. The principals remain shareholders. Performance metrics, portfolio composition, and exit history available to qualified investors and counterparties on request.
+          </p>
+          <div class="platform-feature-meta">
+            <div class="platform-feature-stat">
+              <span class="num">[X]</span>
+              <span class="label">Fund I IRR · TBC</span>
+            </div>
+            <div class="platform-feature-stat">
+              <span class="num">[X]</span>
+              <span class="label">Fund II Multiple · TBC</span>
+            </div>
+            <div class="platform-feature-stat">
+              <span class="num">[X]</span>
+              <span class="label">Portfolio Companies · TBC</span>
+            </div>
+          </div>
+        </div>
+        <div class="platform-feature-thumb" role="img" aria-label="Space Fund visual">
+          <span class="platform-feature-thumb-label">IMG: Space Fund logo / fund cover graphic</span>
+        </div>
+      </a>
+
+      <!-- Platform Card: Space Capital Stack -->
+      <a class="port-card platform port-scs" href="index.html#scs">
+        <div class="port-image" role="img" aria-label="The Space Capital Stack">
+          <div class="placeholder"><span>IMG: Custom four-layer diagram · the complete capital stack for space</span></div>
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">Space · Integrated Platform</span>
+            <span class="port-stage">Active</span>
+          </div>
+          <h3 class="port-name">The Space Capital Stack</h3>
+          <p class="port-summary">
+            The first family office integrating all four layers of the space economy capital stack under one strategic roof — early-stage venture (SpaceFund), private credit (Space Finance Company), infrastructure and real estate (SpacePort Fund / Karman Line), and insurance (Alera Group Emerging Technologies Practice partnership). Led by Principal Meagan Crawford.
+          </p>
+          <div class="port-partners">
+            <span class="label">Vehicles:</span> SpaceFund · Space Finance Company · SpacePort Fund · Alera ETP · Off-Earth Data
+          </div>
+          <span class="port-more">
+            Explore the Stack
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card: Gulf Equities -->
+      <a class="port-card port-gulf" href="projects/gulf-equities.html">
+        <div class="port-image" role="img" aria-label="Gulf Equities real estate portfolio">
+          <div class="placeholder"><span>IMG: Houston / Baytown freeway-adjacent commercial property</span></div>
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">Real Estate · Texas</span>
+            <span class="port-stage">Active Disposition</span>
+          </div>
+          <h3 class="port-name">Gulf Equities</h3>
+          <p class="port-summary">
+            A Houston-area real estate portfolio primarily concentrated along freeway-adjacent corridors in Baytown, currently seeking development partners or aligned buyers for select dispositions.
+          </p>
+          <div class="port-partners">
+            <span class="label">Seeking:</span> Development and disposition partners
+          </div>
+          <span class="port-more">
+            View portfolio
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION II: ACTIVE PROJECTS ================= -->
+<div class="section-divider">
+  <div class="wrap">
+    <div class="section-num">Section II.</div>
+    <div class="section-title-block">
+      <h2>Active <em>projects.</em></h2>
+      <p>Current positions where we are actively involved in strategy, capital formation, or operational governance. Most are open to qualified co-investors on a case-by-case basis. Filter by sector below.</p>
+    </div>
+    <div class="section-count">08 Projects</div>
+  </div>
+</div>
+
+<section class="portfolio-section">
+  <div class="wrap">
+
+    <!-- Sector Filter -->
+    <div class="sector-filter" role="region" aria-label="Filter projects by sector">
+      <div class="sector-filter-label">Filter by sector</div>
+      <div class="sector-filter-row">
+        <button type="button" class="sector-btn active" data-sector="all">All <span class="count">08</span></button>
+        <button type="button" class="sector-btn" data-sector="space">Space <span class="count">01</span></button>
+        <button type="button" class="sector-btn" data-sector="agtech">AgTech <span class="count">03</span></button>
+        <button type="button" class="sector-btn" data-sector="water">Water · Infrastructure <span class="count">01</span></button>
+        <button type="button" class="sector-btn" data-sector="ai">AI · EdTech <span class="count">01</span></button>
+        <button type="button" class="sector-btn" data-sector="energy">Energy · Defense <span class="count">01</span></button>
+        <button type="button" class="sector-btn" data-sector="international">International · FinTech <span class="count">01</span></button>
+      </div>
+    </div>
+    <div class="portfolio-grid">
+
+      <!-- Card: AXE H2O -->
+      <a class="port-card port-axe" data-sector="water" href="projects/axe-h2o.html">
+        <div class="port-image" role="img" aria-label="AXE H2O desalination plant">
+          <div class="placeholder"><span>IMG: Aerial of Corpus Christi coastline · desalination infrastructure render</span></div>
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">Water · Infrastructure</span>
+            <span class="port-stage">Pre-Construction</span>
+          </div>
+          <h3 class="port-name">AXE H2O</h3>
+          <p class="port-summary">
+            A 150-million-gallon-per-day Gulf seawater desalination plant addressing the South Texas water crisis, self-powered by a 95 MW microgrid and underwritten by 30-year municipal and industrial offtake contracts.
+          </p>
+          <div class="port-partners">
+            <span class="label">With:</span> Caterpillar · RSE America · ACWA Power · IDE Technologies
+          </div>
+          <span class="port-more">
+            View project
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card: Karman Line -->
+      <a class="port-card port-karman" data-sector="space" href="projects/karman-line.html">
+        <div class="port-image" role="img" aria-label="Karman Line spaceport development">
+          <div class="placeholder"><span>IMG: Cape Canaveral workforce housing · spaceport-adjacent real estate</span></div>
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">Space · Real Estate</span>
+            <span class="port-stage">Fund I Active</span>
+          </div>
+          <h3 class="port-name">Karman Line / SpacePort Fund</h3>
+          <p class="port-summary">
+            The ground layer of the space economy — workforce housing and strategic land near U.S. spaceports, structured as a multi-fund platform scaling from Fund I workforce housing through mixed-use and commercial flex.
+          </p>
+          <div class="port-partners">
+            <span class="label">With:</span> Flow Capital · Sadana Global · Roddenberry Entertainment · SpaceFund
+          </div>
+          <span class="port-more">
+            View project
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card: Eden Grow Systems -->
+      <a class="port-card port-eden" data-sector="agtech" href="projects/eden-grow.html">
+        <div class="port-image" role="img" aria-label="Eden Grow Systems vertical farm">
+          <div class="placeholder"><span>IMG: Vertical grow tower interior · leafy produce · NASA-spinoff aeroponics</span></div>
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">AgTech · CRE</span>
+            <span class="port-stage">Operating</span>
+          </div>
+          <h3 class="port-name">Eden Grow Systems</h3>
+          <p class="port-summary">
+            NASA-spinoff controlled-environment agriculture converting underutilized commercial real estate into year-round indoor farms. 99% less water than hydroponics, delivered through 60/40 profit-share partnerships with building owners.
+          </p>
+          <div class="port-partners">
+            <span class="label">With:</span> Commercial real estate partners nationwide
+          </div>
+          <span class="port-more">
+            View project
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card: Ahura AI -->
+      <a class="port-card port-ahura" data-sector="ai" href="projects/ahura-ai.html">
+        <div class="port-image" role="img" aria-label="Ahura AI learning platform">
+          <div class="placeholder"><span>IMG: Learning platform UI · attention-tracking interface · federal workforce training</span></div>
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">AI · EdTech</span>
+            <span class="port-stage">Series A</span>
+          </div>
+          <h3 class="port-name">Ahura AI</h3>
+          <p class="port-summary">
+            Patented attention-tracking AI delivering 3–5x faster learning and 90%+ retention. Deployed across federal agency upskilling, FBI drone-interception training, prisoner rehabilitation, and a verbal NASA astronaut-training commitment.
+          </p>
+          <div class="port-partners">
+            <span class="label">With:</span> Legacy Impact Technologies · Nevada Partners · Babcock University · Salesforce
+          </div>
+          <span class="port-more">
+            View project
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card: NovaSpark Energy -->
+      <a class="port-card port-novaspark" data-sector="energy" href="projects/novaspark-energy.html">
+        <div class="port-image" role="img" aria-label="NovaSpark hydrogen system">
+          <div class="placeholder"><span>IMG: Mobile hydrogen unit in field deployment · DIU contract visual</span></div>
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">Energy · Defense</span>
+            <span class="port-stage">Seed / Pre-A</span>
+          </div>
+          <h3 class="port-name">NovaSpark Energy</h3>
+          <p class="port-summary">
+            Mobile atmospheric hydrogen systems producing fuel, power, and water on demand for forward operating bases, hurricane-preparedness civil infrastructure, and commercial sites replacing diesel generators.
+          </p>
+          <div class="port-partners">
+            <span class="label">With:</span> Defense Innovation Unit · Lockheed (in negotiation) · Naval Postgraduate School
+          </div>
+          <span class="port-more">
+            View project
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card: Iran Reconstruction Fund -->
+      <a class="port-card port-iran" data-sector="international" href="projects/iran-reconstruction.html">
+        <div class="port-image" role="img" aria-label="Iran Reconstruction Fund">
+          <div class="placeholder"><span>IMG: Abstract architectural motif · Persian geometric pattern · institutional finance</span></div>
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">International · FinTech</span>
+            <span class="port-stage">Fund Formation</span>
+          </div>
+          <h3 class="port-name">Iran Reconstruction Fund</h3>
+          <p class="port-summary">
+            A U.S.-domiciled institutional fund structured to launch 20+ banking, commerce, and CPG platforms into a 92-million-person economy coming online for the first time in half a century. Founded by an Iranian-American technology entrepreneur.
+          </p>
+          <div class="port-partners">
+            <span class="label">Managed by:</span> Iran Reconstruction Agency &amp; Network, LLC
+          </div>
+          <span class="port-more">
+            View project
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card: Celestial Cellars -->
+      <a class="port-card port-celestial" data-sector="agtech" href="projects/celestial-cellars.html">
+        <div class="port-image" role="img" aria-label="Celestial Cellars indoor vineyard">
+          <div class="placeholder"><span>IMG: Grapevines under controlled indoor lighting · lab-style horticulture</span></div>
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">AgTech · CPG</span>
+            <span class="port-stage">Seed</span>
+          </div>
+          <h3 class="port-name">Celestial Cellars</h3>
+          <p class="port-summary">
+            Space-age wine — using NASA-spinoff aeroponic technology to grow wine grapes indoors with complete environmental control, bypassing the climate pressures destabilizing traditional winegrowing regions worldwide.
+          </p>
+          <div class="port-partners">
+            <span class="label">With:</span> Texas A&amp;M Horticultural Sciences · Krown Impact · WINE CO
+          </div>
+          <span class="port-more">
+            View project
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card: Wimberley CBD -->
+      <a class="port-card port-wimberley" data-sector="agtech" href="projects/wimberley-cbd.html">
+        <div class="port-image" role="img" aria-label="Wimberley CBD cultivation">
+          <div class="placeholder"><span>IMG: Texas warehouse interior · hydroponic rack · compliant hemp cultivation</span></div>
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">AgTech · Texas</span>
+            <span class="port-stage">Seed</span>
+          </div>
+          <h3 class="port-name">Wimberley CBD Cultivation</h3>
+          <p class="port-summary">
+            Compliant indoor CBD hemp cultivation on partner-owned Hays County land, structured capital-light with committed wholesale buyer and a roadmap to branded non-smokable CBD consumer products under Phase 2.
+          </p>
+          <div class="port-partners">
+            <span class="label">Under:</span> Texas Department of Agriculture Industrial Hemp Program
+          </div>
+          <span class="port-more">
+            View project
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION III: SUCCESSFUL EXITS ================= -->
+<section class="exits">
+  <div class="wrap">
+    <div class="exits-head">
+      <div class="exits-head-left">
+        <div class="eyebrow">Section III.</div>
+        <h2>Successful <em>exits.</em></h2>
+      </div>
+      <div class="exits-head-right">
+        <p>The track record. Realized exits and major liquidity events from across the firm's history — the proof point investors look to first. Performance details available on request to qualified investors and counterparties.</p>
+      </div>
+    </div>
+
+    <div class="exits-grid">
+      <a class="exit-card" href="projects/detecticam.html">
+        <span class="exit-tag">Exit · 2024</span>
+        <h3 class="exit-name">Detecticam</h3>
+        <p class="exit-desc">Significant exit completed two years ago — a strong realized return for Bart Womack and the firm. Sector and structure detail on request.</p>
+        <div class="exit-meta">
+          <span>Realized</span>
+          <span>Bart Womack</span>
+        </div>
+      </a>
+
+      <a class="exit-card" href="projects/deep-space.html">
+        <span class="exit-tag">Exit · Historical</span>
+        <h3 class="exit-name">Deep Space Industries</h3>
+        <p class="exit-desc">Pioneering asteroid-mining venture; an early position in the firm's space-economy track record, exited prior to the formal SCS thesis.</p>
+        <div class="exit-meta">
+          <span>Realized</span>
+          <span>Space Fund era</span>
+        </div>
+      </a>
+
+      <a class="exit-card" href="projects/park-plaza.html">
+        <span class="exit-tag">Exit · Realized</span>
+        <h3 class="exit-name">Park Plaza Hospital</h3>
+        <p class="exit-desc">[Description placeholder — to be supplied by Leo. Flagship realized investment in the firm's healthcare-adjacent real assets track record.]</p>
+        <div class="exit-meta">
+          <span>Realized</span>
+          <span>Leo Womack</span>
+        </div>
+      </a>
+    </div>
+
+    <p class="exits-foot-note">
+      <strong>A note on the full track record.</strong> The firm's 30-year history spans dozens of additional realized positions across life sciences, energy, and Houston-area real estate, anchored by the Fairway / Liprostin / CardioNexus lineage that informs the firm's current med-tech ambitions. Full track-record conversations are available to qualified investors and counterparties on request.
+    </p>
+  </div>
+</section>
+
+<!-- ================= SECTION IV: PREVIOUS PROJECTS ================= -->
+<section class="legacy">
+  <div class="wrap">
+    <div class="legacy-head">
+      <div class="legacy-head-left">
+        <div class="eyebrow">Section IV.</div>
+        <h2>Previous <em>projects.</em></h2>
+      </div>
+      <div class="legacy-head-right">
+        <p>
+          Investments, board seats, and partnerships from across three decades of the firm's history that remain on the books but are no longer in active fundraising or development. These positions reflect the continuity of Ramsey Financial Group's life-sciences, energy, and real-estate practice — and the deep operating experience the team brings to new opportunities.
+        </p>
+      </div>
+    </div>
+
+    <ul class="legacy-list">
+      <li class="legacy-item">
+        <span class="legacy-name">ARTELLA Solutions</span>
+        <span class="legacy-desc">Digital health &amp; MCT monitoring, formerly CorVitals of Texas. RFG largest shareholder; Sep Moshiri, Board.</span>
+        <span class="legacy-era">Ongoing</span>
+      </li>
+      <li class="legacy-item">
+        <span class="legacy-name">Sky Quarry</span>
+        <span class="legacy-desc">Oil sands recovery &amp; waste asphalt shingle recycling. Leo Womack, Board of Directors (2025).</span>
+        <span class="legacy-era">Active</span>
+      </li>
+      <li class="legacy-item">
+        <span class="legacy-name">Fairway Medical Technologies</span>
+        <span class="legacy-desc">Diagnostic imaging platforms. Sep Moshiri, Board Member.</span>
+        <span class="legacy-era">Ongoing</span>
+      </li>
+      <li class="legacy-item">
+        <span class="legacy-name">Liprostin Group</span>
+        <span class="legacy-desc">Medical device &amp; therapeutic platform. Sep Moshiri, Board Director.</span>
+        <span class="legacy-era">Ongoing</span>
+      </li>
+      <li class="legacy-item">
+        <span class="legacy-name">CardioNexus Corporation</span>
+        <span class="legacy-desc">Cardiovascular diagnostics platform. Formed with Fairway Medical &amp; Panasonic NA.</span>
+        <span class="legacy-era">2010</span>
+      </li>
+      <li class="legacy-item">
+        <span class="legacy-name">Ramsey RegA</span>
+        <span class="legacy-desc">Regulation A+ advisory practice. Sep Moshiri, Co-Founder &amp; CEO.</span>
+        <span class="legacy-era">Active ↗</span>
+      </li>
+    </ul>
+
+    <div class="legacy-note">
+      <strong>Note for Leo's review.</strong> This list is a curated subset; Petrolia Energy, SMG Industries, and other historical positions have been removed pending confirmation, and the inclusion of CoreMedica and/or Menebo is pending Leo's decision. Any items that have not exited and are not in the current portfolio will be removed in the next pass. Ramsey Reggae has been omitted from all listings.
+    </div>
+  </div>
+</section>
+
+<!-- CTA Band -->
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Get Involved</div>
+      <h2>Whether you are <em>building, investing, or reporting</em> — we read every inquiry.</h2>
+    </div>
+    <div class="cta-actions">
+      <a href="#">
+        <span><span class="num">I.</span> For Founders — Submit an Executive Summary</span>
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+          <path d="M1 6h13m0 0L9 1m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+        </svg>
+      </a>
+      <a href="#">
+        <span><span class="num">II.</span> For Investors — Request an Introduction</span>
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+          <path d="M1 6h13m0 0L9 1m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+        </svg>
+      </a>
+      <a href="#">
+        <span><span class="num">III.</span> For Press &amp; Policy — Request an Interview</span>
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+          <path d="M1 6h13m0 0L9 1m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="foot-brand">
+        <a href="#" class="brand" style="color: var(--bone);">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">
+            <span class="top">Ramsey</span>
+            <span class="name" style="color: var(--bone);">Financial Group</span>
+          </span>
+        </a>
+        <p>A Houston single-family office co-investing in frontier industries since 1992. Manager of the Leo B. Womack Family Trust.</p>
+        <address class="foot-address">
+          710 N Post Oak Rd<br>
+          Houston, Texas 77024<br>
+          sep@ramseyfg.com
+        </address>
+        <div class="foot-crest" aria-label="Ramsey heritage crest">
+          <div class="foot-crest-mark" aria-hidden="true">
+            <svg viewBox="0 0 56 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 6 L28 2 L52 6 L52 32 C52 48 40 58 28 62 C16 58 4 48 4 32 Z"
+                    fill="none" stroke="rgba(244,239,230,0.4)" stroke-width="1.2"/>
+              <path d="M9 10 L28 7 L47 10 L47 32 C47 45 37 53 28 56 C19 53 9 45 9 32 Z"
+                    fill="none" stroke="rgba(244,239,230,0.25)" stroke-width="1"/>
+              <path d="M28 18 L28 14 L31 17 L29.5 18.5 Z"
+                    fill="rgba(217,207,184,0.7)" stroke="rgba(244,239,230,0.4)" stroke-width="0.6"/>
+              <path d="M22 30 C22 24 25 21 28 21 C31 21 34 23 34 28 L34 36 C34 40 32 42 30 42 L26 42 C24 42 22 40 22 36 Z"
+                    fill="none" stroke="rgba(244,239,230,0.5)" stroke-width="1.1"/>
+              <path d="M22 28 L20 26 M23 25 L21 22 M24 23 L23 20"
+                    stroke="rgba(244,239,230,0.4)" stroke-width="0.8" stroke-linecap="round"/>
+              <circle cx="30" cy="30" r="0.8" fill="rgba(122,46,42,0.7)"/>
+              <text x="28" y="52" text-anchor="middle"
+                    fill="rgba(217,207,184,0.6)"
+                    font-family="serif" font-style="italic" font-size="6" letter-spacing="0.5">MCMXCII</text>
+            </svg>
+          </div>
+          <div class="foot-crest-text">
+            <strong>Ramsey Heritage</strong>
+            Continuity across three decades<br>and three generations of operators.
+          </div>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Space Capital Stack</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Thought Leadership</a></li>
+          <li><a href="#">Media</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Platforms</h4>
+        <ul>
+          <li><a href="#">Ramsey RegA&nbsp;↗</a></li>
+          <li><a href="#">SpaceFund&nbsp;↗</a></li>
+          <li><a href="#">Space Finance Company&nbsp;↗</a></li>
+          <li><a href="#">SpacePort Fund&nbsp;↗</a></li>
+          <li><a href="#">Off-Earth Data&nbsp;↗</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">LinkedIn&nbsp;↗</a></li>
+          <li><a href="#">Press Releases</a></li>
+          <li><a href="#">Speaking Requests</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Ramsey Financial Group, LLC. All rights reserved.</div>
+      <div class="legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Disclosures</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id === '#' || id.length < 2) return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      const navH = document.querySelector('.nav').offsetHeight;
+      window.scrollTo({ top: target.offsetTop - navH - 8, behavior: 'smooth' });
+    });
+  });
+
+  // Sector filter for active projects
+  (function() {
+    const buttons = document.querySelectorAll('.sector-btn');
+    // Scope to actual project cards only — buttons also carry data-sector
+    // and would otherwise be hidden by the filter.
+    const cards = document.querySelectorAll('.port-card[data-sector]');
+    if (!buttons.length || !cards.length) return;
+
+    const allBtn = document.querySelector('.sector-btn[data-sector="all"]');
+
+    function applyFilter(sector) {
+      buttons.forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-sector') === sector);
+      });
+      cards.forEach(card => {
+        const cs = card.getAttribute('data-sector');
+        card.style.display = (sector === 'all' || cs === sector) ? '' : 'none';
+      });
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sector = btn.getAttribute('data-sector');
+        // If clicking the already-active sector (and it's not "All"),
+        // toggle off by reverting to the "All" view.
+        if (btn.classList.contains('active') && sector !== 'all') {
+          applyFilter('all');
+        } else {
+          applyFilter(sector);
+        }
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
