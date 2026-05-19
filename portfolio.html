@@ -524,14 +524,16 @@
     opacity: 0.65;
     z-index: 2;
   }
-  /* Real <img> inside .platform-feature-thumb — same fallback pattern as .port-image */
+  /* Real <img> inside .platform-feature-thumb — contain + padding so the
+     SpaceFund wordmark is never cropped. Gradient + ::after stay as fallback. */
   .platform-feature-thumb img {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
+    padding: 32px;
     display: block;
     z-index: 2;
   }
@@ -708,17 +710,25 @@
   }
   .port-image .placeholder span { position: relative; z-index: 1; max-width: 90%; }
 
-  /* Real <img> inside .port-image — fills the 16:11 container; per-card gradient
-     and ::after overlay stay defined as fallback if the image fails to load. */
+  /* Default: contain + padding. Most portfolio cards carry logos/wordmarks,
+     which would lose key letters or marks under a 16:11 cover crop. Photos
+     (Park Plaza, Gulf Equities) override below to cover-crop the full
+     container. Gradient + ::after stay defined as fallback if image fails. */
   .port-image img {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
+    padding: 20px;
     display: block;
     z-index: 2;
+  }
+  .port-park .port-image img,
+  .port-gulf .port-image img {
+    object-fit: cover;
+    padding: 0;
   }
 
   /* Individual card visual treatments — same system as homepage */
@@ -762,23 +772,15 @@
     position: absolute; inset: 0;
     background: radial-gradient(ellipse at center, rgba(244,239,230,0.12) 0%, transparent 60%);
   }
-  /* Celestial source is portrait; bias the cover crop toward the logo (~70% down). */
-  .port-celestial .port-image img { object-position: center 70%; }
-
-  /* Ambrose logo treatment — source is small (200x200), so use scale-down + padding
-     to keep it crisp and centered with negative space rather than stretching. */
+  /* Ambrose — small 200x200 logo; default contain + 20px padding works. */
   .port-ambrose .port-image { background: linear-gradient(135deg, #3F2526 0%, #1B3A2E 100%); }
   .port-ambrose .port-image::after {
     content: '';
     position: absolute; inset: 0;
     background: radial-gradient(ellipse at center, rgba(244,239,230,0.08) 0%, transparent 60%);
   }
-  .port-ambrose .port-image img {
-    object-fit: scale-down;
-    padding: 28px;
-  }
 
-  /* DetectaChem — landscape photo, standard cover treatment. */
+  /* DetectaChem — logo / wordmark; default contain + padding applies. */
   .port-detectachem .port-image { background: linear-gradient(160deg, #1B3A2E 0%, #0D2620 100%); }
   .port-detectachem .port-image::after {
     content: ''; position: absolute; inset: 0;
@@ -795,16 +797,6 @@
   .port-ramsey-crest .port-image img {
     object-fit: contain;
     padding: 32px;
-  }
-
-  /* Logo / wordmark cards whose source images are wide banners or graphics,
-     not photos. Cover crop would cut off key parts of the wordmark; use
-     scale-down + padding to keep them crisp and centered. */
-  .port-eden .port-image img,
-  .port-ahura .port-image img,
-  .port-novaspark .port-image img {
-    object-fit: scale-down;
-    padding: 28px;
   }
 
   /* Yo-Yo Dyne Industries — placeholder card visuals (no images yet). */
