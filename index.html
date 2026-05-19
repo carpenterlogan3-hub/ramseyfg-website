@@ -1884,20 +1884,14 @@
       <aside class="hero-videos" aria-label="Featured videos">
         <div class="hero-video-label">Hear from the principals</div>
 
-        <!-- TODO: This slot is meant for Bart's "Legacy of Ramsey Financial Group"
-             speech. That video has not been provided yet, so the Why-Houston video
-             is filling the slot as a stopgap. Swap the src to the real Bart-legacy
-             video ID and update the tag/title text when it lands. -->
+        <!-- TODO: Embed Bart's "Legacy of Ramsey Financial Group" speech when
+             the YouTube URL is provided. Showing a placeholder play button in
+             the meantime — the Why-Houston video was previously used as a
+             stopgap here but caused a visible duplicate with the same video
+             in the media section below. -->
         <article class="hero-video video-1">
           <div class="hero-video-thumb">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/prqZ5pmM6O8?rel=0&modestbranding=1"
-              title="Why Houston is the Future of the Trillion-Dollar Space Economy"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              loading="lazy">
-            </iframe>
+            <div class="hero-video-play" aria-hidden="true"></div>
           </div>
           <div class="hero-video-meta">
             <div class="hero-video-tag">Bart Womack · Speech</div>
@@ -2382,20 +2376,14 @@
     </div>
 
     <div class="media-grid">
-      <!-- TODO: This slot is meant for Bart's "Legacy of Ramsey Financial Group"
-           speech. That video has not been provided yet, so the Why-Houston video
-           is filling the slot as a stopgap (same fill as the top-hero video-1).
-           Swap to the real Bart-legacy YouTube ID when it lands. -->
+      <!-- TODO: Embed Bart's "Legacy of Ramsey Financial Group" speech when the
+           YouTube URL is provided. Showing a placeholder play button + estimated
+           runtime in the meantime — do NOT re-fill with the Why-Houston video,
+           it caused a visible duplicate against m-3. -->
       <article class="media-card m-1" tabindex="0">
         <div class="media-thumb">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/prqZ5pmM6O8?rel=0&modestbranding=1"
-            title="Why Houston is the Future of the Trillion-Dollar Space Economy"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            loading="lazy">
-          </iframe>
+          <div class="media-play" aria-hidden="true"></div>
+          <div class="media-duration">~ 18:00</div>
         </div>
         <div class="media-body">
           <div class="media-tag">Speech · Ramsey Event</div>
