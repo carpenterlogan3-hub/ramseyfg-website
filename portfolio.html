@@ -778,6 +778,35 @@
     padding: 28px;
   }
 
+  /* DetectaChem — landscape photo, standard cover treatment. */
+  .port-detectachem .port-image { background: linear-gradient(160deg, #1B3A2E 0%, #0D2620 100%); }
+  .port-detectachem .port-image::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(45deg, transparent 48%, rgba(244,239,230,0.14) 49%, rgba(244,239,230,0.14) 51%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, rgba(244,239,230,0.10) 49%, rgba(244,239,230,0.10) 51%, transparent 52%);
+  }
+
+  /* Ramsey Crest — tiny 138x75 crest, treat as logo with breathing room. */
+  .port-ramsey-crest .port-image { background: linear-gradient(135deg, #1B3A2E 0%, #0D2620 100%); }
+  .port-ramsey-crest .port-image::after {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(244,239,230,0.10) 0%, transparent 60%);
+  }
+  .port-ramsey-crest .port-image img {
+    object-fit: scale-down;
+    padding: 28px;
+  }
+
+  /* Logo / wordmark cards whose source images are wide banners or graphics,
+     not photos. Cover crop would cut off key parts of the wordmark; use
+     scale-down + padding to keep them crisp and centered. */
+  .port-eden .port-image img,
+  .port-ahura .port-image img,
+  .port-novaspark .port-image img {
+    object-fit: scale-down;
+    padding: 28px;
+  }
+
   /* Yo-Yo Dyne Industries — placeholder card visuals (no images yet). */
   .port-escape-pod .port-image { background: linear-gradient(180deg, #2A5043 0%, #0D2620 100%); }
   .port-escape-pod .port-image::after {
@@ -1336,7 +1365,7 @@
           <div class="count-label">Platforms &amp; Funds</div>
         </div>
         <div class="count">
-          <div class="count-num">9</div>
+          <div class="count-num">11</div>
           <div class="count-label">Active Projects</div>
         </div>
         <div class="count">
@@ -1467,7 +1496,7 @@
       <h2>Active <em>projects.</em></h2>
       <p>Current positions where we are actively involved in strategy, capital formation, or operational governance. Most are open to qualified co-investors on a case-by-case basis. Filter by sector below.</p>
     </div>
-    <div class="section-count">09 Projects</div>
+    <div class="section-count">11 Projects</div>
   </div>
 </div>
 
@@ -1478,9 +1507,9 @@
     <div class="sector-filter" role="region" aria-label="Filter projects by sector">
       <div class="sector-filter-label">Filter by sector</div>
       <div class="sector-filter-row">
-        <button type="button" class="sector-btn active" data-sector="all">All <span class="count">09</span></button>
-        <button type="button" class="sector-btn" data-sector="healthcare">Healthcare · Real Estate <span class="count">01</span></button>
-        <button type="button" class="sector-btn" data-sector="medtech">Med-Tech <span class="count">01</span></button>
+        <button type="button" class="sector-btn active" data-sector="all">All <span class="count">11</span></button>
+        <button type="button" class="sector-btn" data-sector="realestate">Real Estate <span class="count">02</span></button>
+        <button type="button" class="sector-btn" data-sector="medtech">Med-Tech <span class="count">02</span></button>
         <button type="button" class="sector-btn" data-sector="agtech">AgTech <span class="count">02</span></button>
         <button type="button" class="sector-btn" data-sector="water">Water · Infrastructure <span class="count">01</span></button>
         <button type="button" class="sector-btn" data-sector="ai">AI · EdTech <span class="count">01</span></button>
@@ -1491,10 +1520,10 @@
     <div class="portfolio-grid">
 
       <!-- Card: Park Plaza Hospital -->
-      <a class="port-card port-park" data-sector="healthcare" href="projects/park-plaza.html">
+      <a class="port-card port-park" data-sector="realestate" href="projects/park-plaza.html">
         <div class="port-image">
           <img src="assets/portfolio/Park_Plaza_Hospital.jpg"
-               alt="Park Plaza Hospital — Houston Texas Medical Center"
+               alt="Park Plaza Hospital exterior"
                loading="lazy" />
         </div>
         <div class="port-body">
@@ -1505,6 +1534,31 @@
           <!-- TODO: Replace with Bart's final Park Plaza copy when received. -->
           <p class="port-summary">
             Park Plaza Hospital opened in Houston's Museum District in 1975 as one of the largest physician-owned hospitals in the nation, with Leo Womack serving as a founding board member and Secretary-Treasurer alongside the hospital's founding physicians. Over the next four decades the hospital grew into a 444-bed flagship before joining HCA Houston Healthcare in 2017. <strong>LOGAN ATTEMPTED DRAFT — NEEDS REVIEW.</strong>
+          </p>
+          <span class="port-more">
+            View project
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card: DetectaChem -->
+      <!-- TODO: Replace placeholder copy with Bart's final DetectaChem description when received. -->
+      <a class="port-card port-detectachem" data-sector="medtech" href="projects/detectachem.html">
+        <div class="port-image">
+          <img src="assets/portfolio/DetectaChem.jpg"
+               alt="DetectaChem — portable chemical and explosive detection"
+               loading="lazy" />
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">Med-Tech · Defense</span>
+          </div>
+          <h3 class="port-name">DetectaChem</h3>
+          <p class="port-summary">
+            Portable chemical and explosive detection technology for defense, law enforcement, and security applications.
           </p>
           <span class="port-more">
             View project
@@ -1540,10 +1594,65 @@
         </div>
       </a>
 
+      <!-- Card: Gulf Equities — relocated from Section I per refresh -->
+      <a class="port-card port-gulf" data-sector="realestate" href="projects/gulf-equities.html">
+        <div class="port-image">
+          <img src="assets/portfolio/Gulf_Equities.jpg"
+               alt="Gulf Equities — Houston-area real estate portfolio"
+               loading="lazy" />
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">Real Estate · Texas</span>
+            <span class="port-stage">Active Disposition</span>
+          </div>
+          <h3 class="port-name">Gulf Equities</h3>
+          <p class="port-summary">
+            We manage a $100M portfolio of properties in and around Houston, with the majority located off the freeway in Baytown. We are looking for partners that can help us develop or liquidate these properties.
+          </p>
+          <div class="port-partners">
+            <span class="label">Seeking:</span> Development and disposition partners
+          </div>
+          <span class="port-more">
+            View portfolio
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card: Ramsey Crest -->
+      <!-- TODO: Confirm whether Ramsey Crest should link to a dedicated project page; href="#" placeholder for now. Final copy and any expanded description to be supplied. -->
+      <a class="port-card port-ramsey-crest" href="#">
+        <div class="port-image">
+          <img src="assets/portfolio/Ramsey_Crest.png"
+               alt="The Ramsey Financial Group crest"
+               loading="lazy" />
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">Institutional Mark</span>
+          </div>
+          <h3 class="port-name">Ramsey Crest</h3>
+          <p class="port-summary">
+            The Ramsey Financial Group institutional mark.
+          </p>
+          <span class="port-more">
+            Learn more
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
       <!-- Card: AXE H2O -->
       <a class="port-card port-axe" data-sector="water" href="projects/axe-h2o.html">
-        <div class="port-image" role="img" aria-label="AXE H2O desalination plant">
-          <div class="placeholder"><span>IMG: Aerial of Corpus Christi coastline · desalination infrastructure render</span></div>
+        <div class="port-image">
+          <img src="assets/portfolio/Axe_H2O.jpg"
+               alt="AXE H2O — Gulf seawater desalination plant"
+               loading="lazy" />
         </div>
         <div class="port-body">
           <div class="port-meta">
@@ -1568,8 +1677,10 @@
 
       <!-- Card: Eden Grow Systems -->
       <a class="port-card port-eden" data-sector="agtech" href="projects/eden-grow.html">
-        <div class="port-image" role="img" aria-label="Eden Grow Systems vertical farm">
-          <div class="placeholder"><span>IMG: Vertical grow tower interior · leafy produce · NASA-spinoff aeroponics</span></div>
+        <div class="port-image">
+          <img src="assets/portfolio/Eden_Grow_Systems.png"
+               alt="Eden Grow Systems logo"
+               loading="lazy" />
         </div>
         <div class="port-body">
           <div class="port-meta">
@@ -1594,8 +1705,10 @@
 
       <!-- Card: Ahura AI -->
       <a class="port-card port-ahura" data-sector="ai" href="projects/ahura-ai.html">
-        <div class="port-image" role="img" aria-label="Ahura AI learning platform">
-          <div class="placeholder"><span>IMG: Learning platform UI · attention-tracking interface · federal workforce training</span></div>
+        <div class="port-image">
+          <img src="assets/portfolio/Ahura_AI.png"
+               alt="Ahura AI logo"
+               loading="lazy" />
         </div>
         <div class="port-body">
           <div class="port-meta">
@@ -1620,8 +1733,10 @@
 
       <!-- Card: NovaSpark Energy -->
       <a class="port-card port-novaspark" data-sector="energy" href="projects/novaspark-energy.html">
-        <div class="port-image" role="img" aria-label="NovaSpark hydrogen system">
-          <div class="placeholder"><span>IMG: Mobile hydrogen unit in field deployment · DIU contract visual</span></div>
+        <div class="port-image">
+          <img src="assets/portfolio/Novaspark.png"
+               alt="NovaSpark Energy logo"
+               loading="lazy" />
         </div>
         <div class="port-body">
           <div class="port-meta">
@@ -1700,33 +1815,6 @@
         </div>
       </a>
 
-      <!-- Card: Gulf Equities — relocated from Section I per refresh -->
-      <!-- TODO: Add Gulf_Equities.jpg and finalize Gulf Equities copy/order in Section II rollout. -->
-      <a class="port-card port-gulf" data-sector="realestate" href="projects/gulf-equities.html">
-        <div class="port-image" role="img" aria-label="Gulf Equities real estate portfolio">
-          <div class="placeholder"><span>IMG: Houston / Baytown freeway-adjacent commercial property</span></div>
-        </div>
-        <div class="port-body">
-          <div class="port-meta">
-            <span class="port-tag">Real Estate · Texas</span>
-            <span class="port-stage">Active Disposition</span>
-          </div>
-          <h3 class="port-name">Gulf Equities</h3>
-          <p class="port-summary">
-            A Houston-area real estate portfolio primarily concentrated along freeway-adjacent corridors in Baytown, currently seeking development partners or aligned buyers for select dispositions.
-          </p>
-          <div class="port-partners">
-            <span class="label">Seeking:</span> Development and disposition partners
-          </div>
-          <span class="port-more">
-            View portfolio
-            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
-              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
-            </svg>
-          </span>
-        </div>
-      </a>
-
     </div>
   </div>
 </section>
@@ -1745,16 +1833,6 @@
     </div>
 
     <div class="exits-grid">
-      <a class="exit-card" href="projects/detectachem.html">
-        <span class="exit-tag">Exit · 2024</span>
-        <h3 class="exit-name">DetectaChem</h3>
-        <p class="exit-desc">Significant exit completed two years ago — a strong realized return for Bart Womack and the firm. Sector and structure detail on request.</p>
-        <div class="exit-meta">
-          <span>Realized</span>
-          <span>Bart Womack</span>
-        </div>
-      </a>
-
       <a class="exit-card" href="projects/deep-space.html">
         <span class="exit-tag">Exit · Historical</span>
         <h3 class="exit-name">Deep Space Industries</h3>
