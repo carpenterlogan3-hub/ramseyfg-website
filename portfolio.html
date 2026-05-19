@@ -762,6 +762,21 @@
     position: absolute; inset: 0;
     background: radial-gradient(ellipse at center, rgba(244,239,230,0.12) 0%, transparent 60%);
   }
+  /* Celestial source is portrait; bias the cover crop toward the logo (~70% down). */
+  .port-celestial .port-image img { object-position: center 70%; }
+
+  /* Ambrose logo treatment — source is small (200x200), so use scale-down + padding
+     to keep it crisp and centered with negative space rather than stretching. */
+  .port-ambrose .port-image { background: linear-gradient(135deg, #3F2526 0%, #1B3A2E 100%); }
+  .port-ambrose .port-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(244,239,230,0.08) 0%, transparent 60%);
+  }
+  .port-ambrose .port-image img {
+    object-fit: scale-down;
+    padding: 28px;
+  }
 
   .port-ahura .port-image { background: linear-gradient(200deg, #0D2620 0%, #1B3A2E 60%, #2A5043 100%); }
   .port-ahura .port-image::after {
@@ -1305,7 +1320,7 @@
           <div class="count-label">Platforms &amp; Funds</div>
         </div>
         <div class="count">
-          <div class="count-num">8</div>
+          <div class="count-num">9</div>
           <div class="count-label">Active Projects</div>
         </div>
         <div class="count">
@@ -1436,7 +1451,7 @@
       <h2>Active <em>projects.</em></h2>
       <p>Current positions where we are actively involved in strategy, capital formation, or operational governance. Most are open to qualified co-investors on a case-by-case basis. Filter by sector below.</p>
     </div>
-    <div class="section-count">08 Projects</div>
+    <div class="section-count">09 Projects</div>
   </div>
 </div>
 
@@ -1447,8 +1462,9 @@
     <div class="sector-filter" role="region" aria-label="Filter projects by sector">
       <div class="sector-filter-label">Filter by sector</div>
       <div class="sector-filter-row">
-        <button type="button" class="sector-btn active" data-sector="all">All <span class="count">08</span></button>
+        <button type="button" class="sector-btn active" data-sector="all">All <span class="count">09</span></button>
         <button type="button" class="sector-btn" data-sector="healthcare">Healthcare · Real Estate <span class="count">01</span></button>
+        <button type="button" class="sector-btn" data-sector="medtech">Med-Tech <span class="count">01</span></button>
         <button type="button" class="sector-btn" data-sector="agtech">AgTech <span class="count">02</span></button>
         <button type="button" class="sector-btn" data-sector="water">Water · Infrastructure <span class="count">01</span></button>
         <button type="button" class="sector-btn" data-sector="ai">AI · EdTech <span class="count">01</span></button>
@@ -1473,6 +1489,31 @@
           <!-- TODO: Replace with Bart's final Park Plaza copy when received. -->
           <p class="port-summary">
             Park Plaza Hospital opened in Houston's Museum District in 1975 as one of the largest physician-owned hospitals in the nation, with Leo Womack serving as a founding board member and Secretary-Treasurer alongside the hospital's founding physicians. Over the next four decades the hospital grew into a 444-bed flagship before joining HCA Houston Healthcare in 2017. <strong>LOGAN ATTEMPTED DRAFT — NEEDS REVIEW.</strong>
+          </p>
+          <span class="port-more">
+            View project
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card: Ambrose Cell Therapy -->
+      <a class="port-card port-ambrose" data-sector="medtech" href="projects/ambrose.html">
+        <div class="port-image">
+          <img src="assets/portfolio/Ambrose_Cell_Therapy.jpg"
+               alt="Ambrose Cell Therapy logo"
+               loading="lazy" />
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">Cell Therapy · Med-Tech</span>
+            <span class="port-stage">FDA Pathway</span>
+          </div>
+          <h3 class="port-name">Ambrose Cell Therapy</h3>
+          <p class="port-summary">
+            Ambrose Cell Therapy is advancing an Adipose-Derived Regenerative Cell (ADRC) platform through an FDA pivotal study targeting Ehlers-Danlos Syndrome — a connective-tissue disorder with no approved disease-modifying therapy. Ramsey holds an early position alongside a clinical leadership team led by Dr. Clair Francomano, a leading EDS clinician with 40+ years in the field.
           </p>
           <span class="port-more">
             View project
@@ -1589,8 +1630,10 @@
 
       <!-- Card: Iran Reconstruction Fund -->
       <a class="port-card port-iran" data-sector="international" href="projects/iran-reconstruction.html">
-        <div class="port-image" role="img" aria-label="Iran Reconstruction Fund">
-          <div class="placeholder"><span>IMG: Abstract architectural motif · Persian geometric pattern · institutional finance</span></div>
+        <div class="port-image">
+          <img src="assets/portfolio/Iran_Reconstruction_Fund.jpg"
+               alt="Iran Reconstruction Fund"
+               loading="lazy" />
         </div>
         <div class="port-body">
           <div class="port-meta">
@@ -1599,7 +1642,7 @@
           </div>
           <h3 class="port-name">Iran Reconstruction Fund</h3>
           <p class="port-summary">
-            A U.S.-domiciled institutional fund structured to launch 20+ banking, commerce, and CPG platforms into a 92-million-person economy coming online for the first time in half a century. Founded by an Iranian-American technology entrepreneur.
+            A 92-million-person economy is coming online for the first time in half a century. Our Iranian founder — who immigrated at age 6, was working at NASA by age 16, and has created over $3B in value for investors across 4 technology startups — has been tapped by the US government to create a technology, banking, and consumer packaged goods investment fund. By focusing on a circular economy (digital-native banking powered by local Airbnb-, Uber-, and Fiverr-type apps), we can build a thriving economic engine targeting 5–7X returns in ten years. Raising a $1B fund, $50M ticket size.
           </p>
           <div class="port-partners">
             <span class="label">Managed by:</span> Iran Reconstruction Agency &amp; Network, LLC
@@ -1615,8 +1658,10 @@
 
       <!-- Card: Celestial Cellars -->
       <a class="port-card port-celestial" data-sector="agtech" href="projects/celestial-cellars.html">
-        <div class="port-image" role="img" aria-label="Celestial Cellars indoor vineyard">
-          <div class="placeholder"><span>IMG: Grapevines under controlled indoor lighting · lab-style horticulture</span></div>
+        <div class="port-image">
+          <img src="assets/portfolio/Celestial_Cellars.jpg"
+               alt="Celestial Cellars — NASA-spinoff indoor wine cultivation"
+               loading="lazy" />
         </div>
         <div class="port-body">
           <div class="port-meta">
@@ -1625,7 +1670,7 @@
           </div>
           <h3 class="port-name">Celestial Cellars</h3>
           <p class="port-summary">
-            Space-age wine — using NASA-spinoff aeroponic technology to grow wine grapes indoors with complete environmental control, bypassing the climate pressures destabilizing traditional winegrowing regions worldwide.
+            This early-stage startup developed a new way to grow grape plants using the most advanced plant-growing technology in the universe — created by NASA to grow food aboard the ISS and developed in partnership with the horticulture department at Texas A&amp;M. This allows complete control over inputs and environmental conditions, enabling year-round production and bypassing the climate change crisis affecting wine growing worldwide. Raising $500,000 on a $10M valuation.
           </p>
           <div class="port-partners">
             <span class="label">With:</span> Texas A&amp;M Horticultural Sciences · Krown Impact · WINE CO
