@@ -1452,6 +1452,17 @@
     overflow: hidden;
     background: var(--forest-deep);
   }
+  /* When a media-thumb contains a real video embed, the iframe fills the
+     16:9 container. The decorative gradient + ::before swirl underneath
+     act as a loading placeholder. */
+  .media-thumb iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    z-index: 2;
+  }
   .media-thumb::before {
     content: '';
     position: absolute;
@@ -2339,25 +2350,38 @@
 
       <article class="media-card m-2" tabindex="0">
         <div class="media-thumb">
-          <div class="media-play" aria-hidden="true"></div>
-          <div class="media-duration">~ 22:00</div>
+          <iframe
+            src="https://www.youtube.com/embed/enVL9YTHB1w"
+            title="The Texas Space Revolution: A Once-in-500-Years Opportunity"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
         </div>
         <div class="media-body">
-          <div class="media-tag">Speech · Ramsey Event</div>
-          <h3 class="media-title">The Texas Space Economy Ecosystem</h3>
-          <p class="media-byline">Meagan Crawford on the fundamentals of Texas's space economy and the financing architecture required to scale it.</p>
+          <div class="media-tag">Talk · SpaceFund</div>
+          <h3 class="media-title">The Texas Space Revolution: A Once-in-500-Years Opportunity</h3>
+          <p class="media-byline">Meagan Crawford on why the Texas space economy is a once-in-500-years opportunity.</p>
         </div>
       </article>
 
       <article class="media-card m-3" tabindex="0">
         <div class="media-thumb">
-          <div class="media-play" aria-hidden="true"></div>
-          <div class="media-duration">— : —</div>
+          <iframe
+            src="https://www.youtube.com/embed/prqZ5pmM6O8"
+            title="Why Houston is the Future of the Trillion-Dollar Space Economy"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
         </div>
         <div class="media-body">
-          <div class="media-tag">Interview · Featured</div>
-          <h3 class="media-title">Featured Interview — Title TBD</h3>
-          <p class="media-byline">Placeholder for an additional featured interview. To be selected and slotted in alongside the Womack and Crawford speeches.</p>
+          <div class="media-tag">Talk · SpaceFund</div>
+          <h3 class="media-title">Why Houston is the Future of the Trillion-Dollar Space Economy</h3>
+          <!-- TODO: Confirm speaker (likely Meagan Crawford — video is on the SpaceFund channel) and replace the byline below with a finalized one-line description. -->
+          <p class="media-byline">[TODO byline — speaker likely Meagan Crawford; confirm and replace this line.]</p>
         </div>
       </article>
     </div>
