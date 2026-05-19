@@ -524,6 +524,17 @@
     opacity: 0.65;
     z-index: 2;
   }
+  /* Real <img> inside .platform-feature-thumb — same fallback pattern as .port-image */
+  .platform-feature-thumb img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    z-index: 2;
+  }
 
   /* ============ Exits / Successful Exits section ============ */
   .exits {
@@ -842,6 +853,16 @@
     letter-spacing: -0.01em;
     color: var(--ink);
     margin-bottom: 12px;
+  }
+  .port-name .port-subtitle {
+    display: block;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.62em;
+    color: var(--forest);
+    letter-spacing: 0.02em;
+    margin-top: 6px;
   }
   .port-summary {
     font-size: 14.5px;
@@ -1312,8 +1333,66 @@
   <div class="wrap">
     <div class="portfolio-grid">
 
-      <!-- Featured: Space Fund — prominent placement -->
-      <a class="platform-feature" aria-label="Space Fund I &amp; II — featured platform" href="projects/space-fund.html">
+      <!-- Platform Card: Space Capital Stack — Monolith -->
+      <a class="port-card platform port-scs" href="index.html#scs">
+        <div class="port-image">
+          <img src="assets/portfolio/Space_Capital_Stack.jpg"
+               alt="Space Capital Stack — Monolith"
+               loading="lazy" />
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">Space · Integrated Platform</span>
+            <span class="port-stage">Active</span>
+          </div>
+          <h3 class="port-name">
+            Space Capital Stack
+            <span class="port-subtitle">Monolith</span>
+          </h3>
+          <p class="port-summary">
+            For the last 8 years, Meagan has pioneered space venture capital — high-risk, early-stage investing in companies changing the universe. Working within a new industry previously regarded as uninvestable, she has produced best-in-class results with two of the nation's top-performing venture funds. As these companies move into production and early revenue, they need a full capital stack: debt, risk management, and real asset development. Meagan is now solving this by creating a fund of funds that can invest in and direct private credit, insurance, real estate development, workforce development, and quantitative data solutions.
+          </p>
+          <div class="port-partners">
+            <span class="label">Vehicles:</span> SpaceFund · Space Finance Company · SpacePort Fund · Alera ETP · Off-Earth Data
+          </div>
+          <span class="port-more">
+            Explore the Stack
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card: Karman Line / Spaceport Fund — relocated from Section II per refresh -->
+      <!-- TODO: Add Karman Line / Spaceport Fund image to assets/portfolio/ when available. Gradient fallback used in the interim. -->
+      <a class="port-card port-karman" href="projects/karman-line.html">
+        <div class="port-image" role="img" aria-label="Karman Line spaceport development">
+          <div class="placeholder"><span>IMG: Cape Canaveral workforce housing · spaceport-adjacent real estate</span></div>
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">Space · Real Estate</span>
+            <span class="port-stage">Fund I Active</span>
+          </div>
+          <h3 class="port-name">Karman Line / SpacePort Fund</h3>
+          <p class="port-summary">
+            Spaceports are necessarily in remote areas. As launch cadence increases and spaceports are built worldwide, real estate in these remote areas can become extremely valuable if developed to meet the needs of the growing space industry. Karman Line lives at the intersection of real estate and space. We are currently raising Fund I, a $50M workforce housing fund focused on Cape Canaveral and several other US spaceports, with a $30M anchor committed.
+          </p>
+          <div class="port-partners">
+            <span class="label">With:</span> Flow Capital · Sadana Global · Roddenberry Entertainment · SpaceFund
+          </div>
+          <span class="port-more">
+            View project
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Featured: SpaceFund — prominent placement (full-width platform-feature) -->
+      <a class="platform-feature" aria-label="SpaceFund — featured platform" href="projects/space-fund.html">
         <div class="platform-feature-body">
           <div class="platform-feature-flag">Featured Platform · Venture</div>
           <h3 class="platform-feature-name">Space Fund <em>I &amp; II</em></h3>
@@ -1321,7 +1400,7 @@
             Space Fund 1 &amp; 2, managed by Meagan and Leo, has overperformed across every fund metric since inception.
           </p>
           <p class="platform-feature-summary">
-            Two early-stage venture funds investing across the space economy. The principals remain shareholders. Performance metrics, portfolio composition, and exit history available to qualified investors and counterparties on request.
+            SpaceFund is the world's first venture capital firm focused exclusively on space technology and the new space economy. Meagan Crawford co-founded and serves as Managing Partner, deploying capital into early-stage space companies across launch, satellites, space infrastructure, and downstream applications.
           </p>
           <div class="platform-feature-meta">
             <div class="platform-feature-stat">
@@ -1338,60 +1417,10 @@
             </div>
           </div>
         </div>
-        <div class="platform-feature-thumb" role="img" aria-label="Space Fund visual">
-          <span class="platform-feature-thumb-label">IMG: Space Fund logo / fund cover graphic</span>
-        </div>
-      </a>
-
-      <!-- Platform Card: Space Capital Stack -->
-      <a class="port-card platform port-scs" href="index.html#scs">
-        <div class="port-image" role="img" aria-label="The Space Capital Stack">
-          <div class="placeholder"><span>IMG: Custom four-layer diagram · the complete capital stack for space</span></div>
-        </div>
-        <div class="port-body">
-          <div class="port-meta">
-            <span class="port-tag">Space · Integrated Platform</span>
-            <span class="port-stage">Active</span>
-          </div>
-          <h3 class="port-name">The Space Capital Stack</h3>
-          <p class="port-summary">
-            The first family office integrating all four layers of the space economy capital stack under one strategic roof — early-stage venture (SpaceFund), private credit (Space Finance Company), infrastructure and real estate (SpacePort Fund / Karman Line), and insurance (Alera Group Emerging Technologies Practice partnership). Led by Principal Meagan Crawford.
-          </p>
-          <div class="port-partners">
-            <span class="label">Vehicles:</span> SpaceFund · Space Finance Company · SpacePort Fund · Alera ETP · Off-Earth Data
-          </div>
-          <span class="port-more">
-            Explore the Stack
-            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
-              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
-            </svg>
-          </span>
-        </div>
-      </a>
-
-      <!-- Card: Gulf Equities -->
-      <a class="port-card port-gulf" href="projects/gulf-equities.html">
-        <div class="port-image" role="img" aria-label="Gulf Equities real estate portfolio">
-          <div class="placeholder"><span>IMG: Houston / Baytown freeway-adjacent commercial property</span></div>
-        </div>
-        <div class="port-body">
-          <div class="port-meta">
-            <span class="port-tag">Real Estate · Texas</span>
-            <span class="port-stage">Active Disposition</span>
-          </div>
-          <h3 class="port-name">Gulf Equities</h3>
-          <p class="port-summary">
-            A Houston-area real estate portfolio primarily concentrated along freeway-adjacent corridors in Baytown, currently seeking development partners or aligned buyers for select dispositions.
-          </p>
-          <div class="port-partners">
-            <span class="label">Seeking:</span> Development and disposition partners
-          </div>
-          <span class="port-more">
-            View portfolio
-            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
-              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
-            </svg>
-          </span>
+        <div class="platform-feature-thumb">
+          <img src="assets/portfolio/Spacefund.jpg"
+               alt="SpaceFund — venture capital for the space economy"
+               loading="lazy" />
         </div>
       </a>
 
@@ -1420,7 +1449,6 @@
       <div class="sector-filter-row">
         <button type="button" class="sector-btn active" data-sector="all">All <span class="count">08</span></button>
         <button type="button" class="sector-btn" data-sector="healthcare">Healthcare · Real Estate <span class="count">01</span></button>
-        <button type="button" class="sector-btn" data-sector="space">Space <span class="count">01</span></button>
         <button type="button" class="sector-btn" data-sector="agtech">AgTech <span class="count">02</span></button>
         <button type="button" class="sector-btn" data-sector="water">Water · Infrastructure <span class="count">01</span></button>
         <button type="button" class="sector-btn" data-sector="ai">AI · EdTech <span class="count">01</span></button>
@@ -1440,9 +1468,9 @@
         <div class="port-body">
           <div class="port-meta">
             <span class="port-tag">Healthcare · Real Estate</span>
-            <span class="port-stage">Realized · 2017</span>
           </div>
           <h3 class="port-name">Park Plaza Hospital</h3>
+          <!-- TODO: Replace with Bart's final Park Plaza copy when received. -->
           <p class="port-summary">
             Park Plaza Hospital opened in Houston's Museum District in 1975 as one of the largest physician-owned hospitals in the nation, with Leo Womack serving as a founding board member and Secretary-Treasurer alongside the hospital's founding physicians. Over the next four decades the hospital grew into a 444-bed flagship before joining HCA Houston Healthcare in 2017. <strong>LOGAN ATTEMPTED DRAFT — NEEDS REVIEW.</strong>
           </p>
@@ -1471,32 +1499,6 @@
           </p>
           <div class="port-partners">
             <span class="label">With:</span> Caterpillar · RSE America · ACWA Power · IDE Technologies
-          </div>
-          <span class="port-more">
-            View project
-            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
-              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
-            </svg>
-          </span>
-        </div>
-      </a>
-
-      <!-- Card: Karman Line -->
-      <a class="port-card port-karman" data-sector="space" href="projects/karman-line.html">
-        <div class="port-image" role="img" aria-label="Karman Line spaceport development">
-          <div class="placeholder"><span>IMG: Cape Canaveral workforce housing · spaceport-adjacent real estate</span></div>
-        </div>
-        <div class="port-body">
-          <div class="port-meta">
-            <span class="port-tag">Space · Real Estate</span>
-            <span class="port-stage">Fund I Active</span>
-          </div>
-          <h3 class="port-name">Karman Line / SpacePort Fund</h3>
-          <p class="port-summary">
-            The ground layer of the space economy — workforce housing and strategic land near U.S. spaceports, structured as a multi-fund platform scaling from Fund I workforce housing through mixed-use and commercial flex.
-          </p>
-          <div class="port-partners">
-            <span class="label">With:</span> Flow Capital · Sadana Global · Roddenberry Entertainment · SpaceFund
           </div>
           <span class="port-more">
             View project
@@ -1630,6 +1632,33 @@
           </div>
           <span class="port-more">
             View project
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card: Gulf Equities — relocated from Section I per refresh -->
+      <!-- TODO: Add Gulf_Equities.jpg and finalize Gulf Equities copy/order in Section II rollout. -->
+      <a class="port-card port-gulf" data-sector="realestate" href="projects/gulf-equities.html">
+        <div class="port-image" role="img" aria-label="Gulf Equities real estate portfolio">
+          <div class="placeholder"><span>IMG: Houston / Baytown freeway-adjacent commercial property</span></div>
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">Real Estate · Texas</span>
+            <span class="port-stage">Active Disposition</span>
+          </div>
+          <h3 class="port-name">Gulf Equities</h3>
+          <p class="port-summary">
+            A Houston-area real estate portfolio primarily concentrated along freeway-adjacent corridors in Baytown, currently seeking development partners or aligned buyers for select dispositions.
+          </p>
+          <div class="port-partners">
+            <span class="label">Seeking:</span> Development and disposition partners
+          </div>
+          <span class="port-more">
+            View portfolio
             <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
               <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
             </svg>
