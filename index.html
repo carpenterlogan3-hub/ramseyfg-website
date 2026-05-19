@@ -444,6 +444,14 @@
     overflow: hidden;
     background: var(--forest-deep);
   }
+  .hero-video-thumb iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    z-index: 2;
+  }
   .hero-video-thumb::before {
     content: '';
     position: absolute;
@@ -1721,24 +1729,29 @@
   .footer-bottom .legal { display: flex; gap: 24px; flex-wrap: wrap; }
   .footer-bottom a:hover { color: var(--bone); }
 
-  /* Footer crest mark — secondary identity */
+  /* Footer royal logo — ornate secondary identity, contrast with the
+     clean corporate wordmark in the header. Logo on top, heritage
+     tagline centered beneath. */
   .foot-crest {
     margin-top: 28px;
     padding-top: 24px;
     border-top: 1px solid rgba(244,239,230,0.12);
     display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 14px;
   }
   .foot-crest-mark {
-    width: 56px;
-    height: 64px;
+    width: 100px;
     flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
-  .foot-crest-mark svg { width: 100%; height: 100%; }
+  .foot-crest-mark img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
   .foot-crest-text {
     font-family: var(--serif);
     font-size: 11px;
@@ -1871,25 +1884,43 @@
       <aside class="hero-videos" aria-label="Featured videos">
         <div class="hero-video-label">Hear from the principals</div>
 
-        <a href="#" class="hero-video video-1" aria-label="Watch: The legacy of Ramsey Financial Group">
+        <!-- TODO: This slot is meant for Bart's "Legacy of Ramsey Financial Group"
+             speech. That video has not been provided yet, so the Why-Houston video
+             is filling the slot as a stopgap. Swap the src to the real Bart-legacy
+             video ID and update the tag/title text when it lands. -->
+        <article class="hero-video video-1">
           <div class="hero-video-thumb">
-            <div class="hero-video-play" aria-hidden="true"></div>
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/prqZ5pmM6O8?rel=0&modestbranding=1"
+              title="Why Houston is the Future of the Trillion-Dollar Space Economy"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
           </div>
           <div class="hero-video-meta">
             <div class="hero-video-tag">Bart Womack · Speech</div>
             <div class="hero-video-title">Hear about the legacy of Ramsey Financial Group</div>
           </div>
-        </a>
+        </article>
 
-        <a href="#" class="hero-video video-2" aria-label="Watch: The Texas space economy ecosystem">
+        <article class="hero-video video-2">
           <div class="hero-video-thumb">
-            <div class="hero-video-play" aria-hidden="true"></div>
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/enVL9YTHB1w?rel=0&modestbranding=1"
+              title="The Texas Space Revolution: A Once-in-500-Years Opportunity"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
           </div>
           <div class="hero-video-meta">
             <div class="hero-video-tag">Meagan Crawford · Speech</div>
             <div class="hero-video-title">Learn about the Texas space economy ecosystem</div>
           </div>
-        </a>
+        </article>
       </aside>
     </div>
 
@@ -2351,10 +2382,20 @@
     </div>
 
     <div class="media-grid">
+      <!-- TODO: This slot is meant for Bart's "Legacy of Ramsey Financial Group"
+           speech. That video has not been provided yet, so the Why-Houston video
+           is filling the slot as a stopgap (same fill as the top-hero video-1).
+           Swap to the real Bart-legacy YouTube ID when it lands. -->
       <article class="media-card m-1" tabindex="0">
         <div class="media-thumb">
-          <div class="media-play" aria-hidden="true"></div>
-          <div class="media-duration">~ 18:00</div>
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/prqZ5pmM6O8?rel=0&modestbranding=1"
+            title="Why Houston is the Future of the Trillion-Dollar Space Economy"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
         </div>
         <div class="media-body">
           <div class="media-tag">Speech · Ramsey Event</div>
@@ -2483,24 +2524,7 @@
         </address>
         <div class="foot-crest" aria-label="Ramsey heritage crest">
           <div class="foot-crest-mark" aria-hidden="true">
-            <svg viewBox="0 0 56 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 6 L28 2 L52 6 L52 32 C52 48 40 58 28 62 C16 58 4 48 4 32 Z"
-                    fill="none" stroke="rgba(244,239,230,0.4)" stroke-width="1.2"/>
-              <path d="M9 10 L28 7 L47 10 L47 32 C47 45 37 53 28 56 C19 53 9 45 9 32 Z"
-                    fill="none" stroke="rgba(244,239,230,0.25)" stroke-width="1"/>
-              <!-- Unicorn silhouette: head, horn, mane -->
-              <path d="M28 18 L28 14 L31 17 L29.5 18.5 Z"
-                    fill="rgba(217,207,184,0.7)" stroke="rgba(244,239,230,0.4)" stroke-width="0.6"/>
-              <path d="M22 30 C22 24 25 21 28 21 C31 21 34 23 34 28 L34 36 C34 40 32 42 30 42 L26 42 C24 42 22 40 22 36 Z"
-                    fill="none" stroke="rgba(244,239,230,0.5)" stroke-width="1.1"/>
-              <path d="M22 28 L20 26 M23 25 L21 22 M24 23 L23 20"
-                    stroke="rgba(244,239,230,0.4)" stroke-width="0.8" stroke-linecap="round"/>
-              <circle cx="30" cy="30" r="0.8" fill="rgba(122,46,42,0.7)"/>
-              <!-- Estab year -->
-              <text x="28" y="52" text-anchor="middle"
-                    fill="rgba(217,207,184,0.6)"
-                    font-family="serif" font-style="italic" font-size="6" letter-spacing="0.5">MCMXCII</text>
-            </svg>
+            <img src="assets/Royal_Logo.png" alt="" loading="lazy" />
           </div>
           <div class="foot-crest-text">
             <strong>Ramsey Heritage</strong>

@@ -1217,20 +1217,26 @@
   }
   .foot-col a:hover { color: var(--bone); }
 
-  /* Footer crest mark — secondary identity */
+  /* Footer royal logo — ornate secondary identity, contrast with the
+     clean corporate wordmark in the header. Logo on top, heritage
+     tagline centered beneath. */
   .foot-crest {
     margin-top: 28px;
     padding-top: 24px;
     border-top: 1px solid rgba(244,239,230,0.12);
     display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 14px;
   }
-  .foot-crest-mark {
-    width: 56px; height: 64px; flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center;
+  .foot-crest-mark { width: 100px; flex-shrink: 0; }
+  .foot-crest-mark img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
   }
-  .foot-crest-mark svg { width: 100%; height: 100%; }
   .foot-crest-text {
     font-family: var(--serif);
     font-size: 11px;
@@ -2017,22 +2023,7 @@
         </address>
         <div class="foot-crest" aria-label="Ramsey heritage crest">
           <div class="foot-crest-mark" aria-hidden="true">
-            <svg viewBox="0 0 56 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 6 L28 2 L52 6 L52 32 C52 48 40 58 28 62 C16 58 4 48 4 32 Z"
-                    fill="none" stroke="rgba(244,239,230,0.4)" stroke-width="1.2"/>
-              <path d="M9 10 L28 7 L47 10 L47 32 C47 45 37 53 28 56 C19 53 9 45 9 32 Z"
-                    fill="none" stroke="rgba(244,239,230,0.25)" stroke-width="1"/>
-              <path d="M28 18 L28 14 L31 17 L29.5 18.5 Z"
-                    fill="rgba(217,207,184,0.7)" stroke="rgba(244,239,230,0.4)" stroke-width="0.6"/>
-              <path d="M22 30 C22 24 25 21 28 21 C31 21 34 23 34 28 L34 36 C34 40 32 42 30 42 L26 42 C24 42 22 40 22 36 Z"
-                    fill="none" stroke="rgba(244,239,230,0.5)" stroke-width="1.1"/>
-              <path d="M22 28 L20 26 M23 25 L21 22 M24 23 L23 20"
-                    stroke="rgba(244,239,230,0.4)" stroke-width="0.8" stroke-linecap="round"/>
-              <circle cx="30" cy="30" r="0.8" fill="rgba(122,46,42,0.7)"/>
-              <text x="28" y="52" text-anchor="middle"
-                    fill="rgba(217,207,184,0.6)"
-                    font-family="serif" font-style="italic" font-size="6" letter-spacing="0.5">MCMXCII</text>
-            </svg>
+            <img src="assets/Royal_Logo.png" alt="" loading="lazy" />
           </div>
           <div class="foot-crest-text">
             <strong>Ramsey Heritage</strong>
