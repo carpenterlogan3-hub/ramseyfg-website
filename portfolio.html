@@ -697,7 +697,28 @@
   }
   .port-image .placeholder span { position: relative; z-index: 1; max-width: 90%; }
 
+  /* Real <img> inside .port-image — fills the 16:11 container; per-card gradient
+     and ::after overlay stay defined as fallback if the image fails to load. */
+  .port-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    z-index: 2;
+  }
+
   /* Individual card visual treatments — same system as homepage */
+  .port-park .port-image { background: linear-gradient(135deg, #2A4A38 0%, #1B3A2E 100%); }
+  .port-park .port-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(244,239,230,0.18), transparent 35%),
+                radial-gradient(circle at 70% 30%, rgba(244,239,230,0.12), transparent 30%);
+  }
+
   .port-axe .port-image  { background: linear-gradient(135deg, #4A6B5C 0%, #2A4738 100%); }
   .port-axe .port-image::after {
     content: '';
@@ -1263,7 +1284,7 @@
           <div class="count-label">Platforms &amp; Funds</div>
         </div>
         <div class="count">
-          <div class="count-num">7</div>
+          <div class="count-num">8</div>
           <div class="count-label">Active Projects</div>
         </div>
         <div class="count">
@@ -1386,7 +1407,7 @@
       <h2>Active <em>projects.</em></h2>
       <p>Current positions where we are actively involved in strategy, capital formation, or operational governance. Most are open to qualified co-investors on a case-by-case basis. Filter by sector below.</p>
     </div>
-    <div class="section-count">07 Projects</div>
+    <div class="section-count">08 Projects</div>
   </div>
 </div>
 
@@ -1397,7 +1418,8 @@
     <div class="sector-filter" role="region" aria-label="Filter projects by sector">
       <div class="sector-filter-label">Filter by sector</div>
       <div class="sector-filter-row">
-        <button type="button" class="sector-btn active" data-sector="all">All <span class="count">07</span></button>
+        <button type="button" class="sector-btn active" data-sector="all">All <span class="count">08</span></button>
+        <button type="button" class="sector-btn" data-sector="healthcare">Healthcare · Real Estate <span class="count">01</span></button>
         <button type="button" class="sector-btn" data-sector="space">Space <span class="count">01</span></button>
         <button type="button" class="sector-btn" data-sector="agtech">AgTech <span class="count">02</span></button>
         <button type="button" class="sector-btn" data-sector="water">Water · Infrastructure <span class="count">01</span></button>
@@ -1407,6 +1429,31 @@
       </div>
     </div>
     <div class="portfolio-grid">
+
+      <!-- Card: Park Plaza Hospital -->
+      <a class="port-card port-park" data-sector="healthcare" href="projects/park-plaza.html">
+        <div class="port-image">
+          <img src="assets/portfolio/Park_Plaza_Hospital.jpg"
+               alt="Park Plaza Hospital — Houston Texas Medical Center"
+               loading="lazy" />
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">Healthcare · Real Estate</span>
+            <span class="port-stage">Realized · 2017</span>
+          </div>
+          <h3 class="port-name">Park Plaza Hospital</h3>
+          <p class="port-summary">
+            Park Plaza Hospital opened in Houston's Museum District in 1975 as one of the largest physician-owned hospitals in the nation, with Leo Womack serving as a founding board member and Secretary-Treasurer alongside the hospital's founding physicians. Over the next four decades the hospital grew into a 444-bed flagship before joining HCA Houston Healthcare in 2017. <strong>LOGAN ATTEMPTED DRAFT — NEEDS REVIEW.</strong>
+          </p>
+          <span class="port-more">
+            View project
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
 
       <!-- Card: AXE H2O -->
       <a class="port-card port-axe" data-sector="water" href="projects/axe-h2o.html">
@@ -1628,15 +1675,6 @@
         </div>
       </a>
 
-      <a class="exit-card" href="projects/park-plaza.html">
-        <span class="exit-tag">Exit · Realized</span>
-        <h3 class="exit-name">Park Plaza Hospital</h3>
-        <p class="exit-desc">[Description placeholder — to be supplied by Leo. Flagship realized investment in the firm's healthcare-adjacent real assets track record.]</p>
-        <div class="exit-meta">
-          <span>Realized</span>
-          <span>Leo Womack</span>
-        </div>
-      </a>
     </div>
 
     <p class="exits-foot-note">
