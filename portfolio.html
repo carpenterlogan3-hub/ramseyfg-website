@@ -778,6 +778,22 @@
     padding: 28px;
   }
 
+  /* Yo-Yo Dyne Industries — placeholder card visuals (no images yet). */
+  .port-escape-pod .port-image { background: linear-gradient(180deg, #2A5043 0%, #0D2620 100%); }
+  .port-escape-pod .port-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 30%, rgba(244,239,230,0.18), transparent 35%),
+                radial-gradient(circle at 50% 80%, rgba(122,46,42,0.20), transparent 40%);
+  }
+
+  .port-aeroshade .port-image { background: linear-gradient(135deg, #1B3A2E 0%, #0D2620 100%); }
+  .port-aeroshade .port-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(110deg, transparent 0%, rgba(244,239,230,0.10) 45%, rgba(244,239,230,0.10) 55%, transparent 100%);
+  }
+
   .port-ahura .port-image { background: linear-gradient(200deg, #0D2620 0%, #1B3A2E 60%, #2A5043 100%); }
   .port-ahura .port-image::after {
     content: '';
@@ -1807,6 +1823,76 @@
 
     <div class="legacy-note">
       <strong>Note for Leo's review.</strong> This list is a curated subset; Petrolia Energy, SMG Industries, and other historical positions have been removed pending confirmation, and the inclusion of CoreMedica and/or Menebo is pending Leo's decision. Any items that have not exited and are not in the current portfolio will be removed in the next pass. Ramsey Reggae has been omitted from all listings.
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION V: YO-YO DYNE INDUSTRIES ================= -->
+<!-- Scaffold only — placeholder content. Bart to supply final copy, product
+     details, images, and any external links for Escape Pod and AeroShade. -->
+<div class="section-divider">
+  <div class="wrap">
+    <div class="section-num">Section V.</div>
+    <div class="section-title-block">
+      <h2>Yo-Yo Dyne <em>Industries.</em></h2>
+      <p>Yo-Yo Dyne Industries is the operating company standing up Ramsey Financial Group's aerospace technologies.</p>
+    </div>
+    <div class="section-count">02 Ventures</div>
+  </div>
+</div>
+
+<section class="portfolio-section">
+  <div class="wrap">
+    <div class="portfolio-grid">
+
+      <!-- Card: Escape Pod -->
+      <!-- TODO: Add Escape Pod image to assets/portfolio/ and finalize description (Bart's invention). -->
+      <a class="port-card port-escape-pod" href="#">
+        <div class="port-image" role="img" aria-label="Escape Pod by Yo-Yo Dyne Industries">
+          <div class="placeholder"><span>IMG: Escape Pod — image pending</span></div>
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">Aerospace · Yo-Yo Dyne</span>
+            <span class="port-stage">Placeholder</span>
+          </div>
+          <h3 class="port-name">Escape Pod</h3>
+          <p class="port-summary">
+            [Description placeholder — to be supplied by Bart. Escape Pod is a Yo-Yo Dyne Industries aerospace product invented by Bart Womack.]
+          </p>
+          <span class="port-more">
+            View project
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card: AeroShade -->
+      <!-- TODO: Add AeroShade image to assets/portfolio/ and finalize description. -->
+      <a class="port-card port-aeroshade" href="#">
+        <div class="port-image" role="img" aria-label="AeroShade by Yo-Yo Dyne Industries">
+          <div class="placeholder"><span>IMG: AeroShade — image pending</span></div>
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">Aerospace · Yo-Yo Dyne</span>
+            <span class="port-stage">Placeholder</span>
+          </div>
+          <h3 class="port-name">AeroShade</h3>
+          <p class="port-summary">
+            [Description placeholder — to be supplied by Bart.]
+          </p>
+          <span class="port-more">
+            View project
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
