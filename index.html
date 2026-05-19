@@ -835,6 +835,16 @@
     z-index: 0;
   }
   .track-image .placeholder span { position: relative; z-index: 1; }
+  .track-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    z-index: 2;
+  }
 
   /* Distinct gradient treatments for each Proven Track Record card */
   .track-park .track-image      { background: linear-gradient(135deg, #2A4A38 0%, #1B3A2E 100%); }
@@ -2205,10 +2215,8 @@
         - Andrew Nat (Business Development Advisor)
       Likely yes for the principal (Bryan); possibly yes for the advisors.
 
-      Park Plaza Hospital — bed count: Leo's bio (above) lists Park Plaza
-      as a 376-bed hospital. An earlier draft of the Park Plaza portfolio
-      card (in portfolio.html) used "444-bed" — that number is incorrect.
-      When Bart provides final Park Plaza copy, use 376 (not 444).
+      Park Plaza Hospital — bed count is 376 per Leo's bio (above).
+      Final Park Plaza copy is still pending from Bart.
     -->
   </div>
 </section>
@@ -2236,10 +2244,10 @@
 
       <!-- Card 1: Park Plaza Hospital -->
       <article class="track-card track-park" tabindex="0" data-project="park-plaza">
-        <div class="track-image" role="img" aria-label="Park Plaza Hospital">
-          <div class="placeholder">
-            <span>IMG: Park Plaza Hospital — graphic to come from Bart</span>
-          </div>
+        <div class="track-image">
+          <img src="assets/portfolio/Park_Plaza_Hospital.jpg"
+               alt="Park Plaza Hospital exterior"
+               loading="lazy" />
         </div>
         <div class="track-body">
           <div class="track-meta">
@@ -2248,7 +2256,7 @@
           </div>
           <h3 class="track-name">Park Plaza Hospital</h3>
           <p class="track-summary">
-            Park Plaza Hospital opened in Houston's Museum District in 1975 as one of the largest physician-owned hospitals in the nation, with Leo Womack serving as a founding board member and Secretary-Treasurer alongside the hospital's founding physicians. Over the next four decades the hospital grew into a 444-bed flagship before joining HCA Houston Healthcare in 2017. Park Plaza is the earliest expression of the operating-and-investing pattern Ramsey still applies today — serve on the board, hold for the long arc, and stay through the work. <strong>LOGAN ATTEMPTED DRAFT — NEEDS REVIEW.</strong>
+            Description pending — see active portfolio for current detail.
           </p>
           <a href="projects/park-plaza.html" class="track-more">
             View project
@@ -2261,10 +2269,10 @@
 
       <!-- Card 2: DetectaChem -->
       <article class="track-card track-detectachem" tabindex="0" data-project="detectachem">
-        <div class="track-image" role="img" aria-label="DetectaChem">
-          <div class="placeholder">
-            <span>IMG: DetectaChem — graphic to come from Bart</span>
-          </div>
+        <div class="track-image">
+          <img src="assets/portfolio/DetectaChem.jpg"
+               alt="DetectaChem — portable chemical and explosive detection"
+               loading="lazy" />
         </div>
         <div class="track-body">
           <div class="track-meta">
@@ -2273,7 +2281,7 @@
           </div>
           <h3 class="track-name">DetectaChem</h3>
           <p class="track-summary">
-            [Paragraph description placeholder — to be supplied by Leo. Med-tech commercialization win drawing on three decades of operating experience taking new medical technologies to market.]
+            Description pending — see active portfolio for current detail.
           </p>
           <a href="projects/detectachem.html" class="track-more">
             View project
@@ -2286,10 +2294,10 @@
 
       <!-- Card 3: Ambrose Stem Cell Therapy -->
       <article class="track-card track-ambrose" tabindex="0" data-project="ambrose">
-        <div class="track-image" role="img" aria-label="Ambrose Cell Therapy">
-          <div class="placeholder">
-            <span>IMG: Ambrose Cell Therapy — graphic to come from Bart</span>
-          </div>
+        <div class="track-image">
+          <img src="assets/portfolio/Ambrose_Cell_Therapy.jpg"
+               alt="Ambrose Cell Therapy logo"
+               loading="lazy" />
         </div>
         <div class="track-body">
           <div class="track-meta">
@@ -2298,7 +2306,7 @@
           </div>
           <h3 class="track-name">Ambrose Cell Therapy</h3>
           <p class="track-summary">
-            Ambrose Cell Therapy is advancing an Adipose-Derived Regenerative Cell (ADRC) platform through an FDA pivotal study targeting Ehlers-Danlos Syndrome — a connective-tissue disorder with no approved disease-modifying therapy. Ramsey holds an early position alongside a clinical leadership team led by Dr. Clair Francomano, a leading EDS clinician with 40+ years in the field.
+            Description pending — see active portfolio for current detail.
           </p>
           <a href="projects/ambrose.html" class="track-more">
             View project
