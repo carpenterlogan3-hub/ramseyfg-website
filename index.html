@@ -684,16 +684,6 @@
     background: radial-gradient(ellipse at center, rgba(244,239,230,0.12) 0%, transparent 60%);
   }
 
-  .port-wimberley .port-image { background: linear-gradient(135deg, #3F5A42 0%, #1B3A2E 100%); }
-  .port-wimberley .port-image::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 25% 30%, rgba(244,239,230,0.15), transparent 25%),
-                radial-gradient(circle at 75% 60%, rgba(244,239,230,0.1), transparent 20%),
-                radial-gradient(circle at 50% 85%, rgba(244,239,230,0.08), transparent 15%);
-  }
-
   .port-ahura .port-image { background: linear-gradient(200deg, #0D2620 0%, #1B3A2E 60%, #2A5043 100%); }
   .port-ahura .port-image::after {
     content: '';
@@ -845,6 +835,23 @@
     z-index: 0;
   }
   .track-image .placeholder span { position: relative; z-index: 1; }
+  /* Default: contain + padding (DetectaChem and Ambrose are logos).
+     track-park (Park Plaza Hospital exterior) is the only photo, override below. */
+  .track-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    padding: 20px;
+    display: block;
+    z-index: 2;
+  }
+  .track-park .track-image img {
+    object-fit: cover;
+    padding: 0;
+  }
 
   /* Distinct gradient treatments for each Proven Track Record card */
   .track-park .track-image      { background: linear-gradient(135deg, #2A4A38 0%, #1B3A2E 100%); }
@@ -853,8 +860,8 @@
     background: radial-gradient(circle at 30% 50%, rgba(244,239,230,0.18), transparent 35%),
                 radial-gradient(circle at 70% 30%, rgba(244,239,230,0.12), transparent 30%);
   }
-  .track-detecticam .track-image { background: linear-gradient(160deg, #1B3A2E 0%, #0D2620 100%); }
-  .track-detecticam .track-image::after {
+  .track-detectachem .track-image { background: linear-gradient(160deg, #1B3A2E 0%, #0D2620 100%); }
+  .track-detectachem .track-image::after {
     content: ''; position: absolute; inset: 0;
     background: linear-gradient(45deg, transparent 48%, rgba(244,239,230,0.14) 49%, rgba(244,239,230,0.14) 51%, transparent 52%),
                 linear-gradient(-45deg, transparent 48%, rgba(244,239,230,0.10) 49%, rgba(244,239,230,0.10) 51%, transparent 52%);
@@ -1461,6 +1468,17 @@
     position: relative;
     overflow: hidden;
     background: var(--forest-deep);
+  }
+  /* When a media-thumb contains a real video embed, the iframe fills the
+     16:9 container. The decorative gradient + ::before swirl underneath
+     act as a loading placeholder. */
+  .media-thumb iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    z-index: 2;
   }
   .media-thumb::before {
     content: '';
@@ -2151,12 +2169,13 @@
 
     <div class="team-grid">
       <article class="team-card">
-        <div class="team-photo t-leo" role="img" aria-label="Photo of Leo B. Womack">
-          <div class="placeholder">[Headshot — Leo B. Womack]</div>
+        <div class="team-photo t-leo">
+          <img src="assets/team/leo-womack.jpg" alt="Leo B. Womack" loading="lazy" />
         </div>
         <h3 class="team-name">Leo B. Womack</h3>
-        <div class="team-role">Principal · Founder</div>
-        <p class="team-bio">[Bio placeholder — to be supplied. Founder of Ramsey Financial Group; thirty-plus years of energy, life-sciences, and Houston-area real estate investment; current and prior board service across the firm's portfolio.]</p>
+        <div class="team-role">Founder and Chairman</div>
+        <p class="team-bio">Leo has spent his entire career in Houston. He began his career as a CPA with Arthur Andersen and then purchased a CPA firm in the Texas Medical Center. In the early 80's this firm was acquired by a large national firm and Leo focused on private investments and entrepreneurial activities. Leo was a co-founder and CFO of Park Plaza Hospital (376 beds) until it was sold to a NYSE Hospital Management Company. Later he was involved as the financial principal in founding one of the first surgery center companies, a long-term care hospital, and numerous other life science companies primarily in medical devices.</p>
+        <p class="team-bio">He was a founding member of the Houston Angel Network (HAN) and later served as its President and Chairman, and is still an active member. He continues to search for unique opportunities in real estate, early stage technology, medical device, and micro-cap public companies involving these disciplines.</p>
         <div class="team-links">
           <a href="#">LinkedIn ↗</a>
           <a href="#">Full Bio →</a>
@@ -2164,12 +2183,14 @@
       </article>
 
       <article class="team-card">
-        <div class="team-photo t-bart" role="img" aria-label="Photo of Bart Womack">
-          <div class="placeholder">[Headshot — Bart Womack]</div>
+        <div class="team-photo t-bart">
+          <img src="assets/team/bart-womack.jpg" alt="L. Barton Womack" loading="lazy" />
         </div>
-        <h3 class="team-name">Bart Womack</h3>
-        <div class="team-role">Principal</div>
-        <p class="team-bio">[Bio placeholder — to be supplied. Operator and entrepreneur; portfolio leadership across Eden Grow Systems, Celestial Cellars, Wimberley CBD, and the firm's emerging med-tech and real-estate initiatives.]</p>
+        <h3 class="team-name">L. Barton Womack</h3>
+        <div class="team-role">Managing Director</div>
+        <p class="team-bio">Bart Womack is Managing Director of Ramsey Financial Group and Founder and CEO of Eden Grow Systems, a Houston-based NASA spinoff producing soil-free aeroponic and closed-loop indoor farming systems adapted from NASA's Controlled Ecological Life Support Systems. He invented the LifePod and the Grow Tower — self-contained, climate-controlled units that bring food production to households, urban centers, remote sites, and military installations. Eden Grow Systems has been profiled in NASA Spinoff ("Astronaut Life Support for Earth Families"), the Houston Chronicle, Texas Monthly, and FOX 26 Houston, with deployments including downtown Houston's Niels Esperson Building and investment from SpaceFund.</p>
+        <p class="team-bio">Bart has built and operated companies across entertainment, media, and frontier technology for more than thirty years. He produced motion pictures and television, interviewed presidential candidates, and for over five years owned the largest nightclub in Texas. After producing and hosting a public-interest television program, he led the effort that won Houston Media Source 501(c)(3) status and a ten-year, $12 million grant from the City of Houston to fund local community media. He has since spent years in early-stage technology — building corporate brands, running marketing for bootstrapped startups, and producing events attended by thousands.</p>
+        <p class="team-bio">An active inventor and investor, Bart also volunteers locally and leads media and communications for the Future of Humanity Foundation.</p>
         <div class="team-links">
           <a href="#">LinkedIn ↗</a>
           <a href="#">Full Bio →</a>
@@ -2177,24 +2198,39 @@
       </article>
 
       <article class="team-card">
-        <div class="team-photo t-meagan" role="img" aria-label="Photo of Meagan Murphy Crawford">
-          <div class="placeholder">[Headshot — Meagan Crawford]</div>
+        <div class="team-photo t-meagan">
+          <img src="assets/team/meagan-crawford.jpg" alt="Meagan Crawford" loading="lazy" />
         </div>
-        <h3 class="team-name">Meagan Murphy Crawford</h3>
-        <div class="team-role">Principal · Space Capital Stack</div>
-        <p class="team-bio">[Bio placeholder — to be supplied. Co-founder of SpaceFund; architect of the firm's four-layer Space Capital Stack thesis; recognized voice in space finance and the Texas space economy.]</p>
+        <h3 class="team-name">Meagan Crawford</h3>
+        <div class="team-role">Partner</div>
+        <p class="team-bio">Meagan is an expert in finance and entrepreneurship, with a specific focus on the most exciting new business sector of our time, space commercialization. She is building the capital stack for the private space industry through investments in and significant contributions to venture capital, private credit, spaceport-adjacent real estate development, and the structuring of new space insurance products. She is a co-founder of SpaceFund where she architected two top-performing venture funds delivering best-in-class returns. Meagan is also a start-up investor, coach, mentor, and advisor. She is a frequent speaker and writer on the development of the space industry.</p>
+        <p class="team-bio">Meagan was a cofounder of the NewSpace Business Plan Competition, the world's longest-running space business plan competition that has launched hundreds of startups and catalyzed an entire industry. She is a member of the Board of Directors or a Board Advisor for more than 10 organizations, in the for-profit and non-profit realms. She holds an MBA in Entrepreneurship and Finance from Rice University as well as a BBA in Management, Marketing, and Supply Chain Logistics from the University of Houston. Formerly, she was a Technology Transfer Specialist at NASA, a professor of Executive Communication at the University of Houston, a management consultant in the oil and gas industry, and earned her Series 6 and 63 licenses as a financial advisor.</p>
         <div class="team-links">
           <a href="#">LinkedIn ↗</a>
           <a href="#">Full Bio →</a>
         </div>
       </article>
     </div>
+
+    <!--
+      TODO: Confirm with Bart whether the following team members from the
+      live site (https://ramseyfg.com/team-members/) should also be added:
+        - Bryan Talebi (Partner, CEO of Ahura AI)
+        - Dante Bullara (Financial Advisor)
+        - C. Richard Piazza (Life Sciences Advisor)
+        - Bruce Badeau (Financial Advisor)
+        - Andrew Nat (Business Development Advisor)
+      Likely yes for the principal (Bryan); possibly yes for the advisors.
+
+      Park Plaza Hospital — bed count is 376 per Leo's bio (above).
+      Final Park Plaza copy is still pending from Bart.
+    -->
   </div>
 </section>
 
 <!-- =================================================================== -->
 <!-- PROVEN TRACK RECORD — Top 3 features                                  -->
-<!-- v3: Park Plaza, Detecticam, Ambrose. Larger panels; paragraph         -->
+<!-- v3: Park Plaza, DetectaChem, Ambrose. Larger panels; paragraph        -->
 <!-- descriptions land here once Leo provides them.                        -->
 <!-- =================================================================== -->
 <section class="track-record" id="track-record">
@@ -2215,10 +2251,10 @@
 
       <!-- Card 1: Park Plaza Hospital -->
       <article class="track-card track-park" tabindex="0" data-project="park-plaza">
-        <div class="track-image" role="img" aria-label="Park Plaza Hospital">
-          <div class="placeholder">
-            <span>IMG: Park Plaza Hospital — graphic to come from Bart</span>
-          </div>
+        <div class="track-image">
+          <img src="assets/portfolio/Park_Plaza_Hospital.jpg"
+               alt="Park Plaza Hospital exterior"
+               loading="lazy" />
         </div>
         <div class="track-body">
           <div class="track-meta">
@@ -2227,7 +2263,7 @@
           </div>
           <h3 class="track-name">Park Plaza Hospital</h3>
           <p class="track-summary">
-            Park Plaza Hospital opened in Houston's Museum District in 1975 as one of the largest physician-owned hospitals in the nation, with Leo Womack serving as a founding board member and Secretary-Treasurer alongside the hospital's founding physicians. Over the next four decades the hospital grew into a 444-bed flagship before joining HCA Houston Healthcare in 2017. Park Plaza is the earliest expression of the operating-and-investing pattern Ramsey still applies today — serve on the board, hold for the long arc, and stay through the work. <strong>LOGAN ATTEMPTED DRAFT — NEEDS REVIEW.</strong>
+            Description pending — see active portfolio for current detail.
           </p>
           <a href="projects/park-plaza.html" class="track-more">
             View project
@@ -2238,23 +2274,23 @@
         </div>
       </article>
 
-      <!-- Card 2: Detecticam -->
-      <article class="track-card track-detecticam" tabindex="0" data-project="detecticam">
-        <div class="track-image" role="img" aria-label="Detecticam">
-          <div class="placeholder">
-            <span>IMG: Detecticam — graphic to come from Bart</span>
-          </div>
+      <!-- Card 2: DetectaChem -->
+      <article class="track-card track-detectachem" tabindex="0" data-project="detectachem">
+        <div class="track-image">
+          <img src="assets/portfolio/DetectaChem.jpg"
+               alt="DetectaChem — portable chemical and explosive detection"
+               loading="lazy" />
         </div>
         <div class="track-body">
           <div class="track-meta">
             <span class="track-tag">Med-Tech · Commercialization</span>
             <span class="track-stage">Realized</span>
           </div>
-          <h3 class="track-name">Detecticam</h3>
+          <h3 class="track-name">DetectaChem</h3>
           <p class="track-summary">
-            [Paragraph description placeholder — to be supplied by Leo. Med-tech commercialization win drawing on three decades of operating experience taking new medical technologies to market.]
+            Description pending — see active portfolio for current detail.
           </p>
-          <a href="projects/detecticam.html" class="track-more">
+          <a href="projects/detectachem.html" class="track-more">
             View project
             <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
               <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
@@ -2265,10 +2301,10 @@
 
       <!-- Card 3: Ambrose Stem Cell Therapy -->
       <article class="track-card track-ambrose" tabindex="0" data-project="ambrose">
-        <div class="track-image" role="img" aria-label="Ambrose Cell Therapy">
-          <div class="placeholder">
-            <span>IMG: Ambrose Cell Therapy — graphic to come from Bart</span>
-          </div>
+        <div class="track-image">
+          <img src="assets/portfolio/Ambrose_Cell_Therapy.jpg"
+               alt="Ambrose Cell Therapy logo"
+               loading="lazy" />
         </div>
         <div class="track-body">
           <div class="track-meta">
@@ -2277,7 +2313,7 @@
           </div>
           <h3 class="track-name">Ambrose Cell Therapy</h3>
           <p class="track-summary">
-            Ambrose Cell Therapy is advancing an Adipose-Derived Regenerative Cell (ADRC) platform through an FDA pivotal study targeting Ehlers-Danlos Syndrome — a connective-tissue disorder with no approved disease-modifying therapy. Ramsey holds an early position alongside a clinical leadership team led by Dr. Clair Francomano, a leading EDS clinician with 40+ years in the field.
+            Description pending — see active portfolio for current detail.
           </p>
           <a href="projects/ambrose.html" class="track-more">
             View project
@@ -2329,25 +2365,38 @@
 
       <article class="media-card m-2" tabindex="0">
         <div class="media-thumb">
-          <div class="media-play" aria-hidden="true"></div>
-          <div class="media-duration">~ 22:00</div>
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/enVL9YTHB1w?rel=0&modestbranding=1"
+            title="The Texas Space Revolution: A Once-in-500-Years Opportunity"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
         </div>
         <div class="media-body">
-          <div class="media-tag">Speech · Ramsey Event</div>
-          <h3 class="media-title">The Texas Space Economy Ecosystem</h3>
-          <p class="media-byline">Meagan Crawford on the fundamentals of Texas's space economy and the financing architecture required to scale it.</p>
+          <div class="media-tag">Talk · SpaceFund</div>
+          <h3 class="media-title">The Texas Space Revolution: A Once-in-500-Years Opportunity</h3>
+          <p class="media-byline">Meagan Crawford on why the Texas space economy is a once-in-500-years opportunity.</p>
         </div>
       </article>
 
       <article class="media-card m-3" tabindex="0">
         <div class="media-thumb">
-          <div class="media-play" aria-hidden="true"></div>
-          <div class="media-duration">— : —</div>
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/prqZ5pmM6O8?rel=0&modestbranding=1"
+            title="Why Houston is the Future of the Trillion-Dollar Space Economy"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
         </div>
         <div class="media-body">
-          <div class="media-tag">Interview · Featured</div>
-          <h3 class="media-title">Featured Interview — Title TBD</h3>
-          <p class="media-byline">Placeholder for an additional featured interview. To be selected and slotted in alongside the Womack and Crawford speeches.</p>
+          <div class="media-tag">Talk · SpaceFund</div>
+          <h3 class="media-title">Why Houston is the Future of the Trillion-Dollar Space Economy</h3>
+          <!-- TODO: Confirm speaker. Byline defaulted to Meagan Crawford based on SpaceFund channel ownership and topic; replace if attribution turns out to be wrong. -->
+          <p class="media-byline">Meagan Crawford on why Houston is positioned to anchor the trillion-dollar space economy.</p>
         </div>
       </article>
     </div>
