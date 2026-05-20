@@ -519,7 +519,31 @@
   .btn-ghost:hover { color: var(--sand); border-bottom-color: var(--sand); }
 
   /* ============ Footer ============ */
-  footer.site-footer {
+/* Footer Ramsey Heritage crest — ornate secondary identity beneath
+     address; corporate logo stays in the header. */
+  .foot-crest {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(244,239,230,0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+  }
+  .foot-crest-mark { width: 100px; flex-shrink: 0; }
+  .foot-crest-mark img { width: 100%; height: auto; object-fit: contain; display: block; }
+  .foot-crest-text {
+    font-family: var(--serif);
+    font-size: 11px;
+    line-height: 1.5;
+    font-style: italic;
+    color: rgba(244,239,230,0.55);
+    letter-spacing: 0.04em;
+  }
+  .foot-crest-text strong { display: block; font-style: normal; font-weight: 500; color: rgba(244,239,230,0.85); }
+
+    footer.site-footer {
     background: var(--forest-deep);
     color: var(--bone);
     padding: 80px 0 40px;
@@ -712,6 +736,15 @@
           Houston, Texas 77024<br>
           <a href="mailto:bart@ramseyfg.com">bart@ramseyfg.com</a>
         </address>
+        <div class="foot-crest" aria-label="Ramsey heritage crest">
+          <div class="foot-crest-mark" aria-hidden="true">
+            <img src="../assets/Royal_Logo.png" alt="" loading="lazy" />
+          </div>
+          <div class="foot-crest-text">
+            <strong>Ramsey Heritage</strong>
+            Continuity across three decades<br>and three generations of operators.
+          </div>
+        </div>
       </div>
       <div class="foot-col">
         <h4>Navigate</h4>
