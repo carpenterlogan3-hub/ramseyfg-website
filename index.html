@@ -1291,17 +1291,29 @@
     padding: 0;
     cursor: pointer;
     font-family: var(--sans);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
     color: var(--forest);
+    text-decoration: underline;
+    text-underline-offset: 3px;
     transition: color 0.2s ease;
   }
-  .team-readmore:hover { color: var(--burgundy); }
+  .team-readmore:hover { color: var(--forest-tint); }
   .team-readmore .rm-less { display: none; }
   .team-readmore[aria-expanded="true"] .rm-more { display: none; }
   .team-readmore[aria-expanded="true"] .rm-less { display: inline; }
+  .team-bio-rest[hidden] { display: none; }
+
+  /* Inline action links (Read full bio, Read the Paper, etc.) — green + underlined */
+  .link-action {
+    color: var(--forest);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+  .link-action:hover { color: var(--forest-tint); }
 
   .team-linkedin {
     display: inline-flex;
@@ -2039,11 +2051,18 @@
         </div>
         <h3 class="team-name">Leo B. Womack</h3>
         <div class="team-role">Founder and Chairman</div>
-        <p class="team-bio">Leo has spent his entire career in Houston. He began his career as a CPA with Arthur Andersen and then purchased a CPA firm in the Texas Medical Center. In the early 80's this firm was acquired by a large national firm and Leo focused on private investments and entrepreneurial activities. Leo was a co-founder and CFO of Park Plaza Hospital (376 beds) until it was sold to a NYSE Hospital Management Company. Later he was involved as the financial principal in founding one of the first surgery center companies, a long-term care hospital, and numerous other life science companies primarily in medical devices.</p>
-        <p class="team-bio">He was a founding member of the Houston Angel Network (HAN) and later served as its President and Chairman, and is still an active member. He continues to search for unique opportunities in real estate, early stage technology, medical device, and micro-cap public companies involving these disciplines.</p>
-        <div class="team-links">
-          <a href="#">LinkedIn ↗</a>
-          <a href="#">Full Bio →</a>
+        <p class="team-bio-teaser">Leo has spent his entire career in Houston. He began his career as a CPA with Arthur Andersen and then purchased a CPA firm in the Texas Medical Center. In the early 80's this firm was acquired by a large national firm and Leo focused on private investments and entrepreneurial activities. Leo was a co-founder and CFO of Park Plaza Hospital (376 beds) until it was sold to a NYSE Hospital Management Company. Later he was involved as the financial principal in founding one of the first surgery center companies, a long-term care hospital, and numerous other life science companies primarily in medical devices.</p>
+        <div class="team-bio-rest" id="bio-rest-leo" hidden>
+          <p>He was a founding member of the Houston Angel Network (HAN) and later served as its President and Chairman, and is still an active member. He continues to search for unique opportunities in real estate, early stage technology, medical device, and micro-cap public companies involving these disciplines.</p>
+        </div>
+        <div class="team-actions">
+          <button type="button" class="team-readmore" aria-expanded="false" aria-controls="bio-rest-leo">
+            <span class="rm-more">Read full bio</span>
+            <span class="rm-less">Show less</span>
+          </button>
+          <a href="#" class="team-linkedin" data-todo="add-linkedin-url" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (URL pending)">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.89 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
         </div>
       </article>
 
@@ -2053,12 +2072,19 @@
         </div>
         <h3 class="team-name">L. Barton Womack</h3>
         <div class="team-role">Managing Director</div>
-        <p class="team-bio">Bart Womack is Managing Director of Ramsey Financial Group and Founder and CEO of Eden Grow Systems, a Houston-based NASA spinoff producing soil-free aeroponic and closed-loop indoor farming systems adapted from NASA's Controlled Ecological Life Support Systems. He invented the LifePod and the Grow Tower — self-contained, climate-controlled units that bring food production to households, urban centers, remote sites, and military installations. Eden Grow Systems has been profiled in NASA Spinoff ("Astronaut Life Support for Earth Families"), the Houston Chronicle, Texas Monthly, and FOX 26 Houston, with deployments including downtown Houston's Niels Esperson Building and investment from SpaceFund.</p>
-        <p class="team-bio">Bart has built and operated companies across entertainment, media, and frontier technology for more than thirty years. He produced motion pictures and television, interviewed presidential candidates, and for over five years owned the largest nightclub in Texas. After producing and hosting a public-interest television program, he led the effort that won Houston Media Source 501(c)(3) status and a ten-year, $12 million grant from the City of Houston to fund local community media. He has since spent years in early-stage technology — building corporate brands, running marketing for bootstrapped startups, and producing events attended by thousands.</p>
-        <p class="team-bio">An active inventor and investor, Bart also volunteers locally and leads media and communications for the Future of Humanity Foundation.</p>
-        <div class="team-links">
-          <a href="#">LinkedIn ↗</a>
-          <a href="#">Full Bio →</a>
+        <p class="team-bio-teaser">Bart Womack is Managing Director of Ramsey Financial Group and Founder and CEO of Eden Grow Systems, a Houston-based NASA spinoff producing soil-free aeroponic and closed-loop indoor farming systems adapted from NASA's Controlled Ecological Life Support Systems. He invented the LifePod and the Grow Tower — self-contained, climate-controlled units that bring food production to households, urban centers, remote sites, and military installations. Eden Grow Systems has been profiled in NASA Spinoff ("Astronaut Life Support for Earth Families"), the Houston Chronicle, Texas Monthly, and FOX 26 Houston, with deployments including downtown Houston's Niels Esperson Building and investment from SpaceFund.</p>
+        <div class="team-bio-rest" id="bio-rest-bart" hidden>
+          <p>Bart has built and operated companies across entertainment, media, and frontier technology for more than thirty years. He produced motion pictures and television, interviewed presidential candidates, and for over five years owned the largest nightclub in Texas. After producing and hosting a public-interest television program, he led the effort that won Houston Media Source 501(c)(3) status and a ten-year, $12 million grant from the City of Houston to fund local community media. He has since spent years in early-stage technology — building corporate brands, running marketing for bootstrapped startups, and producing events attended by thousands.</p>
+          <p>An active inventor and investor, Bart also volunteers locally and leads media and communications for the Future of Humanity Foundation.</p>
+        </div>
+        <div class="team-actions">
+          <button type="button" class="team-readmore" aria-expanded="false" aria-controls="bio-rest-bart">
+            <span class="rm-more">Read full bio</span>
+            <span class="rm-less">Show less</span>
+          </button>
+          <a href="#" class="team-linkedin" data-todo="add-linkedin-url" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (URL pending)">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.89 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
         </div>
       </article>
 
@@ -2068,11 +2094,18 @@
         </div>
         <h3 class="team-name">Meagan Crawford</h3>
         <div class="team-role">Partner</div>
-        <p class="team-bio">Meagan is an expert in finance and entrepreneurship, with a specific focus on the most exciting new business sector of our time, space commercialization. She is building the capital stack for the private space industry through investments in and significant contributions to venture capital, private credit, spaceport-adjacent real estate development, and the structuring of new space insurance products. She is a co-founder of SpaceFund where she architected two top-performing venture funds delivering best-in-class returns. Meagan is also a start-up investor, coach, mentor, and advisor. She is a frequent speaker and writer on the development of the space industry.</p>
-        <p class="team-bio">Meagan was a cofounder of the NewSpace Business Plan Competition, the world's longest-running space business plan competition that has launched hundreds of startups and catalyzed an entire industry. She is a member of the Board of Directors or a Board Advisor for more than 10 organizations, in the for-profit and non-profit realms. She holds an MBA in Entrepreneurship and Finance from Rice University as well as a BBA in Management, Marketing, and Supply Chain Logistics from the University of Houston. Formerly, she was a Technology Transfer Specialist at NASA, a professor of Executive Communication at the University of Houston, a management consultant in the oil and gas industry, and earned her Series 6 and 63 licenses as a financial advisor.</p>
-        <div class="team-links">
-          <a href="#">LinkedIn ↗</a>
-          <a href="#">Full Bio →</a>
+        <p class="team-bio-teaser">Meagan is an expert in finance and entrepreneurship, with a specific focus on the most exciting new business sector of our time, space commercialization. She is building the capital stack for the private space industry through investments in and significant contributions to venture capital, private credit, spaceport-adjacent real estate development, and the structuring of new space insurance products. She is a co-founder of SpaceFund where she architected two top-performing venture funds delivering best-in-class returns. Meagan is also a start-up investor, coach, mentor, and advisor. She is a frequent speaker and writer on the development of the space industry.</p>
+        <div class="team-bio-rest" id="bio-rest-meagan" hidden>
+          <p>Meagan was a cofounder of the NewSpace Business Plan Competition, the world's longest-running space business plan competition that has launched hundreds of startups and catalyzed an entire industry. She is a member of the Board of Directors or a Board Advisor for more than 10 organizations, in the for-profit and non-profit realms. She holds an MBA in Entrepreneurship and Finance from Rice University as well as a BBA in Management, Marketing, and Supply Chain Logistics from the University of Houston. Formerly, she was a Technology Transfer Specialist at NASA, a professor of Executive Communication at the University of Houston, a management consultant in the oil and gas industry, and earned her Series 6 and 63 licenses as a financial advisor.</p>
+        </div>
+        <div class="team-actions">
+          <button type="button" class="team-readmore" aria-expanded="false" aria-controls="bio-rest-meagan">
+            <span class="rm-more">Read full bio</span>
+            <span class="rm-less">Show less</span>
+          </button>
+          <a href="https://www.linkedin.com/in/meagan/" class="team-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Meagan Crawford on LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.89 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
         </div>
       </article>
     </div>
@@ -2418,6 +2451,19 @@
       e.preventDefault();
       const navH = document.querySelector('.nav').offsetHeight;
       window.scrollTo({ top: target.offsetTop - navH - 8, behavior: 'smooth' });
+    });
+  });
+
+  // Team bio expand/collapse toggle
+  document.querySelectorAll('.team-readmore').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('aria-controls');
+      const panel = document.getElementById(targetId);
+      if (!panel) return;
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      if (isOpen) panel.setAttribute('hidden', '');
+      else panel.removeAttribute('hidden');
     });
   });
 </script>
