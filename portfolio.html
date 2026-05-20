@@ -689,20 +689,13 @@
     padding: 32px;
   }
 
-  /* Yo-Yo Dyne Industries — placeholder card visuals (no images yet). */
-  .port-escape-pod .port-image { background: linear-gradient(180deg, #2A5043 0%, #0D2620 100%); }
-  .port-escape-pod .port-image::after {
+  /* Yo-Yo Dyne Industries — placeholder card visuals (no image yet). */
+  .port-yoyodyne .port-image { background: linear-gradient(180deg, #2A5043 0%, #0D2620 100%); }
+  .port-yoyodyne .port-image::after {
     content: '';
     position: absolute; inset: 0;
     background: radial-gradient(circle at 50% 30%, rgba(244,239,230,0.18), transparent 35%),
                 radial-gradient(circle at 50% 80%, rgba(122,46,42,0.20), transparent 40%);
-  }
-
-  .port-aeroshade .port-image { background: linear-gradient(135deg, #1B3A2E 0%, #0D2620 100%); }
-  .port-aeroshade .port-image::after {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(110deg, transparent 0%, rgba(244,239,230,0.10) 45%, rgba(244,239,230,0.10) 55%, transparent 100%);
   }
 
   .port-ahura .port-image { background: linear-gradient(200deg, #0D2620 0%, #1B3A2E 60%, #2A5043 100%); }
@@ -1286,7 +1279,7 @@
       <h2>Active <em>projects.</em></h2>
       <p>Current positions where we are actively involved in strategy, capital formation, or operational governance. Most are open to qualified co-investors on a case-by-case basis. Filter by sector below.</p>
     </div>
-    <div class="section-count">10 Projects</div>
+    <div class="section-count">11 Projects</div>
   </div>
 </div>
 
@@ -1297,13 +1290,14 @@
     <div class="sector-filter" role="region" aria-label="Filter projects by sector">
       <div class="sector-filter-label">Filter by sector</div>
       <div class="sector-filter-row">
-        <button type="button" class="sector-btn active" data-sector="all">All <span class="count">10</span></button>
+        <button type="button" class="sector-btn active" data-sector="all">All <span class="count">11</span></button>
         <button type="button" class="sector-btn" data-sector="realestate">Real Estate <span class="count">02</span></button>
         <button type="button" class="sector-btn" data-sector="medtech">Med-Tech <span class="count">02</span></button>
         <button type="button" class="sector-btn" data-sector="agtech">AgTech <span class="count">02</span></button>
         <button type="button" class="sector-btn" data-sector="water">Water · Infrastructure <span class="count">01</span></button>
         <button type="button" class="sector-btn" data-sector="ai">AI · EdTech <span class="count">01</span></button>
         <button type="button" class="sector-btn" data-sector="energy">Energy · Defense <span class="count">01</span></button>
+        <button type="button" class="sector-btn" data-sector="aerospace">Aerospace · Defense <span class="count">01</span></button>
         <button type="button" class="sector-btn" data-sector="international">International · FinTech <span class="count">01</span></button>
       </div>
     </div>
@@ -1497,6 +1491,31 @@
         </div>
       </a>
 
+      <!-- Card: Yo-Yo Dyne Industries (Escape Pod) -->
+      <!-- TODO: Add Escape Pod image to assets/portfolio/ (Bart's invention) and
+           swap into <img>. Placeholder gradient via .port-yoyodyne CSS is in use. -->
+      <a class="port-card port-yoyodyne" data-sector="aerospace" href="#" data-todo="yoyodyne-image-and-link">
+        <div class="port-image" role="img" aria-label="Yo-Yo Dyne Industries — Escape Pod">
+          <div class="placeholder"><span>Image pending</span></div>
+        </div>
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-tag">Aerospace · Defense</span>
+            <span class="port-stage">In Development</span>
+          </div>
+          <h3 class="port-name">Yo-Yo Dyne Industries</h3>
+          <p class="port-summary">
+            Yo-Yo Dyne Industries is an aerospace and defense company whose first product is the Escape Pod.
+          </p>
+          <span class="port-more">
+            View project
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
       <!-- Card: NovaSpark Energy -->
       <a class="port-card port-novaspark" data-sector="energy" href="projects/novaspark-energy.html">
         <div class="port-image">
@@ -1572,77 +1591,6 @@
           <div class="port-partners">
             <span class="label">With:</span> Texas A&amp;M Horticultural Sciences · Krown Impact · WINE CO
           </div>
-          <span class="port-more">
-            View project
-            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
-              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
-            </svg>
-          </span>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- ================= SECTION V: YO-YO DYNE INDUSTRIES ================= -->
-<!-- Scaffold only — placeholder content. Bart to supply final copy, product
-     details, images, and any external links for Escape Pod and AeroShade. -->
-<div class="section-divider">
-  <div class="wrap">
-    <div class="section-num">Section V.</div>
-    <div class="section-title-block">
-      <h2>Yo-Yo Dyne <em>Industries.</em></h2>
-      <p>Yo-Yo Dyne Industries is the operating company standing up Ramsey Financial Group's aerospace technologies.</p>
-    </div>
-    <div class="section-count">02 Ventures</div>
-  </div>
-</div>
-
-<section class="portfolio-section">
-  <div class="wrap">
-    <div class="portfolio-grid">
-
-      <!-- Card: Escape Pod -->
-      <!-- TODO: Add Escape Pod image to assets/portfolio/ and finalize description
-           (Bart's invention — Yo-Yo Dyne Industries aerospace product). -->
-      <a class="port-card port-escape-pod" href="#">
-        <div class="port-image" role="img" aria-label="Escape Pod by Yo-Yo Dyne Industries">
-          <div class="placeholder"><span>Image pending</span></div>
-        </div>
-        <div class="port-body">
-          <div class="port-meta">
-            <span class="port-tag">Aerospace · Yo-Yo Dyne</span>
-            <span class="port-stage">Placeholder</span>
-          </div>
-          <h3 class="port-name">Escape Pod</h3>
-          <p class="port-summary">
-            Description forthcoming.
-          </p>
-          <span class="port-more">
-            View project
-            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
-              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
-            </svg>
-          </span>
-        </div>
-      </a>
-
-      <!-- Card: AeroShade -->
-      <!-- TODO: Add AeroShade image to assets/portfolio/ and finalize description. -->
-      <a class="port-card port-aeroshade" href="#">
-        <div class="port-image" role="img" aria-label="AeroShade by Yo-Yo Dyne Industries">
-          <div class="placeholder"><span>Image pending</span></div>
-        </div>
-        <div class="port-body">
-          <div class="port-meta">
-            <span class="port-tag">Aerospace · Yo-Yo Dyne</span>
-            <span class="port-stage">Placeholder</span>
-          </div>
-          <h3 class="port-name">AeroShade</h3>
-          <p class="port-summary">
-            Description forthcoming.
-          </p>
           <span class="port-more">
             View project
             <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
