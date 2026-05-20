@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Karman Line / SpacePort Fund — Ramsey Financial Group</title>
+<link rel="icon" type="image/png" href="../assets/Royal_Logo.png" />
 <meta name="description" content="Karman Line / SpacePort Fund — drill-down stub. Page in development." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -519,7 +520,31 @@
   .btn-ghost:hover { color: var(--sand); border-bottom-color: var(--sand); }
 
   /* ============ Footer ============ */
-  footer.site-footer {
+/* Footer Ramsey Heritage crest — ornate secondary identity beneath
+     address; corporate logo stays in the header. */
+  .foot-crest {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(244,239,230,0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+  }
+  .foot-crest-mark { width: 100px; flex-shrink: 0; }
+  .foot-crest-mark img { width: 100%; height: auto; object-fit: contain; display: block; }
+  .foot-crest-text {
+    font-family: var(--serif);
+    font-size: 11px;
+    line-height: 1.5;
+    font-style: italic;
+    color: rgba(244,239,230,0.55);
+    letter-spacing: 0.04em;
+  }
+  .foot-crest-text strong { display: block; font-style: normal; font-weight: 500; color: rgba(244,239,230,0.85); }
+
+    footer.site-footer {
     background: var(--forest-deep);
     color: var(--bone);
     padding: 80px 0 40px;
@@ -591,7 +616,6 @@
   <div class="wrap">
     <span class="top-left">Houston, Texas · Established 1992 · Manager of the Leo B. Womack Family Trust</span>
     <div class="top-right">
-      <a href="#">Ramsey RegA&nbsp;↗</a>
       <a href="#">LinkedIn&nbsp;↗</a>
     </div>
   </div>
@@ -655,15 +679,10 @@
     <div class="body-grid">
       <div class="body-left">
         <h2>About this <em>project.</em></h2>
-        <div class="stub-callout">
-          <div class="stub-mark" aria-hidden="true"></div>
-          <div class="stub-text">
-            <strong>Phase 1 stub</strong>
-            <p>This page is a placeholder during the Phase 1 build of ramseyfg.com. Full project copy, deal economics, principal commentary, and supporting materials will be added in a subsequent phase. For information in the interim, please request an introduction.</p>
-          </div>
-        </div>
-        <p class="lead">Karman Line / SpacePort Fund is an active Ramsey raise pairing space-economy exposure with real-estate underwriting discipline.</p>
-        <p>Sector thesis, fund terms, sponsor economics, and current pipeline of underlying real assets will be detailed here in a subsequent phase. The text above is a Phase 1 placeholder.</p>
+        <p class="lead">Real estate at the intersection of space and infrastructure. Workforce housing and shared facilities at Cape Canaveral and other US spaceports — Fund I is $50M with a $30M anchor committed.</p>
+        <p>Spaceports are necessarily in remote areas. As launch cadence increases and spaceports are built worldwide, real estate in these remote areas becomes extremely valuable when developed to meet the needs of the growing space industry. Karman Line lives at the intersection of real estate and space.</p>
+        <p>Fund I is a $50M workforce housing fund focused on Cape Canaveral and several other US spaceports, with a $30M anchor commitment already in place. Fund II will follow, focused on raw land development for infrastructure such as shared office space and co-working spacecraft labs.</p>
+        <p>Spaceport Fund: <a href="https://spaceportfund.com" target="_blank" rel="noopener noreferrer" class="link-action">spaceportfund.com</a></p>
       </div>
       <aside class="body-right">
         <div class="glance">
@@ -673,7 +692,7 @@
             <div class="row"><dt>Stage</dt><dd>Fund I — Active</dd></div>
             <div class="row"><dt>Vehicle</dt><dd><span class="tbc">[TBC]</span></dd></div>
             <div class="row"><dt>Lead Principal</dt><dd><span class="tbc">[TBC]</span></dd></div>
-            <div class="row"><dt>Materials</dt><dd><span class="tbc">[Deck on request]</span></dd></div>
+            <div class="row"><dt>Materials</dt><dd><a href="mailto:bart@ramseyfg.com?subject=Ramsey%20RFG%20%E2%80%94%20Request%20Deck%3A%20Karman%20Line%20/%20Spaceport%20Fund" class="tbc" style="text-decoration: underline; cursor: pointer;">Request Deck</a></dd></div>
           </dl>
         </div>
       </aside>
@@ -718,8 +737,17 @@
         <address class="foot-address">
           710 N Post Oak Rd<br>
           Houston, Texas 77024<br>
-          sep@ramseyfg.com
+          <a href="mailto:bart@ramseyfg.com">bart@ramseyfg.com</a>
         </address>
+        <div class="foot-crest" aria-label="Ramsey heritage crest">
+          <div class="foot-crest-mark" aria-hidden="true">
+            <img src="../assets/Royal_Logo.png" alt="" loading="lazy" />
+          </div>
+          <div class="foot-crest-text">
+            <strong>Ramsey Heritage</strong>
+            Continuity across three decades<br>and three generations of operators.
+          </div>
+        </div>
       </div>
       <div class="foot-col">
         <h4>Navigate</h4>
@@ -734,10 +762,9 @@
       <div class="foot-col">
         <h4>Platforms</h4>
         <ul>
-          <li><a href="#">Ramsey RegA&nbsp;↗</a></li>
-          <li><a href="#">SpaceFund&nbsp;↗</a></li>
-          <li><a href="#">Space Finance Company&nbsp;↗</a></li>
-          <li><a href="#">SpacePort Fund&nbsp;↗</a></li>
+          <li><a href="#" data-todo="spacefund-url">SpaceFund&nbsp;↗</a></li>
+          <li><a href="#" data-todo="space-finance-company-url">Space Finance Company&nbsp;↗</a></li>
+          <li><a href="https://spaceportfund.com" target="_blank" rel="noopener noreferrer">SpacePort Fund&nbsp;↗</a></li>
         </ul>
       </div>
       <div class="foot-col">

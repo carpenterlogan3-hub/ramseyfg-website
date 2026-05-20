@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ramsey Financial Group — Intelligent Co-Investing in Frontier Industries</title>
 <meta name="description" content="Ramsey Financial Group is a Houston single-family office co-investing in frontier industries since 1992 — space, water, AgTech, AI, energy, and reconstruction finance." />
+<link rel="icon" type="image/png" href="assets/Royal_Logo.png" />
 
 <!-- Fonts: Fraunces (serif display) + Inter (geometric sans body) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,6 +55,13 @@
   }
 
   a { color: inherit; text-decoration: none; }
+
+  /* Keyboard focus indicator — visible for tab navigation, hidden for mouse clicks */
+  :focus-visible {
+    outline: 2px solid var(--forest);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
 
   img { max-width: 100%; display: block; }
 
@@ -856,7 +864,9 @@
     display: block;
     z-index: 2;
   }
-  .track-park .track-image img {
+  /* Photo cards (skyline, exterior) override default contain → cover */
+  .track-park .track-image img,
+  .track-gulf .track-image img {
     object-fit: cover;
     padding: 0;
   }
@@ -874,10 +884,16 @@
     background: linear-gradient(45deg, transparent 48%, rgba(244,239,230,0.14) 49%, rgba(244,239,230,0.14) 51%, transparent 52%),
                 linear-gradient(-45deg, transparent 48%, rgba(244,239,230,0.10) 49%, rgba(244,239,230,0.10) 51%, transparent 52%);
   }
-  .track-ambrose .track-image    { background: linear-gradient(140deg, #5A1F1C 0%, #2A1514 100%); }
-  .track-ambrose .track-image::after {
+  .track-gulf .track-image      { background: linear-gradient(145deg, #3A4A3E 0%, #1B3A2E 100%); }
+  .track-gulf .track-image::after {
     content: ''; position: absolute; inset: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(244,239,230,0.18) 0%, transparent 50%);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(13,38,32,0.45) 100%);
+  }
+  .track-deep-space .track-image { background: linear-gradient(180deg, #0D2620 0%, #1B3A2E 60%, #2A5043 100%); }
+  .track-deep-space .track-image::after {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(244,239,230,0.20) 0%, transparent 25%),
+                radial-gradient(circle at 70% 70%, rgba(244,239,230,0.12) 0%, transparent 30%);
   }
 
   .track-body {
@@ -1165,122 +1181,18 @@
     font-size: 10px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--burgundy);
+    color: var(--sand);
     font-weight: 600;
     text-align: right;
     padding-left: 20px;
     border-left: 1px solid rgba(244,239,230,0.12);
     line-height: 1.5;
   }
-  .layer.accent .layer-vehicle { color: var(--sand); }
 
   @media (max-width: 600px) {
     .layer { grid-template-columns: 40px 1fr; gap: 16px; padding: 22px; }
     .layer-vehicle { grid-column: 1 / -1; padding-left: 0; border-left: 0; border-top: 1px solid rgba(244,239,230,0.12); padding-top: 14px; margin-top: 6px; text-align: left; }
   }
-
-  /* ============ Thought Leadership ============ */
-  .tl { padding: clamp(90px, 12vw, 140px) 0; background: var(--bone); }
-
-  .tl-grid {
-    display: grid;
-    grid-template-columns: 5fr 7fr;
-    gap: 80px;
-    align-items: center;
-  }
-  @media (max-width: 980px) { .tl-grid { grid-template-columns: 1fr; gap: 48px; } }
-
-  .tl-cover {
-    aspect-ratio: 4 / 5;
-    background: var(--forest-deep);
-    color: var(--bone);
-    padding: 48px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    overflow: hidden;
-  }
-  .tl-cover::before {
-    content: '';
-    position: absolute;
-    right: -30%;
-    top: -30%;
-    width: 120%;
-    height: 120%;
-    border: 1px solid rgba(244,239,230,0.1);
-    transform: rotate(45deg);
-  }
-  .tl-cover::after {
-    content: '';
-    position: absolute;
-    right: -20%;
-    top: -20%;
-    width: 90%;
-    height: 90%;
-    border: 1px solid rgba(244,239,230,0.08);
-    transform: rotate(45deg);
-  }
-  .tl-cover-top { position: relative; z-index: 2; }
-  .tl-cover-top .eyebrow { color: var(--sand); }
-  .tl-cover-title {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: clamp(30px, 3.5vw, 42px);
-    line-height: 1.05;
-    letter-spacing: -0.015em;
-    color: var(--bone);
-    margin-top: 32px;
-  }
-  .tl-cover-title em { font-style: italic; color: var(--sand); font-weight: 300; }
-  .tl-cover-bottom { position: relative; z-index: 2; }
-  .tl-cover-author {
-    font-size: 13px;
-    color: var(--bone);
-    opacity: 0.8;
-    line-height: 1.5;
-  }
-  .tl-cover-author strong { font-weight: 500; display: block; }
-  .tl-cover-meta {
-    margin-top: 24px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(244,239,230,0.15);
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--sand);
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .tl-right .eyebrow { margin-bottom: 20px; }
-  .tl-right h2 {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: clamp(32px, 4vw, 46px);
-    line-height: 1.05;
-    letter-spacing: -0.015em;
-    color: var(--ink);
-    margin-bottom: 28px;
-  }
-  .tl-excerpt {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-style: italic;
-    font-size: 20px;
-    line-height: 1.5;
-    color: var(--forest);
-    margin-bottom: 28px;
-    padding-left: 24px;
-    border-left: 2px solid var(--burgundy);
-  }
-  .tl-right p {
-    font-size: 16px;
-    line-height: 1.65;
-    color: var(--mute);
-    margin-bottom: 20px;
-  }
-  .tl-actions { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; margin-top: 32px; }
 
   /* ============ Team Section ============ */
   .team {
@@ -1395,17 +1307,29 @@
     padding: 0;
     cursor: pointer;
     font-family: var(--sans);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
     color: var(--forest);
+    text-decoration: underline;
+    text-underline-offset: 3px;
     transition: color 0.2s ease;
   }
-  .team-readmore:hover { color: var(--burgundy); }
+  .team-readmore:hover { color: var(--forest-tint); }
   .team-readmore .rm-less { display: none; }
   .team-readmore[aria-expanded="true"] .rm-more { display: none; }
   .team-readmore[aria-expanded="true"] .rm-less { display: inline; }
+  .team-bio-rest[hidden] { display: none; }
+
+  /* Inline action links (Read full bio, Read the Paper, etc.) — green + underlined */
+  .link-action {
+    color: var(--forest);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+  .link-action:hover { color: var(--forest-tint); }
 
   .team-linkedin {
     display: inline-flex;
@@ -1815,8 +1739,7 @@
   <div class="wrap">
     <span class="top-left">Houston, Texas · Established 1992 · Manager of the Leo B. Womack Family Trust</span>
     <div class="top-right">
-      <a href="#">Ramsey RegA&nbsp;↗</a>
-      <a href="https://www.linkedin.com/company/ramsey-financial-group/" target="_blank" rel="noopener">LinkedIn&nbsp;↗</a>
+      <a href="https://www.linkedin.com/company/ramsey-financial-group/" target="_blank" rel="noopener noreferrer">LinkedIn&nbsp;↗</a>
     </div>
   </div>
 </div>
@@ -1836,7 +1759,6 @@
       <li><a href="#active-raises">Current Raises</a></li>
       <li><a href="#scs">Space Capital Stack</a></li>
       <li><a href="#team">Team</a></li>
-      <li><a href="#tl">Thought Leadership</a></li>
       <li><a href="#media">Media</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -1891,16 +1813,6 @@
              in the media section below. -->
         <article class="hero-video video-1">
           <div class="hero-video-thumb">
-            <div class="hero-video-play" aria-hidden="true"></div>
-          </div>
-          <div class="hero-video-meta">
-            <div class="hero-video-tag">Bart Womack · Speech</div>
-            <div class="hero-video-title">Hear about the legacy of Ramsey Financial Group</div>
-          </div>
-        </article>
-
-        <article class="hero-video video-2">
-          <div class="hero-video-thumb">
             <iframe
               src="https://www.youtube-nocookie.com/embed/enVL9YTHB1w?rel=0&modestbranding=1"
               title="The Texas Space Revolution: A Once-in-500-Years Opportunity"
@@ -1913,6 +1825,16 @@
           <div class="hero-video-meta">
             <div class="hero-video-tag">Meagan Crawford · Speech</div>
             <div class="hero-video-title">Learn about the Texas space economy ecosystem</div>
+          </div>
+        </article>
+
+        <article class="hero-video video-2">
+          <div class="hero-video-thumb">
+            <div class="hero-video-play" aria-hidden="true"></div>
+          </div>
+          <div class="hero-video-meta">
+            <div class="hero-video-tag">Bart Womack · Speech</div>
+            <div class="hero-video-title">Hear about the legacy of Ramsey Financial Group</div>
           </div>
         </article>
       </aside>
@@ -2080,8 +2002,8 @@
         <p class="scs-lede">
           Venture capital gets a space company off the ground. It is the wrong tool once the company has hardware on orbit producing revenue. The missing tools — <strong style="color: var(--bone); font-weight: 500;">debt, infrastructure, insurance</strong> — have matured every other capital-intensive industry before this one. Building them for space is what we do.
         </p>
-        <a href="#" class="scs-cta">
-          Explore the Stack
+        <a href="assets/Beyond-Venture-Capital-Space-Capital-Stack.pdf" target="_blank" rel="noopener" class="scs-cta">
+          Read the Paper
           <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
             <path d="M1 6h13m0 0L9 1m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
           </svg>
@@ -2128,61 +2050,6 @@
   </div>
 </section>
 
-<!-- Thought Leadership feature -->
-<section class="tl" id="tl">
-  <div class="wrap">
-    <div class="tl-grid">
-      <div class="tl-cover" aria-label="White paper cover">
-        <div class="tl-cover-top">
-          <div class="eyebrow">Ramsey Financial Group · White Paper</div>
-          <h3 class="tl-cover-title">
-            Beyond Venture:<br>Space Needs a <em>Complete</em><br>Capital Stack.
-          </h3>
-        </div>
-        <div class="tl-cover-bottom">
-          <div class="tl-cover-author">
-            <strong>Meagan Murphy Crawford</strong>
-            Principal, Ramsey Financial Group<br>
-            Co-Founder, SpaceFund
-          </div>
-          <div class="tl-cover-meta">
-            <span>2026 · 7 pages</span>
-            <span>PDF · Web</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="tl-right">
-        <div class="eyebrow">Thought Leadership</div>
-        <h2>The next space inflection point is financial — not technical.</h2>
-        <blockquote class="tl-excerpt">
-          "The success of the space economy will not be written by venture capital alone. It will be written by those who build the complete capital stack — the equity that sparks ideas, the credit that scales them, the infrastructure that grounds them, and the insurance that de-risks them."
-        </blockquote>
-        <p>
-          Florida's Space Coast launched 109 times in 2025. Revenue-generating assets are proliferating on orbit. But the financing architecture required to scale proven space companies into cash-flow-positive operators has not kept pace with the launch manifest.
-        </p>
-        <p>
-          In this white paper, Meagan Crawford — one of the leading voices in space venture — lays out the four-layer framework being assembled at Ramsey Financial Group, and what governments, investors, and founders need to build together now.
-        </p>
-        <div class="tl-actions">
-          <a href="assets/Beyond-Venture-Capital-Space-Capital-Stack.pdf" target="_blank" rel="noopener" class="btn-primary">
-            Read the Paper
-            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
-              <path d="M1 6h13m0 0L9 1m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
-            </svg>
-          </a>
-          <a href="assets/Beyond-Venture-Capital-Space-Capital-Stack.pdf" download="Beyond-Venture-Capital-Space-Capital-Stack.pdf" class="btn-link">
-            Download PDF
-            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
-              <path d="M7 1v8m0 0L3 5m4 4l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Team section -->
 <section class="team" id="team">
   <div class="wrap">
@@ -2199,11 +2066,18 @@
         </div>
         <h3 class="team-name">Leo B. Womack</h3>
         <div class="team-role">Founder and Chairman</div>
-        <p class="team-bio">Leo has spent his entire career in Houston. He began his career as a CPA with Arthur Andersen and then purchased a CPA firm in the Texas Medical Center. In the early 80's this firm was acquired by a large national firm and Leo focused on private investments and entrepreneurial activities. Leo was a co-founder and CFO of Park Plaza Hospital (376 beds) until it was sold to a NYSE Hospital Management Company. Later he was involved as the financial principal in founding one of the first surgery center companies, a long-term care hospital, and numerous other life science companies primarily in medical devices.</p>
-        <p class="team-bio">He was a founding member of the Houston Angel Network (HAN) and later served as its President and Chairman, and is still an active member. He continues to search for unique opportunities in real estate, early stage technology, medical device, and micro-cap public companies involving these disciplines.</p>
-        <div class="team-links">
-          <a href="#">LinkedIn ↗</a>
-          <a href="#">Full Bio →</a>
+        <p class="team-bio-teaser">Leo has spent his entire career in Houston. He began his career as a CPA with Arthur Andersen and then purchased a CPA firm in the Texas Medical Center. In the early 80's this firm was acquired by a large national firm and Leo focused on private investments and entrepreneurial activities. Leo was a co-founder and CFO of Park Plaza Hospital (376 beds) until it was sold to a NYSE Hospital Management Company. Later he was involved as the financial principal in founding one of the first surgery center companies, a long-term care hospital, and numerous other life science companies primarily in medical devices.</p>
+        <div class="team-bio-rest" id="bio-rest-leo" hidden>
+          <p>He was a founding member of the Houston Angel Network (HAN) and later served as its President and Chairman, and is still an active member. He continues to search for unique opportunities in real estate, early stage technology, medical device, and micro-cap public companies involving these disciplines.</p>
+        </div>
+        <div class="team-actions">
+          <button type="button" class="team-readmore" aria-expanded="false" aria-controls="bio-rest-leo">
+            <span class="rm-more">Read full bio</span>
+            <span class="rm-less">Show less</span>
+          </button>
+          <a href="#" class="team-linkedin" data-todo="add-linkedin-url" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (URL pending)">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.89 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
         </div>
       </article>
 
@@ -2213,12 +2087,19 @@
         </div>
         <h3 class="team-name">L. Barton Womack</h3>
         <div class="team-role">Managing Director</div>
-        <p class="team-bio">Bart Womack is Managing Director of Ramsey Financial Group and Founder and CEO of Eden Grow Systems, a Houston-based NASA spinoff producing soil-free aeroponic and closed-loop indoor farming systems adapted from NASA's Controlled Ecological Life Support Systems. He invented the LifePod and the Grow Tower — self-contained, climate-controlled units that bring food production to households, urban centers, remote sites, and military installations. Eden Grow Systems has been profiled in NASA Spinoff ("Astronaut Life Support for Earth Families"), the Houston Chronicle, Texas Monthly, and FOX 26 Houston, with deployments including downtown Houston's Niels Esperson Building and investment from SpaceFund.</p>
-        <p class="team-bio">Bart has built and operated companies across entertainment, media, and frontier technology for more than thirty years. He produced motion pictures and television, interviewed presidential candidates, and for over five years owned the largest nightclub in Texas. After producing and hosting a public-interest television program, he led the effort that won Houston Media Source 501(c)(3) status and a ten-year, $12 million grant from the City of Houston to fund local community media. He has since spent years in early-stage technology — building corporate brands, running marketing for bootstrapped startups, and producing events attended by thousands.</p>
-        <p class="team-bio">An active inventor and investor, Bart also volunteers locally and leads media and communications for the Future of Humanity Foundation.</p>
-        <div class="team-links">
-          <a href="#">LinkedIn ↗</a>
-          <a href="#">Full Bio →</a>
+        <p class="team-bio-teaser">Bart Womack is Managing Director of Ramsey Financial Group and Founder and CEO of Eden Grow Systems, a Houston-based NASA spinoff producing soil-free aeroponic and closed-loop indoor farming systems adapted from NASA's Controlled Ecological Life Support Systems. He invented the LifePod and the Grow Tower — self-contained, climate-controlled units that bring food production to households, urban centers, remote sites, and military installations. Eden Grow Systems has been profiled in NASA Spinoff ("Astronaut Life Support for Earth Families"), the Houston Chronicle, Texas Monthly, and FOX 26 Houston, with deployments including downtown Houston's Niels Esperson Building and investment from SpaceFund.</p>
+        <div class="team-bio-rest" id="bio-rest-bart" hidden>
+          <p>Bart has built and operated companies across entertainment, media, and frontier technology for more than thirty years. He produced motion pictures and television, interviewed presidential candidates, and for over five years owned the largest nightclub in Texas. After producing and hosting a public-interest television program, he led the effort that won Houston Media Source 501(c)(3) status and a ten-year, $12 million grant from the City of Houston to fund local community media. He has since spent years in early-stage technology — building corporate brands, running marketing for bootstrapped startups, and producing events attended by thousands.</p>
+          <p>An active inventor and investor, Bart also volunteers locally and leads media and communications for the Future of Humanity Foundation.</p>
+        </div>
+        <div class="team-actions">
+          <button type="button" class="team-readmore" aria-expanded="false" aria-controls="bio-rest-bart">
+            <span class="rm-more">Read full bio</span>
+            <span class="rm-less">Show less</span>
+          </button>
+          <a href="#" class="team-linkedin" data-todo="add-linkedin-url" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (URL pending)">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.89 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
         </div>
       </article>
 
@@ -2228,11 +2109,18 @@
         </div>
         <h3 class="team-name">Meagan Crawford</h3>
         <div class="team-role">Partner</div>
-        <p class="team-bio">Meagan is an expert in finance and entrepreneurship, with a specific focus on the most exciting new business sector of our time, space commercialization. She is building the capital stack for the private space industry through investments in and significant contributions to venture capital, private credit, spaceport-adjacent real estate development, and the structuring of new space insurance products. She is a co-founder of SpaceFund where she architected two top-performing venture funds delivering best-in-class returns. Meagan is also a start-up investor, coach, mentor, and advisor. She is a frequent speaker and writer on the development of the space industry.</p>
-        <p class="team-bio">Meagan was a cofounder of the NewSpace Business Plan Competition, the world's longest-running space business plan competition that has launched hundreds of startups and catalyzed an entire industry. She is a member of the Board of Directors or a Board Advisor for more than 10 organizations, in the for-profit and non-profit realms. She holds an MBA in Entrepreneurship and Finance from Rice University as well as a BBA in Management, Marketing, and Supply Chain Logistics from the University of Houston. Formerly, she was a Technology Transfer Specialist at NASA, a professor of Executive Communication at the University of Houston, a management consultant in the oil and gas industry, and earned her Series 6 and 63 licenses as a financial advisor.</p>
-        <div class="team-links">
-          <a href="#">LinkedIn ↗</a>
-          <a href="#">Full Bio →</a>
+        <p class="team-bio-teaser">Meagan is an expert in finance and entrepreneurship, with a specific focus on the most exciting new business sector of our time, space commercialization. She is building the capital stack for the private space industry through investments in and significant contributions to venture capital, private credit, spaceport-adjacent real estate development, and the structuring of new space insurance products. She is a co-founder of SpaceFund where she architected two top-performing venture funds delivering best-in-class returns. Meagan is also a start-up investor, coach, mentor, and advisor. She is a frequent speaker and writer on the development of the space industry.</p>
+        <div class="team-bio-rest" id="bio-rest-meagan" hidden>
+          <p>Meagan was a cofounder of the NewSpace Business Plan Competition, the world's longest-running space business plan competition that has launched hundreds of startups and catalyzed an entire industry. She is a member of the Board of Directors or a Board Advisor for more than 10 organizations, in the for-profit and non-profit realms. She holds an MBA in Entrepreneurship and Finance from Rice University as well as a BBA in Management, Marketing, and Supply Chain Logistics from the University of Houston. Formerly, she was a Technology Transfer Specialist at NASA, a professor of Executive Communication at the University of Houston, a management consultant in the oil and gas industry, and earned her Series 6 and 63 licenses as a financial advisor.</p>
+        </div>
+        <div class="team-actions">
+          <button type="button" class="team-readmore" aria-expanded="false" aria-controls="bio-rest-meagan">
+            <span class="rm-more">Read full bio</span>
+            <span class="rm-less">Show less</span>
+          </button>
+          <a href="https://www.linkedin.com/in/meagan/" class="team-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Meagan Crawford on LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.89 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
         </div>
       </article>
     </div>
@@ -2267,7 +2155,7 @@
       </div>
       <div class="section-head-right">
         <p>
-          A small selection of the firm's highest-conviction wins — operating businesses, exits, and projects that have moved from thesis to execution. Each one represents the kind of work, capital structure, and partner network we bring to every position. <strong>Project descriptions to follow once Leo provides paragraph copy for each.</strong>
+          A small selection of the firm's highest-conviction wins — operating businesses, exits, and projects that have moved from thesis to execution. Each one represents the kind of work, capital structure, and partner network we bring to every position.
         </p>
       </div>
     </div>
@@ -2288,7 +2176,7 @@
           </div>
           <h3 class="track-name">Park Plaza Hospital</h3>
           <p class="track-summary">
-            Description pending — see active portfolio for current detail.
+            One of the largest physician-owned hospitals in Houston's history. Leo Womack served as a founding board member and Secretary-Treasurer; the 376-bed flagship joined HCA Houston Healthcare in 2017.
           </p>
           <a href="projects/park-plaza.html" class="track-more">
             View project
@@ -2313,7 +2201,7 @@
           </div>
           <h3 class="track-name">DetectaChem</h3>
           <p class="track-summary">
-            Description pending — see active portfolio for current detail.
+            Portable chemical and explosive detection technology for defense, law enforcement, and security applications.
           </p>
           <a href="projects/detectachem.html" class="track-more">
             View project
@@ -2324,23 +2212,51 @@
         </div>
       </article>
 
-      <!-- Card 3: Ambrose Stem Cell Therapy -->
-      <article class="track-card track-ambrose" tabindex="0" data-project="ambrose">
+      <!-- Card 3: Gulf Equities (also appears on portfolio.html as an active disposition deal) -->
+      <article class="track-card track-gulf" tabindex="0" data-project="gulf-equities">
         <div class="track-image">
-          <img src="assets/portfolio/Ambrose_Cell_Therapy.jpg"
-               alt="Ambrose Cell Therapy logo"
+          <img src="assets/portfolio/Gulf_Equities.jpg"
+               alt="Gulf Equities — Houston-area real estate portfolio (Houston skyline)"
                loading="lazy" />
         </div>
         <div class="track-body">
           <div class="track-meta">
-            <span class="track-tag">Cell Therapy · Med-Tech</span>
-            <span class="track-stage">FDA Pathway</span>
+            <span class="track-tag">Real Estate · Texas</span>
+            <span class="track-stage">$100M Portfolio</span>
           </div>
-          <h3 class="track-name">Ambrose Cell Therapy</h3>
+          <h3 class="track-name">Gulf Equities</h3>
           <p class="track-summary">
-            Description pending — see active portfolio for current detail.
+            Ramsey Financial Group manages a $100M portfolio of properties in and around Houston, with the majority located off the freeway in Baytown.
           </p>
-          <a href="projects/ambrose.html" class="track-more">
+          <a href="projects/gulf-equities.html" class="track-more">
+            View project
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 4: Deep Space Industries — Meagan's exit, an early space-resources/asteroid-mining position -->
+      <article class="track-card track-deep-space" tabindex="0" data-project="deep-space">
+        <div class="track-image" data-todo="deep-space-industries-logo">
+          <!-- TODO: swap in a proper Deep Space Industries logo when provided.
+               Using Spacefund.jpg as a thematic placeholder (DSI was a
+               SpaceFund-era exit in Meagan's portfolio). -->
+          <img src="assets/portfolio/Spacefund.jpg"
+               alt="Deep Space Industries — space resources / asteroid mining (placeholder)"
+               loading="lazy" />
+        </div>
+        <div class="track-body">
+          <div class="track-meta">
+            <span class="track-tag">Space · Asteroid Mining</span>
+            <span class="track-stage">Realized</span>
+          </div>
+          <h3 class="track-name">Deep Space Industries</h3>
+          <p class="track-summary">
+            An early-stage space resources company and a successful exit in Meagan Crawford's portfolio, acquired as the space economy matured.
+          </p>
+          <a href="projects/deep-space.html" class="track-more">
             View project
             <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
               <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
@@ -2457,7 +2373,7 @@
         <span class="contact-num">I.</span>
         <h3>For Founders</h3>
         <p>Present your idea or funding needs together with a brief executive summary. We review every submission and respond to opportunities that fit our thesis.</p>
-        <a href="#" class="contact-link">
+        <a href="mailto:bart@ramseyfg.com?subject=Ramsey%20RFG%20%E2%80%94%20Submit%20an%20Executive%20Summary" class="contact-link">
           Submit an Executive Summary
           <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
             <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
@@ -2469,7 +2385,7 @@
         <span class="contact-num">II.</span>
         <h3>For Investors</h3>
         <p>For accredited investors and institutional LPs interested in RFG co-investment opportunities or allocation to affiliated funds. Accredited verification required before specific terms are shared.</p>
-        <a href="#" class="contact-link">
+        <a href="mailto:bart@ramseyfg.com?subject=Ramsey%20RFG%20%E2%80%94%20Request%20an%20Introduction" class="contact-link">
           Request an Introduction
           <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
             <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
@@ -2481,7 +2397,7 @@
         <span class="contact-num">III.</span>
         <h3>For Press &amp; Policy</h3>
         <p>Interview requests, speaking invitations, podcast appearances, and policy engagement. Meagan Crawford is available for commentary on space finance, capital-stack structure, and industry policy.</p>
-        <a href="#" class="contact-link">
+        <a href="mailto:bart@ramseyfg.com?subject=Ramsey%20RFG%20%E2%80%94%20Request%20an%20Interview" class="contact-link">
           Request an Interview
           <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
             <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
@@ -2508,7 +2424,7 @@
         <address class="foot-address">
           710 N Post Oak Rd<br>
           Houston, Texas 77024<br>
-          sep@ramseyfg.com
+          <a href="mailto:bart@ramseyfg.com">bart@ramseyfg.com</a>
         </address>
         <div class="foot-crest" aria-label="Ramsey heritage crest">
           <div class="foot-crest-mark" aria-hidden="true">
@@ -2528,7 +2444,6 @@
           <li><a href="#active-raises">Current Raises</a></li>
           <li><a href="#scs">Space Capital Stack</a></li>
           <li><a href="#team">Team</a></li>
-          <li><a href="#tl">Thought Leadership</a></li>
           <li><a href="#media">Media</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -2537,18 +2452,17 @@
       <div class="foot-col">
         <h4>Platforms</h4>
         <ul>
-          <li><a href="#">Ramsey RegA&nbsp;↗</a></li>
-          <li><a href="#">SpaceFund&nbsp;↗</a></li>
-          <li><a href="#">Space Finance Company&nbsp;↗</a></li>
-          <li><a href="#">SpacePort Fund&nbsp;↗</a></li>
-          <li><a href="#">Off-Earth Data&nbsp;↗</a></li>
+          <li><a href="#" data-todo="spacefund-url">SpaceFund&nbsp;↗</a></li>
+          <li><a href="#" data-todo="space-finance-company-url">Space Finance Company&nbsp;↗</a></li>
+          <li><a href="https://spaceportfund.com" target="_blank" rel="noopener noreferrer">SpacePort Fund&nbsp;↗</a></li>
+          <li><a href="#" data-todo="off-earth-data-url">Off-Earth Data&nbsp;↗</a></li>
         </ul>
       </div>
 
       <div class="foot-col">
         <h4>Connect</h4>
         <ul>
-          <li><a href="https://www.linkedin.com/company/ramsey-financial-group/" target="_blank" rel="noopener">LinkedIn&nbsp;↗</a></li>
+          <li><a href="https://www.linkedin.com/company/ramsey-financial-group/" target="_blank" rel="noopener noreferrer">LinkedIn&nbsp;↗</a></li>
           <li><a href="#">Press Releases</a></li>
           <li><a href="#">Speaking Requests</a></li>
           <li><a href="#">Careers</a></li>
@@ -2579,6 +2493,19 @@
       e.preventDefault();
       const navH = document.querySelector('.nav').offsetHeight;
       window.scrollTo({ top: target.offsetTop - navH - 8, behavior: 'smooth' });
+    });
+  });
+
+  // Team bio expand/collapse toggle
+  document.querySelectorAll('.team-readmore').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('aria-controls');
+      const panel = document.getElementById(targetId);
+      if (!panel) return;
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      if (isOpen) panel.setAttribute('hidden', '');
+      else panel.removeAttribute('hidden');
     });
   });
 </script>
