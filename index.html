@@ -1178,109 +1178,6 @@
     .layer-vehicle { grid-column: 1 / -1; padding-left: 0; border-left: 0; border-top: 1px solid rgba(244,239,230,0.12); padding-top: 14px; margin-top: 6px; text-align: left; }
   }
 
-  /* ============ Thought Leadership ============ */
-  .tl { padding: clamp(90px, 12vw, 140px) 0; background: var(--bone); }
-
-  .tl-grid {
-    display: grid;
-    grid-template-columns: 5fr 7fr;
-    gap: 80px;
-    align-items: center;
-  }
-  @media (max-width: 980px) { .tl-grid { grid-template-columns: 1fr; gap: 48px; } }
-
-  .tl-cover {
-    aspect-ratio: 4 / 5;
-    background: var(--forest-deep);
-    color: var(--bone);
-    padding: 48px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    overflow: hidden;
-  }
-  .tl-cover::before {
-    content: '';
-    position: absolute;
-    right: -30%;
-    top: -30%;
-    width: 120%;
-    height: 120%;
-    border: 1px solid rgba(244,239,230,0.1);
-    transform: rotate(45deg);
-  }
-  .tl-cover::after {
-    content: '';
-    position: absolute;
-    right: -20%;
-    top: -20%;
-    width: 90%;
-    height: 90%;
-    border: 1px solid rgba(244,239,230,0.08);
-    transform: rotate(45deg);
-  }
-  .tl-cover-top { position: relative; z-index: 2; }
-  .tl-cover-top .eyebrow { color: var(--sand); }
-  .tl-cover-title {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: clamp(30px, 3.5vw, 42px);
-    line-height: 1.05;
-    letter-spacing: -0.015em;
-    color: var(--bone);
-    margin-top: 32px;
-  }
-  .tl-cover-title em { font-style: italic; color: var(--sand); font-weight: 300; }
-  .tl-cover-bottom { position: relative; z-index: 2; }
-  .tl-cover-author {
-    font-size: 13px;
-    color: var(--bone);
-    opacity: 0.8;
-    line-height: 1.5;
-  }
-  .tl-cover-author strong { font-weight: 500; display: block; }
-  .tl-cover-meta {
-    margin-top: 24px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(244,239,230,0.15);
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--sand);
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .tl-right .eyebrow { margin-bottom: 20px; }
-  .tl-right h2 {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: clamp(32px, 4vw, 46px);
-    line-height: 1.05;
-    letter-spacing: -0.015em;
-    color: var(--ink);
-    margin-bottom: 28px;
-  }
-  .tl-excerpt {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-style: italic;
-    font-size: 20px;
-    line-height: 1.5;
-    color: var(--forest);
-    margin-bottom: 28px;
-    padding-left: 24px;
-    border-left: 2px solid var(--burgundy);
-  }
-  .tl-right p {
-    font-size: 16px;
-    line-height: 1.65;
-    color: var(--mute);
-    margin-bottom: 20px;
-  }
-  .tl-actions { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; margin-top: 32px; }
-
   /* ============ Team Section ============ */
   .team {
     padding: clamp(80px, 10vw, 120px) 0;
@@ -1835,7 +1732,6 @@
       <li><a href="#active-raises">Current Raises</a></li>
       <li><a href="#scs">Space Capital Stack</a></li>
       <li><a href="#team">Team</a></li>
-      <li><a href="#tl">Thought Leadership</a></li>
       <li><a href="#media">Media</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -2079,8 +1975,8 @@
         <p class="scs-lede">
           Venture capital gets a space company off the ground. It is the wrong tool once the company has hardware on orbit producing revenue. The missing tools — <strong style="color: var(--bone); font-weight: 500;">debt, infrastructure, insurance</strong> — have matured every other capital-intensive industry before this one. Building them for space is what we do.
         </p>
-        <a href="#" class="scs-cta">
-          Explore the Stack
+        <a href="assets/Beyond-Venture-Capital-Space-Capital-Stack.pdf" target="_blank" rel="noopener" class="scs-cta">
+          Read the Paper
           <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
             <path d="M1 6h13m0 0L9 1m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
           </svg>
@@ -2121,61 +2017,6 @@
             </div>
             <div class="layer-vehicle">Alera Group<br>Partnership</div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Thought Leadership feature -->
-<section class="tl" id="tl">
-  <div class="wrap">
-    <div class="tl-grid">
-      <div class="tl-cover" aria-label="White paper cover">
-        <div class="tl-cover-top">
-          <div class="eyebrow">Ramsey Financial Group · White Paper</div>
-          <h3 class="tl-cover-title">
-            Beyond Venture:<br>Space Needs a <em>Complete</em><br>Capital Stack.
-          </h3>
-        </div>
-        <div class="tl-cover-bottom">
-          <div class="tl-cover-author">
-            <strong>Meagan Murphy Crawford</strong>
-            Principal, Ramsey Financial Group<br>
-            Co-Founder, SpaceFund
-          </div>
-          <div class="tl-cover-meta">
-            <span>2026 · 7 pages</span>
-            <span>PDF · Web</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="tl-right">
-        <div class="eyebrow">Thought Leadership</div>
-        <h2>The next space inflection point is financial — not technical.</h2>
-        <blockquote class="tl-excerpt">
-          "The success of the space economy will not be written by venture capital alone. It will be written by those who build the complete capital stack — the equity that sparks ideas, the credit that scales them, the infrastructure that grounds them, and the insurance that de-risks them."
-        </blockquote>
-        <p>
-          Florida's Space Coast launched 109 times in 2025. Revenue-generating assets are proliferating on orbit. But the financing architecture required to scale proven space companies into cash-flow-positive operators has not kept pace with the launch manifest.
-        </p>
-        <p>
-          In this white paper, Meagan Crawford — one of the leading voices in space venture — lays out the four-layer framework being assembled at Ramsey Financial Group, and what governments, investors, and founders need to build together now.
-        </p>
-        <div class="tl-actions">
-          <a href="assets/Beyond-Venture-Capital-Space-Capital-Stack.pdf" target="_blank" rel="noopener" class="btn-primary">
-            Read the Paper
-            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
-              <path d="M1 6h13m0 0L9 1m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
-            </svg>
-          </a>
-          <a href="assets/Beyond-Venture-Capital-Space-Capital-Stack.pdf" download="Beyond-Venture-Capital-Space-Capital-Stack.pdf" class="btn-link">
-            Download PDF
-            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
-              <path d="M7 1v8m0 0L3 5m4 4l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
-            </svg>
-          </a>
         </div>
       </div>
     </div>
@@ -2527,7 +2368,6 @@
           <li><a href="#active-raises">Current Raises</a></li>
           <li><a href="#scs">Space Capital Stack</a></li>
           <li><a href="#team">Team</a></li>
-          <li><a href="#tl">Thought Leadership</a></li>
           <li><a href="#media">Media</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
