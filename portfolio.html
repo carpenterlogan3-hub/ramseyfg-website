@@ -538,115 +538,6 @@
     z-index: 2;
   }
 
-  /* ============ Exits / Successful Exits section ============ */
-  .exits {
-    background: var(--forest-deep);
-    color: var(--bone);
-    padding: clamp(80px, 10vw, 120px) 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .exits::before {
-    content: '';
-    position: absolute;
-    left: -10%; top: -20%;
-    width: 600px; height: 600px;
-    border: 1px solid rgba(244,239,230,0.08);
-    transform: rotate(45deg);
-    pointer-events: none;
-  }
-  .exits .wrap { position: relative; z-index: 2; }
-  .exits-head {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 60px;
-    margin-bottom: 56px;
-    align-items: end;
-  }
-  @media (max-width: 900px) {
-    .exits-head { grid-template-columns: 1fr; gap: 24px; align-items: start; }
-  }
-  .exits-head-left .eyebrow { color: rgba(244,239,230,0.55); margin-bottom: 16px; }
-  .exits-head-left h2 {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: clamp(36px, 5vw, 56px);
-    line-height: 1.02;
-    letter-spacing: -0.015em;
-    color: var(--bone);
-  }
-  .exits-head-left h2 em { font-style: italic; color: var(--sand); font-weight: 300; }
-  .exits-head-right p {
-    font-size: 16px;
-    line-height: 1.65;
-    color: var(--bone);
-    opacity: 0.78;
-    max-width: 56ch;
-    padding-bottom: 8px;
-  }
-
-  .exits-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    background: rgba(244,239,230,0.1);
-    padding: 2px;
-  }
-  @media (max-width: 900px) { .exits-grid { grid-template-columns: 1fr; } }
-
-  .exit-card {
-    background: var(--forest-deep);
-    padding: 36px 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    transition: background 0.25s ease;
-    cursor: default;
-  }
-  .exit-card:hover { background: var(--forest); }
-  .exit-tag {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--burgundy);
-  }
-  .exit-name {
-    font-family: var(--serif);
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 1.2;
-    letter-spacing: -0.005em;
-    color: var(--bone);
-  }
-  .exit-desc {
-    font-size: 14px;
-    line-height: 1.6;
-    color: var(--bone);
-    opacity: 0.78;
-    flex: 1;
-  }
-  .exit-meta {
-    margin-top: 12px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(244,239,230,0.15);
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--sand);
-  }
-  .exits-foot-note {
-    margin-top: 40px;
-    font-size: 13px;
-    line-height: 1.7;
-    color: rgba(244,239,230,0.6);
-    max-width: 70ch;
-    font-style: italic;
-  }
-  .exits-foot-note strong { font-style: normal; color: var(--sand); font-weight: 500; }
-
   .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -658,8 +549,7 @@
 
   /* Card-as-link reset — preserve card visual styling when <article> becomes <a> */
   a.port-card,
-  a.platform-feature,
-  a.exit-card {
+  a.platform-feature {
     text-decoration: none;
     color: inherit;
   }
@@ -1790,38 +1680,6 @@
       </a>
 
     </div>
-  </div>
-</section>
-
-<!-- ================= SECTION III: SUCCESSFUL EXITS ================= -->
-<section class="exits">
-  <div class="wrap">
-    <div class="exits-head">
-      <div class="exits-head-left">
-        <div class="eyebrow">Section III.</div>
-        <h2>Successful <em>exits.</em></h2>
-      </div>
-      <div class="exits-head-right">
-        <p>The track record. Realized exits and major liquidity events from across the firm's history — the proof point investors look to first. Performance details available on request to qualified investors and counterparties.</p>
-      </div>
-    </div>
-
-    <div class="exits-grid">
-      <a class="exit-card" href="projects/deep-space.html">
-        <span class="exit-tag">Exit · Historical</span>
-        <h3 class="exit-name">Deep Space Industries</h3>
-        <p class="exit-desc">Pioneering asteroid-mining venture; an early position in the firm's space-economy track record, exited prior to the formal SCS thesis.</p>
-        <div class="exit-meta">
-          <span>Realized</span>
-          <span>Space Fund era</span>
-        </div>
-      </a>
-
-    </div>
-
-    <p class="exits-foot-note">
-      <strong>A note on the full track record.</strong> The firm's 30-year history spans dozens of additional realized positions across life sciences, energy, and Houston-area real estate, anchored by the Fairway / Liprostin / CardioNexus lineage that informs the firm's current med-tech ambitions. Full track-record conversations are available to qualified investors and counterparties on request.
-    </p>
   </div>
 </section>
 
