@@ -856,7 +856,9 @@
     display: block;
     z-index: 2;
   }
-  .track-park .track-image img {
+  /* Photo cards (skyline, exterior) override default contain → cover */
+  .track-park .track-image img,
+  .track-gulf .track-image img {
     object-fit: cover;
     padding: 0;
   }
@@ -874,10 +876,16 @@
     background: linear-gradient(45deg, transparent 48%, rgba(244,239,230,0.14) 49%, rgba(244,239,230,0.14) 51%, transparent 52%),
                 linear-gradient(-45deg, transparent 48%, rgba(244,239,230,0.10) 49%, rgba(244,239,230,0.10) 51%, transparent 52%);
   }
-  .track-ambrose .track-image    { background: linear-gradient(140deg, #5A1F1C 0%, #2A1514 100%); }
-  .track-ambrose .track-image::after {
+  .track-gulf .track-image      { background: linear-gradient(145deg, #3A4A3E 0%, #1B3A2E 100%); }
+  .track-gulf .track-image::after {
     content: ''; position: absolute; inset: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(244,239,230,0.18) 0%, transparent 50%);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(13,38,32,0.45) 100%);
+  }
+  .track-deep-space .track-image { background: linear-gradient(180deg, #0D2620 0%, #1B3A2E 60%, #2A5043 100%); }
+  .track-deep-space .track-image::after {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(244,239,230,0.20) 0%, transparent 25%),
+                radial-gradient(circle at 70% 70%, rgba(244,239,230,0.12) 0%, transparent 30%);
   }
 
   .track-body {
