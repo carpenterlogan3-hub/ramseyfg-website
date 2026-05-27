@@ -858,6 +858,18 @@
     border-right: 1px solid var(--rule);
     border-bottom: 0;
   }
+  /* Platform cards carry full-frame photos (e.g. Monolith) rather than logos,
+     so let the image fill its container instead of letterboxing — otherwise a
+     16:9 source in a tall card renders as a tiny centered thumbnail. */
+  .port-card.platform .port-image img {
+    object-fit: cover;
+    object-position: center;
+    padding: 0;
+  }
+  /* The decorative ::after grid overlay was designed to peek through the
+     contain letterboxing on .port-scs; with cover-fitting the image now
+     fills the container, so suppress the overlay to keep the photo clean. */
+  .port-card.platform .port-image::after { display: none; }
   .port-card.platform .port-body {
     width: 55%;
     padding: 40px 36px;
