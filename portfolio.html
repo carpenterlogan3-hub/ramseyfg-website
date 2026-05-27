@@ -638,13 +638,9 @@
                 radial-gradient(circle at 70% 30%, rgba(244,239,230,0.12), transparent 30%);
   }
 
-  .port-axe .port-image  { background: linear-gradient(135deg, #4A6B5C 0%, #2A4738 100%); }
-  .port-axe .port-image::after {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(circle at 30% 40%, rgba(244,239,230,0.15) 0%, transparent 30%),
-                radial-gradient(circle at 70% 70%, rgba(244,239,230,0.1) 0%, transparent 40%);
-  }
+  /* AXE H2O — dark-ink wordmark on transparent PNG, so flip to a light bone gradient
+     with no decorative overlay (matches the Karman / SpacePort Fund treatment). */
+  .port-axe .port-image { background: linear-gradient(135deg, var(--bone) 0%, var(--bone-soft) 100%); }
 
   /* Karman Line / SpacePort Fund — dark-ink logo on transparent PNG, so flip to a light bone gradient
      with no decorative overlay (the bone-on-dark grid would be invisible on a light backdrop). */
@@ -1424,8 +1420,8 @@
       <!-- Card: AXE H2O -->
       <a class="port-card port-axe" data-sector="water" href="projects/axe-h2o.html">
         <div class="port-image">
-          <img src="assets/portfolio/Axe_H2O.jpg"
-               alt="AXE H2O — Gulf seawater desalination plant"
+          <img src="assets/portfolio/axe-h2o-logo.png"
+               alt="AXE·H2O"
                loading="lazy" />
         </div>
         <div class="port-body">
