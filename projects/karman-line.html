@@ -254,6 +254,17 @@
     max-width: 18ch;
   }
 
+  /* Company wordmark / logo lockup above the h1. Transparent PNG sits directly on the
+     bone page-header background; no surrounding box. Width scales down on small screens. */
+  .page-logo {
+    display: block;
+    max-width: 360px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 28px;
+  }
+  @media (max-width: 600px) { .page-logo { max-width: 260px; } }
+
   .meta-row {
     display: flex;
     flex-wrap: wrap;
@@ -657,6 +668,7 @@
     <div class="page-eyebrow">
       <span class="eyebrow ">Active Projects Seeking Funding</span>
     </div>
+    <img class="page-logo" src="../assets/portfolio/spaceport-fund-logo.png" alt="SpacePort Fund — a Karman Line Company" />
     <h1>Karman Line / SpacePort Fund</h1>
     <div class="meta-row">
       <div class="meta-item">
