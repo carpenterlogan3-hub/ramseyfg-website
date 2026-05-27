@@ -1205,9 +1205,23 @@
     line-height: 1.5;
   }
 
+  /* Logo variant for layers whose vehicle is a branded asset rather than text.
+     Sits inside .layer-vehicle on a small bone-toned backdrop so a dark-ink
+     transparent PNG reads against the panel's forest-deep background. */
+  .layer-vehicle-logo {
+    display: block;
+    max-width: 130px;
+    width: auto;
+    height: auto;
+    background: var(--bone);
+    padding: 6px 10px;
+    margin-left: auto;
+  }
+
   @media (max-width: 600px) {
     .layer { grid-template-columns: 40px 1fr; gap: 16px; padding: 22px; }
     .layer-vehicle { grid-column: 1 / -1; padding-left: 0; border-left: 0; border-top: 1px solid rgba(244,239,230,0.12); padding-top: 14px; margin-top: 6px; text-align: left; }
+    .layer-vehicle-logo { margin-left: 0; margin-right: auto; }
   }
 
   /* ============ Team Section ============ */
@@ -2048,7 +2062,9 @@
               <h3>Infrastructure &amp; Real Estate</h3>
               <p>The ground. Workforce housing, labs, and spaceport-adjacent real estate.</p>
             </div>
-            <div class="layer-vehicle">SpacePort Fund<br>Karman Line</div>
+            <div class="layer-vehicle">
+              <img class="layer-vehicle-logo" src="assets/portfolio/spaceport-fund-logo.png" alt="SpacePort Fund — a Karman Line Company" />
+            </div>
           </div>
           <div class="layer accent">
             <div class="layer-num">04</div>
@@ -2215,7 +2231,7 @@
           </div>
           <h3 class="track-name">DetectaChem</h3>
           <p class="track-summary">
-            Portable chemical and explosive detection technology for defense, law enforcement, and security applications.
+            DetectaChem is a Texas-based manufacturer of handheld narcotic, explosive, and chemical-identification technology used by safety and security operators around the world.
           </p>
           <a href="projects/detectachem.html" class="track-more">
             View project

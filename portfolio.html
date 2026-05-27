@@ -646,14 +646,9 @@
                 radial-gradient(circle at 70% 70%, rgba(244,239,230,0.1) 0%, transparent 40%);
   }
 
-  .port-karman .port-image { background: linear-gradient(180deg, #1B3A2E 0%, #0D2620 100%); }
-  .port-karman .port-image::after {
-    content: '';
-    position: absolute; inset: 0;
-    background:
-      linear-gradient(to top, rgba(244,239,230,0.08) 1px, transparent 1px) 0 0 / 100% 24px,
-      linear-gradient(to right, rgba(244,239,230,0.05) 1px, transparent 1px) 0 0 / 24px 100%;
-  }
+  /* Karman Line / SpacePort Fund — dark-ink logo on transparent PNG, so flip to a light bone gradient
+     with no decorative overlay (the bone-on-dark grid would be invisible on a light backdrop). */
+  .port-karman .port-image { background: linear-gradient(180deg, var(--bone) 0%, var(--bone-soft) 100%); }
 
   .port-eden .port-image { background: linear-gradient(120deg, #2F4F3F 0%, #1B3A2E 100%); }
   .port-eden .port-image::after {
@@ -1227,10 +1222,11 @@
       </a>
 
       <!-- Card: Karman Line / Spaceport Fund — relocated from Section II per refresh -->
-      <!-- TODO: Add Karman Line / Spaceport Fund image to assets/portfolio/ when available. Gradient fallback used in the interim. -->
       <a class="port-card port-karman" href="projects/karman-line.html">
-        <div class="port-image" role="img" aria-label="Karman Line spaceport development">
-          <div class="placeholder"><span>Image pending</span></div>
+        <div class="port-image">
+          <img src="assets/portfolio/spaceport-fund-logo.png"
+               alt="SpacePort Fund — a Karman Line Company"
+               loading="lazy" />
         </div>
         <div class="port-body">
           <div class="port-meta">
@@ -1349,7 +1345,6 @@
       </a>
 
       <!-- Card: DetectaChem -->
-      <!-- TODO: Replace placeholder copy with Bart's final DetectaChem description when received. -->
       <a class="port-card port-detectachem" data-sector="medtech" href="projects/detectachem.html">
         <div class="port-image">
           <img src="assets/portfolio/DetectaChem.jpg"
@@ -1362,7 +1357,7 @@
           </div>
           <h3 class="port-name">DetectaChem</h3>
           <p class="port-summary">
-            Portable chemical and explosive detection technology for defense, law enforcement, and security applications.
+            DetectaChem is a Texas, USA-based manufacturer of innovative, rapidly deployable, handheld, intelligent and easy-to-operate narcotic and explosive detection, as well as chemical identification solutions used around the world. DetectaChem's products provide critical information that enables threat detection and identification for safety and security operators everywhere. All products are proudly manufactured and assembled in the USA.
           </p>
           <span class="port-more">
             View project
