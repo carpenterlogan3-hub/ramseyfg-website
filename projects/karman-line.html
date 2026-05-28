@@ -265,6 +265,18 @@
   }
   @media (max-width: 600px) { .page-logo { max-width: 260px; } }
 
+  /* Inline action links (external references, etc.) — green + underlined,
+     mirrors the homepage .link-action utility. Defined inline here because
+     project pages are self-contained (no shared stylesheet). */
+  .link-action {
+    color: var(--forest);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+  .link-action:hover { color: var(--forest-tint); }
+
   .meta-row {
     display: flex;
     flex-wrap: wrap;
