@@ -157,3 +157,28 @@ are recoverable via `git` history regardless of the comment markers.
 - **Restore the TBD placeholder:** delete the `ARCHIVED 2026-06 ...`,
   `ARCHIVED-BEGIN: raise-tbd`, and `ARCHIVED-END: raise-tbd -->` marker lines in
   `index.html`, and remove/relocate the NovaSpark raise card.
+
+---
+
+## 2026-06 — Presentation cleanup pass
+
+### Placeholder marker convention (normalized)
+
+Visitor-facing pages must never render raw template tokens (`{{…}}`, `[TBC]`).
+Instead, "At a glance" rows that are still awaiting a value use a friendly display
+plus **one machine-readable marker**: a `data-pending` attribute on the `.row` div.
+
+| `data-pending` value | Meaning | Replaces the old token | Displayed text |
+|---|---|---|---|
+| `megan` | awaiting Megan | `{{PENDING — MEGAN}}`, `[TBC]` | "To be confirmed" |
+| `confirm-megan` | real value shown, Megan to confirm | `… {{CONFIRM}}` suffix | the bare value (e.g. "Space Fund", "Bryan Tallebi") |
+| `ramsey-writeup` | awaiting Ramsey's write-up | `{{PENDING — RAMSEY}}` | "To be confirmed" |
+
+**To fill a pending value:** replace the displayed text with the real value and
+**remove the `data-pending` attribute** from that row. To find everything still
+outstanding, grep the repo for `data-pending`.
+
+### "Page in development" pill
+- The `pill-status` "Page in development" badge was commented out on the 9 populated
+  project pages (restore by uncommenting). It was **left in place** on the two genuine
+  stubs whose body copy still says content is coming later: `tbd.html`, `space-fund.html`.
