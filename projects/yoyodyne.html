@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Eden Grow Systems — Ramsey Financial Group</title>
+<title>Yo-Yo Dyne — Ramsey Financial Group</title>
 <link rel="icon" type="image/png" href="../assets/Royal_Logo.png" />
-<meta name="description" content="Eden Grow Systems — drill-down stub. Page in development." />
+<meta name="description" content="Yo-Yo Dyne — an aerospace company developing two flagship products: AeroShade, a tethered drone-swarm sky canopy, and Escape Pod, a rapid stratospheric emergency escape system. A Ramsey Financial Group high-value partnership." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -253,6 +253,39 @@
     margin-bottom: 36px;
     max-width: 18ch;
   }
+
+  /* Company wordmark / logo lockup above the h1. Transparent PNG sits directly on the
+     bone page-header background; no surrounding box. Width scales down on small screens. */
+  .page-logo {
+    display: block;
+    max-width: 360px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 28px;
+  }
+  @media (max-width: 600px) { .page-logo { max-width: 260px; } }
+
+  /* Per-product logo (AeroShade, Escape Pod) above each product eyebrow. */
+  .product-logo {
+    display: block;
+    height: 84px;
+    width: auto;
+    max-width: 100%;
+    margin-bottom: 18px;
+    border-radius: 8px;
+  }
+
+  /* Inline action links (external references, etc.) — green + underlined,
+     mirrors the homepage .link-action utility. Defined inline here because
+     project pages are self-contained (no shared stylesheet). */
+  .link-action {
+    color: var(--forest);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+  .link-action:hover { color: var(--forest-tint); }
 
   .meta-row {
     display: flex;
@@ -646,29 +679,28 @@
 
 <header class="page-header">
   <div class="wrap">
-    <a href="../index.html#active-raises" class="back-link">Back to Active Projects Seeking Funding</a>
+    <a href="../index.html#track-record" class="back-link">Back to High Value Partnerships</a>
     <div class="breadcrumb">
       <a href="../index.html">Home</a>
       <span class="sep">/</span>
-      <a href="../index.html#active-raises">Active Projects Seeking Funding</a>
+      <a href="../index.html#track-record">High Value Partnerships</a>
       <span class="sep">/</span>
-      <span class="current">Eden Grow Systems</span>
+      <span class="current">Yo-Yo Dyne</span>
     </div>
     <div class="page-eyebrow">
-      <span class="eyebrow ">Active Projects Seeking Funding</span>
+      <span class="eyebrow ">High Value Partnerships</span>
     </div>
-    <h1>Eden Grow Systems</h1>
+    <!-- 2026-06: Yo-Yo Dyne logo added (assets/portfolio/yoyodyne-logo.jpg). -->
+    <img class="page-logo" src="../assets/portfolio/yoyodyne-logo.jpg" alt="Yo-Yo Dyne" />
+    <h1>Yo-Yo Dyne</h1>
     <div class="meta-row">
       <div class="meta-item">
         <span class="meta-label">Sector</span>
-        <span class="meta-val">AgTech · CRE</span>
+        <span class="meta-val">Aerospace</span>
       </div>
       <div class="meta-item">
-        <span class="meta-label">Stage</span>
-        <span class="meta-val">Operating</span>
-      </div>
-      <div class="meta-item">
-        <span class="pill-status">Page in development</span>
+        <span class="meta-label">Structure</span>
+        <span class="meta-val">Two products · Seed</span>
       </div>
     </div>
   </div>
@@ -678,22 +710,84 @@
   <div class="wrap">
     <div class="body-grid">
       <div class="body-left">
-        <h2>About this <em>project.</em></h2>
-        <p class="lead">Up to 70% of commercial real estate sits empty. We redevelop defunct controlled-environment space into year-round agricultural production yielding &gt;$15/sq ft for building owners.</p>
-        <p>Up to 70% of commercial real estate currently sits empty. This defunct controlled environment is ripe for redevelopment into controlled environment agriculture. Basil is a year-round cash crop in high demand in most US markets.</p>
-        <p>Using only basil as the baseline, 20,000 sq ft of space yields 16,000 lbs of basil per week at a market price of $14/lb — producing up to $220,000 in weekly revenue. After expenses and profit share to Eden Grow Systems, this results in &gt;$15/sq ft in profit for building owners, for space that is currently earning nothing.</p>
-        <p>Seeking commercial real estate partners who can commit $500,000 in capitalization and 20,000 sq ft of vacant space in exchange for 60% of the profit.</p>
+        <h2>The future of <em>aerospace.</em></h2>
+        <p class="lead">Yo-Yo Dyne is an aerospace company building novel airborne platforms that do what conventional aircraft and ground infrastructure can't.</p>
+        <p>Two flagship products anchor the company. <strong>AeroShade</strong> puts shade and weather protection in the sky — a tethered drone-swarm canopy that covers a crowd with zero ground footprint. <strong>Escape Pod</strong> lifts people clear of danger in minutes — a rapid stratospheric escape capsule for families, executives, and security details. Both are in active seed raises and open to qualified co-investment.</p>
       </div>
       <aside class="body-right">
         <div class="glance">
           <h3>At a glance</h3>
           <dl>
-            <div class="row"><dt>Sector</dt><dd>AgTech · CRE</dd></div>
-            <div class="row"><dt>Stage</dt><dd>Operating</dd></div>
-            <!-- T6 2026-06: At-a-Glance retained (Bart approved). Vehicle pending; Lead Principal to confirm. -->
-            <div class="row"><dt>Vehicle</dt><dd><span class="tbc">{{PENDING — MEGAN}}</span></dd></div>
-            <div class="row"><dt>Lead Principal</dt><dd>Space Fund <span class="tbc">{{CONFIRM}}</span></dd></div>
-            <div class="row"><dt>Materials</dt><dd><a href="mailto:bart@ramseyfg.com?subject=Ramsey%20RFG%20%E2%80%94%20Request%20Deck%3A%20Eden%20Grow%20Systems" class="tbc" style="text-decoration: underline; cursor: pointer;">Request Deck</a></dd></div>
+            <div class="row"><dt>Sector</dt><dd>Aerospace</dd></div>
+            <div class="row"><dt>Products</dt><dd>AeroShade · Escape Pod</dd></div>
+            <div class="row"><dt>Stage</dt><dd>Seed (both)</dd></div>
+            <div class="row"><dt>Combined Ask</dt><dd>$9.5M</dd></div>
+            <div class="row"><dt>Vehicle</dt><dd>[TBC]</dd></div>
+            <div class="row"><dt>Lead Principal</dt><dd>[TBC]</dd></div>
+          </dl>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT 01 — AEROSHADE ============ -->
+<section class="body-section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="body-grid">
+      <div class="body-left">
+        <!-- 2026-06: AeroShade logo added (assets/portfolio/aeroshade-logo.jpg). -->
+        <img class="product-logo" src="../assets/portfolio/aeroshade-logo.jpg" alt="AeroShade Dynamics logo" loading="lazy" />
+        <span class="eyebrow" style="display:block; margin-bottom:14px;">Product 01 · Event Infrastructure</span>
+        <h2>AeroShade — <em>the sky's new canopy.</em></h2>
+        <p class="lead">AeroShade's Nimbus Canopy is the first tethered drone-swarm shade system: a single seamless 25&nbsp;m × 25&nbsp;m fabric ceiling flown at roughly 100&nbsp;feet by a silent 24-drone perimeter swarm.</p>
+        <p>It shades about 600 people with zero ground footprint inside the event area, deploys or retracts in 30 minutes, blocks 99% of UV and rain, and runs indefinitely on tethered power — replacing tents, poles, and rigging with a futuristic overhead experience for festivals, resorts, corporate activations, and disaster-relief operators. The global temporary-event-infrastructure market exceeds <strong>$12B</strong> and is growing 8% a year; each system reaches payback after roughly 12–13 deployments at gross margins near 80%.</p>
+      </div>
+      <aside class="body-right">
+        <div class="glance">
+          <h3>At a glance</h3>
+          <dl>
+            <div class="row"><dt>Sector</dt><dd>Aerospace · Events</dd></div>
+            <div class="row"><dt>Stage</dt><dd>Seed</dd></div>
+            <div class="row"><dt>Raise</dt><dd>$4.5M</dd></div>
+            <div class="row"><dt>Coverage</dt><dd>~600 people · 25×25&nbsp;m</dd></div>
+            <div class="row"><dt>Deploy Time</dt><dd>30 minutes</dd></div>
+            <div class="row"><dt>Market</dt><dd>$12B+ · 8% CAGR</dd></div>
+            <div class="row"><dt>Vehicle</dt><dd>[TBC]</dd></div>
+            <div class="row"><dt>Lead Principal</dt><dd>[TBC]</dd></div>
+            <div class="row"><dt>Materials</dt><dd><a href="mailto:bart@ramseyfg.com?subject=Ramsey%20RFG%20%E2%80%94%20Request%20Deck%3A%20AeroShade" class="tbc" style="text-decoration: underline; cursor: pointer;">Request Deck</a></dd></div>
+          </dl>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT 02 — ESCAPE POD ============ -->
+<section class="body-section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="body-grid">
+      <div class="body-left">
+        <!-- 2026-06: Escape Pod logo added (assets/portfolio/escape-pod-logo.png; cropped from the supplied doc page to isolate the logo mark). -->
+        <img class="product-logo" src="../assets/portfolio/escape-pod-logo.png" alt="Escape Pod logo" loading="lazy" />
+        <span class="eyebrow" style="display:block; margin-bottom:14px;">Product 02 · Emergency Aerospace</span>
+        <h2>Escape Pod — <em>rise above any threat.</em></h2>
+        <p class="lead">Escape Pod&nbsp;v1.0 is a rapid stratospheric escape system for families and VIPs: a pressurized, EMP-hardened, radar-stealth capsule that carries 6–8 people to a 50,000-foot sanctuary in under 30 minutes.</p>
+        <p>When wildfires, floods, storms, or a ground-level security event make staying put dangerous — and bunkers, life rafts, and aircraft are too slow or inaccessible — Escape Pod puts occupants 28–33 minutes above any ground threat. Built from carbon-fiber composite with onboard oxygen and stealth features including radar-absorbent materials and infrared suppression, it targets a <strong>$150B+</strong> disaster-management market growing 15–20% a year across family, corporate, political, and military segments.</p>
+      </div>
+      <aside class="body-right">
+        <div class="glance">
+          <h3>At a glance</h3>
+          <dl>
+            <div class="row"><dt>Sector</dt><dd>Aerospace · Safety</dd></div>
+            <div class="row"><dt>Stage</dt><dd>Seed</dd></div>
+            <div class="row"><dt>Raise</dt><dd>$5M</dd></div>
+            <div class="row"><dt>Capacity</dt><dd>6–8 occupants</dd></div>
+            <div class="row"><dt>Performance</dt><dd>50,000&nbsp;ft · ~30 min</dd></div>
+            <div class="row"><dt>Market</dt><dd>$150B+ · 15–20%/yr</dd></div>
+            <div class="row"><dt>Vehicle</dt><dd>[TBC]</dd></div>
+            <div class="row"><dt>Lead Principal</dt><dd>[TBC]</dd></div>
+            <div class="row"><dt>Materials</dt><dd><a href="mailto:bart@ramseyfg.com?subject=Ramsey%20RFG%20%E2%80%94%20Request%20Deck%3A%20Escape%20Pod" class="tbc" style="text-decoration: underline; cursor: pointer;">Request Deck</a></dd></div>
           </dl>
         </div>
       </aside>

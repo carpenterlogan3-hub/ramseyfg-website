@@ -1302,7 +1302,8 @@
       <h2>Active <em>projects.</em></h2>
       <p>Current positions where we are actively involved in strategy, capital formation, or operational governance. Most are open to qualified co-investors on a case-by-case basis. Filter by sector below.</p>
     </div>
-    <div class="section-count">12 Projects</div>
+    <!-- T1/T8 2026-06: count reflects VISIBLE cards (DetectaChem + Park Plaza archived). -->
+    <div class="section-count">10 Projects</div>
   </div>
 </div>
 
@@ -1313,9 +1314,9 @@
     <div class="sector-filter" role="region" aria-label="Filter projects by sector">
       <div class="sector-filter-label">Filter by sector</div>
       <div class="sector-filter-row">
-        <button type="button" class="sector-btn active" data-sector="all">All <span class="count">12</span></button>
-        <button type="button" class="sector-btn" data-sector="realestate">Real Estate <span class="count">02</span></button>
-        <button type="button" class="sector-btn" data-sector="medtech">Med-Tech <span class="count">02</span></button>
+        <button type="button" class="sector-btn active" data-sector="all">All <span class="count">10</span></button>
+        <button type="button" class="sector-btn" data-sector="realestate">Real Estate <span class="count">01</span></button>
+        <button type="button" class="sector-btn" data-sector="medtech">Med-Tech <span class="count">01</span></button>
         <button type="button" class="sector-btn" data-sector="agtech">AgTech <span class="count">02</span></button>
         <button type="button" class="sector-btn" data-sector="water">Water · Infrastructure <span class="count">01</span></button>
         <button type="button" class="sector-btn" data-sector="ai">AI · EdTech <span class="count">01</span></button>
@@ -1326,8 +1327,26 @@
     </div>
     <div class="portfolio-grid">
 
-      <!-- Card: Park Plaza Hospital -->
-      <a class="port-card port-park" data-sector="realestate" href="projects/park-plaza.html">
+      <!-- =================================================================
+           T7/T11 2026-06 — INERT card metadata (no JS reads these yet).
+           Each active project card carries greppable, opt-in attributes:
+             data-featured="pending"      front-page featured selection (T11)
+             data-active-raise="pending"  active-raise vs portfolio-only (T7)
+           Values are "pending" because the designations await Megan. They are
+           metadata only — the site stays fully static; nothing consumes them.
+
+           TODO (Holiday): once Megan confirms the featured six, implement the
+           landing-page selection logic. Cap featured at 6 items (flip the chosen
+           cards to data-featured="true"); the rest fall through to this full
+           portfolio page. Do NOT hard-code the six — drive it off data-featured.
+
+           Archived cards (data-archived="true") are comment-wrapped above/below
+           and are NOT in the DOM, so they are excluded from filter counts.
+           ================================================================= -->
+
+      <!-- ARCHIVED 2026-06 (client request — hide Park Plaza Hospital from full portfolio; data + assets retained, restore by uncommenting; see ARCHIVE_LOG.md) -->
+      <!-- ARCHIVED-BEGIN: park-plaza
+      <a class="port-card port-park" data-sector="realestate" data-archived="true" href="projects/park-plaza.html">
         <div class="port-image">
           <img src="assets/portfolio/Park_Plaza_Hospital.jpg"
                alt="Park Plaza Hospital exterior"
@@ -1338,8 +1357,7 @@
             <span class="port-tag">Healthcare · Real Assets</span>
           </div>
           <h3 class="port-name">Park Plaza Hospital</h3>
-          <!-- TODO: Replace with Bart's final Park Plaza copy when received.
-               Current copy is Logan's attempted draft — needs review. -->
+          [ARCHIVED-NOTE: TODO — Replace with Bart's final Park Plaza copy when received. Current copy is Logan's attempted draft — needs review.]
           <p class="port-summary">
             Park Plaza Hospital opened in Houston's Museum District in 1975 as one of the largest physician-owned hospitals in the nation, with Leo Womack serving as a founding board member and Secretary-Treasurer alongside the hospital's founding physicians. Over the next four decades the hospital grew into a 376-bed flagship before joining HCA Houston Healthcare in 2017.
           </p>
@@ -1351,9 +1369,11 @@
           </span>
         </div>
       </a>
+      ARCHIVED-END: park-plaza -->
 
-      <!-- Card: DetectaChem -->
-      <a class="port-card port-detectachem" data-sector="medtech" href="projects/detectachem.html">
+      <!-- ARCHIVED 2026-06 (client request — hide DetectaChem from full portfolio; data + assets retained, restore by uncommenting; see ARCHIVE_LOG.md) -->
+      <!-- ARCHIVED-BEGIN: detectachem
+      <a class="port-card port-detectachem" data-sector="medtech" data-archived="true" href="projects/detectachem.html">
         <div class="port-image">
           <img src="assets/portfolio/DetectaChem.jpg"
                alt="DetectaChem — portable chemical and explosive detection"
@@ -1375,9 +1395,10 @@
           </span>
         </div>
       </a>
+      ARCHIVED-END: detectachem -->
 
       <!-- Card: Ambrose Cell Therapy -->
-      <a class="port-card port-ambrose" data-sector="medtech" href="projects/ambrose.html">
+      <a class="port-card port-ambrose" data-sector="medtech" data-featured="pending" data-active-raise="pending" href="projects/ambrose.html">
         <div class="port-image">
           <img src="assets/portfolio/Ambrose_Cell_Therapy.jpg"
                alt="Ambrose Cell Therapy logo"
@@ -1402,7 +1423,7 @@
       </a>
 
       <!-- Card: Gulf Equities — relocated from Section I per refresh -->
-      <a class="port-card port-gulf" data-sector="realestate" href="projects/gulf-equities.html">
+      <a class="port-card port-gulf" data-sector="realestate" data-featured="pending" data-active-raise="pending" href="projects/gulf-equities.html">
         <div class="port-image">
           <img src="assets/portfolio/Gulf_Equities.jpg"
                alt="Gulf Equities — Houston-area real estate portfolio"
@@ -1430,7 +1451,7 @@
       </a>
 
       <!-- Card: AXE H2O -->
-      <a class="port-card port-axe" data-sector="water" href="projects/axe-h2o.html">
+      <a class="port-card port-axe" data-sector="water" data-featured="pending" data-active-raise="pending" href="projects/axe-h2o.html">
         <div class="port-image">
           <img src="assets/portfolio/axe-h2o-logo.png"
                alt="AXE·H2O"
@@ -1458,7 +1479,7 @@
       </a>
 
       <!-- Card: Eden Grow Systems -->
-      <a class="port-card port-eden" data-sector="agtech" href="projects/eden-grow.html">
+      <a class="port-card port-eden" data-sector="agtech" data-featured="pending" data-active-raise="pending" href="projects/eden-grow.html">
         <div class="port-image">
           <img src="assets/portfolio/Eden_Grow_Systems.png"
                alt="Eden Grow Systems logo"
@@ -1486,7 +1507,7 @@
       </a>
 
       <!-- Card: Ahura AI -->
-      <a class="port-card port-ahura" data-sector="ai" href="projects/ahura-ai.html">
+      <a class="port-card port-ahura" data-sector="ai" data-featured="pending" data-active-raise="pending" href="projects/ahura-ai.html">
         <div class="port-image">
           <img src="assets/portfolio/Ahura_AI.png"
                alt="Ahura AI logo"
@@ -1513,21 +1534,23 @@
         </div>
       </a>
 
-      <!-- Card: Yo-Yo Dyne Industries (Escape Pod) -->
-      <!-- TODO: Add Escape Pod image to assets/portfolio/ (Bart's invention) and
-           swap into <img>. Placeholder gradient via .port-yoyodyne CSS is in use. -->
-      <a class="port-card port-yoyodyne" data-sector="aerospace" href="#" data-todo="yoyodyne-image-and-link">
-        <div class="port-image" role="img" aria-label="Yo-Yo Dyne Industries — Escape Pod">
-          <div class="placeholder"><span>Image pending</span></div>
+      <!-- Card: Yo-Yo Dyne (AeroShade + Escape Pod) -->
+      <!-- T5b 2026-06: links to the dedicated detail page projects/yoyodyne.html.
+           2026-06: real Yo-Yo Dyne logo added. -->
+      <a class="port-card port-yoyodyne" data-sector="aerospace" data-featured="pending" data-active-raise="pending" href="projects/yoyodyne.html">
+        <div class="port-image">
+          <img src="assets/portfolio/yoyodyne-logo.jpg"
+               alt="Yo-Yo Dyne — AeroShade sky canopy & Escape Pod escape system"
+               loading="lazy" />
         </div>
         <div class="port-body">
           <div class="port-meta">
-            <span class="port-tag">Aerospace · Defense</span>
-            <span class="port-stage">In Development</span>
+            <span class="port-tag">Aerospace · Two Products</span>
+            <span class="port-stage">$9.5M Seed</span>
           </div>
-          <h3 class="port-name">Yo-Yo Dyne Industries</h3>
+          <h3 class="port-name">Yo-Yo Dyne</h3>
           <p class="port-summary">
-            Yo-Yo Dyne Industries is an aerospace and defense company whose first product is the Escape Pod.
+            The future of aerospace — AeroShade, a tethered drone-swarm sky canopy, and Escape Pod, a rapid stratospheric emergency escape system.
           </p>
           <span class="port-more">
             View project
@@ -1539,7 +1562,11 @@
       </a>
 
       <!-- Card: NovaSpark Energy -->
-      <a class="port-card port-novaspark" data-sector="energy" href="projects/novaspark-energy.html">
+      <!-- T7 2026-06: NovaSpark is a CANDIDATE for the front-page 6th active-raise slot.
+           We are raising for it, but placement is {{PENDING — MEGAN}} — do NOT promote
+           it live. When she confirms, flip data-active-raise to "true" here and surface
+           it in index.html's #active-raises grid (currently a "TBD" placeholder slot). -->
+      <a class="port-card port-novaspark" data-sector="energy" data-featured="pending" data-active-raise="pending" data-raise-candidate="true" href="projects/novaspark-energy.html">
         <div class="port-image">
           <img src="assets/portfolio/Novaspark.png"
                alt="NovaSpark Energy logo"
@@ -1567,7 +1594,9 @@
       </a>
 
       <!-- Card: Iran Reconstruction Fund -->
-      <a class="port-card port-iran" data-sector="international" href="projects/iran-reconstruction.html">
+      <!-- T10 2026-06: Iran Reconstruction Fund — KEEP. Status {{PENDING — MEGAN}}.
+           Low priority per Bart, but do NOT remove or change status without Megan's call. -->
+      <a class="port-card port-iran" data-sector="international" data-featured="pending" data-active-raise="pending" href="projects/iran-reconstruction.html">
         <div class="port-image">
           <img src="assets/portfolio/Iran_Reconstruction_Fund.jpg"
                alt="Iran Reconstruction Fund"
@@ -1597,7 +1626,7 @@
       <!-- Card: Off-Earth Data — Meagan's vested-equity portfolio company -->
       <!-- TODO: confirm sector-filter assignment with Logan; currently "aerospace" (placeholder) — no
            "space-intelligence" sector filter exists yet. Visible tag below reads "Space · Intelligence". -->
-      <a class="port-card port-offearth" data-sector="aerospace" href="projects/off-earth-data.html">
+      <a class="port-card port-offearth" data-sector="aerospace" data-featured="pending" data-active-raise="pending" href="projects/off-earth-data.html">
         <div class="port-image" data-todo="off-earth-data-card-image" role="img" aria-label="Off-Earth Data card thumbnail (pending)">
           <div class="placeholder"><span>Image pending</span></div>
         </div>
@@ -1620,7 +1649,7 @@
       </a>
 
       <!-- Card: Celestial Cellars -->
-      <a class="port-card port-celestial" data-sector="agtech" href="projects/celestial-cellars.html">
+      <a class="port-card port-celestial" data-sector="agtech" data-featured="pending" data-active-raise="pending" href="projects/celestial-cellars.html">
         <div class="port-image">
           <img src="assets/portfolio/Celestial_Cellars.jpg"
                alt="Celestial Cellars — NASA-spinoff indoor wine cultivation"

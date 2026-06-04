@@ -970,6 +970,10 @@
   .track-card:hover .track-more svg { transform: translateX(4px); }
   .track-more svg { transition: transform 0.25s ease; }
 
+  /* Yo-Yo Dyne uses the standard .track-card layout (links to projects/yoyodyne.html);
+     the dedicated feature-panel CSS was removed in T5b — the full AeroShade + Escape Pod
+     write-up now lives on the detail page, not inline on the homepage. */
+
   .track-foot {
     margin-top: 48px;
     display: flex;
@@ -2004,7 +2008,12 @@
       </article>
 
       <!-- Raise 6: TBD — placeholder pending Bart Sr. / Bart Jr. / Megan alignment -->
-      <a href="projects/tbd.html" class="raise-card raise-tbd" data-project="tbd" style="text-decoration:none; color:inherit;">
+      <!-- T7 2026-06: NovaSpark Energy (projects/novaspark-energy.html) is the leading
+           CANDIDATE to fill this 6th active-raise slot. Placement is {{PENDING — MEGAN}} —
+           do NOT promote live yet. To toggle on once confirmed: replace this TBD card
+           with a NovaSpark raise-card and flip data-active-raise to "true" on the
+           NovaSpark card in portfolio.html. -->
+      <a href="projects/tbd.html" class="raise-card raise-tbd" data-project="tbd" data-raise-candidate="novaspark" style="text-decoration:none; color:inherit;">
         <div class="raise-meta">
           <span class="raise-tag">TBD</span>
           <span class="raise-stage">Pending</span>
@@ -2180,20 +2189,26 @@
   <div class="wrap">
     <div class="section-head">
       <div class="section-head-left">
-        <div class="eyebrow">Proven Track Record</div>
-        <h2>The bets that <em>worked.</em></h2>
+        <!-- RENAMED 2026-06: section formerly "Proven Track Record" / "The bets that worked." -->
+        <!-- Old eyebrow: <div class="eyebrow">Proven Track Record</div> -->
+        <!-- Old heading: <h2>The bets that <em>worked.</em></h2> -->
+        <!-- NOTE: section id="track-record" kept as a stable anchor slug (referenced by nav + every project-page breadcrumb/back-link); only the visible label changed. -->
+        <div class="eyebrow">High-Value Partnerships</div>
+        <h2>High-value <em>partnerships.</em></h2>
       </div>
       <div class="section-head-right">
+        <!-- T3 framing 2026-06: positions this section as strategic partnerships that have proven value. -->
         <p>
-          A small selection of the firm's highest-conviction wins — operating businesses, exits, and projects that have moved from thesis to execution. Each one represents the kind of work, capital structure, and partner network we bring to every position.
+          Strategic partnerships that have proven their value. These are the alliances and positions — operating businesses, realized exits, and long-horizon relationships — where Ramsey's capital, network, and operating experience have already moved companies from thesis to execution. Each reflects the structure and partner network we bring to every position.
         </p>
       </div>
     </div>
 
     <div class="track-grid">
 
-      <!-- Card 1: Park Plaza Hospital -->
-      <article class="track-card track-park" tabindex="0" data-project="park-plaza">
+      <!-- ARCHIVED 2026-06 (client request — hide Park Plaza Hospital from view everywhere; data + assets retained, restore by uncommenting; see ARCHIVE_LOG.md) -->
+      <!-- ARCHIVED-BEGIN: park-plaza
+      <article class="track-card track-park" tabindex="0" data-project="park-plaza" data-archived="true">
         <div class="track-image">
           <img src="assets/portfolio/Park_Plaza_Hospital.jpg"
                alt="Park Plaza Hospital exterior"
@@ -2216,9 +2231,11 @@
           </a>
         </div>
       </article>
+      ARCHIVED-END: park-plaza -->
 
-      <!-- Card 2: DetectaChem -->
-      <article class="track-card track-detectachem" tabindex="0" data-project="detectachem">
+      <!-- ARCHIVED 2026-06 (client request — hide DetectaChem from view everywhere; data + assets retained, restore by uncommenting; see ARCHIVE_LOG.md) -->
+      <!-- ARCHIVED-BEGIN: detectachem
+      <article class="track-card track-detectachem" tabindex="0" data-project="detectachem" data-archived="true">
         <div class="track-image">
           <img src="assets/portfolio/DetectaChem.jpg"
                alt="DetectaChem — portable chemical and explosive detection"
@@ -2241,6 +2258,7 @@
           </a>
         </div>
       </article>
+      ARCHIVED-END: detectachem -->
 
       <!-- Card 3: Gulf Equities (also appears on portfolio.html as an active disposition deal) -->
       <article class="track-card track-gulf" tabindex="0" data-project="gulf-equities">
@@ -2295,6 +2313,70 @@
         </div>
       </article>
 
+      <!-- ============================================================= -->
+      <!-- T5/T5b 2026-06: Yo-Yo Dyne in High-Value Partnerships.          -->
+      <!-- The full AeroShade + Escape Pod write-up now lives on its own   -->
+      <!-- detail page (projects/yoyodyne.html). This homepage card links  -->
+      <!-- to it. Same dual-placement pattern as Gulf Equities (also in    -->
+      <!-- both this section and portfolio.html).                          -->
+      <!-- ============================================================= -->
+      <article class="track-card track-yoyodyne" tabindex="0" data-project="yoyodyne" data-archived="false" data-featured="pending">
+        <div class="track-image">
+          <!-- 2026-06: real Yo-Yo Dyne logo added. -->
+          <img src="assets/portfolio/yoyodyne-logo.jpg"
+               alt="Yo-Yo Dyne — aerospace company (AeroShade sky canopy & Escape Pod escape system)"
+               loading="lazy" />
+        </div>
+        <div class="track-body">
+          <div class="track-meta">
+            <span class="track-tag">Aerospace · Two Products</span>
+            <span class="track-stage">$9.5M Seed</span>
+          </div>
+          <h3 class="track-name">Yo-Yo Dyne</h3>
+          <p class="track-summary">
+            The future of aerospace — AeroShade, a tethered drone-swarm sky canopy, and Escape Pod, a rapid stratospheric emergency escape system.
+          </p>
+          <a href="projects/yoyodyne.html" class="track-more">
+            View project
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- ============================================================= -->
+      <!-- T9 2026-06: RSE (data centers) — SCAFFOLD, KEPT OFF.            -->
+      <!-- Hidden/archived placeholder so it can be flipped ON instantly  -->
+      <!-- if Megan approves. To ENABLE: delete the begin/end comment      -->
+      <!-- marker lines below, set data-archived to false, and fill the    -->
+      <!-- {{PENDING}} copy. Do NOT enable without Megan's yes. See         -->
+      <!-- ARCHIVE_LOG.md.                                                 -->
+      <!-- ============================================================= -->
+      <!-- ARCHIVED-BEGIN: rse-data-centers
+      <article class="track-card track-rse" tabindex="0" data-project="rse" data-archived="true" data-featured="pending">
+        <div class="track-image" data-todo="rse-logo">
+          <div class="placeholder"><span>RSE — image pending</span></div>
+        </div>
+        <div class="track-body">
+          <div class="track-meta">
+            <span class="track-tag">Data Centers · Infrastructure</span>
+            <span class="track-stage">{{PENDING — MEGAN}}</span>
+          </div>
+          <h3 class="track-name">RSE</h3>
+          <p class="track-summary">
+            {{PENDING — MEGAN}} — RSE (data centers) partnership write-up. Scaffolded but kept off pending approval.
+          </p>
+          <a href="#" class="track-more" data-todo="rse-detail-page">
+            View project
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+      ARCHIVED-END: rse-data-centers -->
+
     </div>
 
     <div class="track-foot">
@@ -2322,11 +2404,10 @@
     </div>
 
     <div class="media-grid">
-      <!-- TODO: Embed Bart's "Legacy of Ramsey Financial Group" speech when the
-           YouTube URL is provided. Showing a placeholder play button + estimated
-           runtime in the meantime — do NOT re-fill with the Why-Houston video,
-           it caused a visible duplicate against m-3. -->
-      <article class="media-card m-1" tabindex="0">
+      <!-- ARCHIVED 2026-06 (client request — "Legacy of Ramsey Financial Group" is NOT a real video; hide the placeholder card until a real speech URL exists. Restore by uncommenting; see ARCHIVE_LOG.md) -->
+      <!-- Original embed note: TODO — embed Bart's "Legacy of Ramsey Financial Group" speech when the YouTube URL is provided; do NOT re-fill with the Why-Houston video (duplicates m-3). -->
+      <!-- ARCHIVED-BEGIN: media-legacy-video
+      <article class="media-card m-1" tabindex="0" data-archived="true">
         <div class="media-thumb">
           <div class="media-play" aria-hidden="true"></div>
           <div class="media-duration">~ 18:00</div>
@@ -2337,6 +2418,7 @@
           <p class="media-byline">Bart Womack on the firm's history, what Leo built, and the operating philosophy carried forward.</p>
         </div>
       </article>
+      ARCHIVED-END: media-legacy-video -->
 
       <article class="media-card m-2" tabindex="0">
         <div class="media-thumb">
@@ -2397,6 +2479,10 @@
       </p>
     </div>
 
+    <!-- TODO (Holiday): optimize mailto wiring / load speed. The mailto: links
+         below (and the "Request Deck" links on each project page) are functional
+         and intentionally left working. Only optimize if trivial and non-breaking
+         (e.g. consistent subject encoding); otherwise leave as-is for Holiday. -->
     <div class="contact-grid">
       <article class="contact-card">
         <span class="contact-num">I.</span>
