@@ -182,3 +182,11 @@ outstanding, grep the repo for `data-pending`.
 - The `pill-status` "Page in development" badge was commented out on the 9 populated
   project pages (restore by uncommenting). It was **left in place** on the two genuine
   stubs whose body copy still says content is coming later: `tbd.html`, `space-fund.html`.
+
+### Orphaned track-record CSS (index.html)
+- The `.track-park` and `.track-detectachem` gradient rules are now ORPHANED (those two
+  track-record cards are archived/commented out) and were wrapped in a `/* ARCHIVED 2026-06 … */`
+  CSS comment — recoverable by uncommenting.
+- The shared `.track-park .track-image img, .track-gulf .track-image img` rule had only its
+  `.track-park` selector removed (archived in an adjacent comment); `.track-gulf` is live and
+  keeps the rule. Verified no other live reference to these classes before archiving.
