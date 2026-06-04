@@ -881,13 +881,19 @@
     z-index: 2;
   }
   /* Photo cards (skyline, exterior) override default contain → cover */
-  .track-park .track-image img,
+  /* ARCHIVED 2026-06: ".track-park .track-image img," removed from this selector list —
+     the Park Plaza track-record card is archived (see ARCHIVE_LOG.md). Gulf (live) keeps
+     the rule. Restore by re-adding the ".track-park .track-image img," selector here. */
   .track-gulf .track-image img {
     object-fit: cover;
     padding: 0;
   }
 
   /* Distinct gradient treatments for each Proven Track Record card */
+  /* ARCHIVED 2026-06: gradient rules below are ORPHANED — the Park Plaza and DetectaChem
+     track-record cards are archived (commented out / data-archived="true"), so these
+     classes no longer render. Kept (commented) for one-step restore; uncomment if the
+     cards are un-archived. See ARCHIVE_LOG.md.
   .track-park .track-image      { background: linear-gradient(135deg, #2A4A38 0%, #1B3A2E 100%); }
   .track-park .track-image::after {
     content: ''; position: absolute; inset: 0;
@@ -900,6 +906,7 @@
     background: linear-gradient(45deg, transparent 48%, rgba(244,239,230,0.14) 49%, rgba(244,239,230,0.14) 51%, transparent 52%),
                 linear-gradient(-45deg, transparent 48%, rgba(244,239,230,0.10) 49%, rgba(244,239,230,0.10) 51%, transparent 52%);
   }
+  */
   .track-gulf .track-image      { background: linear-gradient(145deg, #3A4A3E 0%, #1B3A2E 100%); }
   .track-gulf .track-image::after {
     content: ''; position: absolute; inset: 0;
