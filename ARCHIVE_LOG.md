@@ -41,6 +41,14 @@ All data records, images, videos, decks, and detail pages remain in the repo.
 - **Retained:** The two real video embeds (`m-2`, `m-3`) remain live.
 - **Restore:** Delete the surrounding `ARCHIVED-BEGIN: media-legacy-video` / `ARCHIVED-END: media-legacy-video` comment markers.
 
+### 4. RSE (data centers) — scaffolded but kept OFF
+- **What:** Placeholder card for RSE (data centers), inside High-Value Partnerships.
+- **Where:** `index.html` — `#track-record` grid, marker `ARCHIVED-BEGIN: rse-data-centers`, `data-archived="true"`.
+- **When:** 2026-06
+- **Why:** Pending Megan's yes/no. Created hidden so it can be flipped on instantly if approved.
+- **Copy:** All fields are `{{PENDING — MEGAN}}` placeholders awaiting real content.
+- **Restore (enable):** Delete the surrounding `ARCHIVED-BEGIN: rse-data-centers` / `ARCHIVED-END: rse-data-centers` markers, set `data-archived="false"`, and fill the `{{PENDING}}` copy. Do NOT enable without Megan's approval.
+
 ---
 
 ## Added items
