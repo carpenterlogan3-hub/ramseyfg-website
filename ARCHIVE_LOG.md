@@ -190,3 +190,13 @@ outstanding, grep the repo for `data-pending`.
 - The shared `.track-park .track-image img, .track-gulf .track-image img` rule had only its
   `.track-park` selector removed (archived in an adjacent comment); `.track-gulf` is live and
   keeps the rule. Verified no other live reference to these classes before archiving.
+
+### Open decisions surfaced (NOT changed — awaiting Logan)
+1. **Leo bio still references Park Plaza** (`index.html` team bio): *"Leo was a co-founder
+   and CFO of Park Plaza Hospital (376 beds) until it was sold to a NYSE Hospital Management
+   Company."* The Park Plaza portfolio card was hidden; this biographical sentence was left
+   intact pending a keep/scrub decision.
+2. **Hero video title vs. content mismatch** (`index.html` hero): video-1 is titled
+   *"Hear about the legacy of Ramsey Financial Group"* but the embedded iframe is Bart's
+   *"Texas Space Revolution: A Once-in-500-Years Opportunity"* talk. Title left untouched
+   pending a keep/change decision.
