@@ -133,3 +133,27 @@ becomes live again. Slugs: `park-plaza`, `detectachem`, `media-legacy-video`,
 
 **Nothing was deleted.** All changes live on branch `website-rework-2026-06` and
 are recoverable via `git` history regardless of the comment markers.
+
+---
+
+## 2026-06 — NovaSpark Energy promoted to the 6th active raise
+
+- **What:** NovaSpark Energy moved from "candidate" to a live active raise.
+- **Homepage (`index.html`, active-raises grid):**
+  - The "Sixth raise — to be confirmed" `raise-tbd` placeholder card was **commented
+    out** (not deleted), wrapped in `ARCHIVED-BEGIN: raise-tbd` / `ARCHIVED-END: raise-tbd`
+    markers for easy restore.
+  - A real **NovaSpark Energy** raise card was inserted in that slot, linking to
+    `projects/novaspark-energy.html` (tag "Energy · Hydrogen", stage "Seed").
+- **Portfolio (`portfolio.html`):** the `port-novaspark` card now carries
+  `data-active-raise="true"`; `data-featured="pending"` (front-page featured selection
+  is a separate Megan call). Card stays in the portfolio.
+- **NovaSpark page (`projects/novaspark-energy.html`):** finalized for go-live —
+  removed the "Page in development" pill; Stage `Active` → `Seed`; Sector
+  `Energy · Atmospheric` → `Energy · Hydrogen`; At-a-Glance Vehicle `[TBC]` →
+  `Convertible Note`, Lead Principal `[TBC]` → `Meagan Crawford`. Request Deck mailto
+  left as-is.
+
+- **Restore the TBD placeholder:** delete the `ARCHIVED 2026-06 ...`,
+  `ARCHIVED-BEGIN: raise-tbd`, and `ARCHIVED-END: raise-tbd -->` marker lines in
+  `index.html`, and remove/relocate the NovaSpark raise card.
