@@ -68,10 +68,16 @@ All data records, images, videos, decks, and detail pages remain in the repo.
 - **When:** 2026-06
 - **Pattern note:** Yo-Yo Dyne intentionally appears in BOTH the homepage
   High-Value Partnerships section and `portfolio.html`, mirroring Gulf Equities.
-- **Pending placeholders preserved:** logo `<img>` line is commented out in
-  `projects/yoyodyne.html` (`../assets/portfolio/yoyodyne-logo.png`); card images
-  use `assets/portfolio/Spacefund.jpg` as a temporary placeholder; `[TBC]` glance
-  values and `Request Deck` mailto links left as-is.
+- **Logos added (2026-06):** real brand assets now in `assets/portfolio/` —
+  `yoyodyne-logo.jpg`, `aeroshade-logo.jpg`, `escape-pod-logo.png`. Wired into the
+  Yo-Yo Dyne page header (`.page-logo`), both product sections (`.product-logo`),
+  the homepage High-Value Partnerships card, and the portfolio card (replacing the
+  `Spacefund.jpg` / "Image pending" placeholders).
+  - **Note:** the supplied Escape Pod file was a portrait doc-page (logo + document
+    text + white margins); it was cropped to a centered 640×640 square to isolate the
+    logo mark. The uncropped original remains in the user's `~/Downloads`.
+- **Still pending:** `[TBC]` glance values (Vehicle, Lead Principal) and `Request Deck`
+  mailto links on `projects/yoyodyne.html` are left as-is.
 
 ---
 

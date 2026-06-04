@@ -265,6 +265,16 @@
   }
   @media (max-width: 600px) { .page-logo { max-width: 260px; } }
 
+  /* Per-product logo (AeroShade, Escape Pod) above each product eyebrow. */
+  .product-logo {
+    display: block;
+    height: 84px;
+    width: auto;
+    max-width: 100%;
+    margin-bottom: 18px;
+    border-radius: 8px;
+  }
+
   /* Inline action links (external references, etc.) — green + underlined,
      mirrors the homepage .link-action utility. Defined inline here because
      project pages are self-contained (no shared stylesheet). */
@@ -680,8 +690,8 @@
     <div class="page-eyebrow">
       <span class="eyebrow ">High Value Partnerships</span>
     </div>
-    <!-- TODO: add Yo-Yo Dyne logo when provided, e.g.:
-         <img class="page-logo" src="../assets/portfolio/yoyodyne-logo.png" alt="Yo-Yo Dyne" /> -->
+    <!-- 2026-06: Yo-Yo Dyne logo added (assets/portfolio/yoyodyne-logo.jpg). -->
+    <img class="page-logo" src="../assets/portfolio/yoyodyne-logo.jpg" alt="Yo-Yo Dyne" />
     <h1>Yo-Yo Dyne</h1>
     <div class="meta-row">
       <div class="meta-item">
@@ -726,6 +736,8 @@
   <div class="wrap">
     <div class="body-grid">
       <div class="body-left">
+        <!-- 2026-06: AeroShade logo added (assets/portfolio/aeroshade-logo.jpg). -->
+        <img class="product-logo" src="../assets/portfolio/aeroshade-logo.jpg" alt="AeroShade Dynamics logo" loading="lazy" />
         <span class="eyebrow" style="display:block; margin-bottom:14px;">Product 01 · Event Infrastructure</span>
         <h2>AeroShade — <em>the sky's new canopy.</em></h2>
         <p class="lead">AeroShade's Nimbus Canopy is the first tethered drone-swarm shade system: a single seamless 25&nbsp;m × 25&nbsp;m fabric ceiling flown at roughly 100&nbsp;feet by a silent 24-drone perimeter swarm.</p>
@@ -756,6 +768,8 @@
   <div class="wrap">
     <div class="body-grid">
       <div class="body-left">
+        <!-- 2026-06: Escape Pod logo added (assets/portfolio/escape-pod-logo.png; cropped from the supplied doc page to isolate the logo mark). -->
+        <img class="product-logo" src="../assets/portfolio/escape-pod-logo.png" alt="Escape Pod logo" loading="lazy" />
         <span class="eyebrow" style="display:block; margin-bottom:14px;">Product 02 · Emergency Aerospace</span>
         <h2>Escape Pod — <em>rise above any threat.</em></h2>
         <p class="lead">Escape Pod&nbsp;v1.0 is a rapid stratospheric escape system for families and VIPs: a pressurized, EMP-hardened, radar-stealth capsule that carries 6–8 people to a 50,000-foot sanctuary in under 30 minutes.</p>
