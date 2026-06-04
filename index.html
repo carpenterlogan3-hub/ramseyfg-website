@@ -970,6 +970,55 @@
   .track-card:hover .track-more svg { transform: translateX(4px); }
   .track-more svg { transition: transform 0.25s ease; }
 
+  /* ---- Yo-Yo Dyne feature panel (T3/T5 2026-06): one header, two product sub-blocks ---- */
+  .track-feature {
+    grid-column: 1 / -1;               /* span full track-grid width */
+    background: var(--bone-soft);
+    border: 1px solid var(--rule);
+    padding: 36px 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    cursor: default;
+  }
+  .track-feature:hover { transform: none; border-color: var(--rule); }
+  .feature-head { display: flex; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
+  .feature-logo {
+    width: 96px; height: 96px; flex: none;
+    background: linear-gradient(180deg, #2A5043 0%, #0D2620 100%);
+    border: 1px solid var(--rule);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .feature-logo img { width: 100%; height: 100%; object-fit: contain; padding: 12px; display: block; }
+  .feature-logo .logo-ph {
+    font-family: var(--sans); font-size: 9px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--bone); text-align: center; opacity: 0.8; padding: 6px;
+  }
+  .feature-headtext { flex: 1; min-width: 240px; }
+  .feature-intro { font-size: 15px; line-height: 1.6; color: var(--mute); margin-top: 12px; }
+  .feature-products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 720px) { .feature-products { grid-template-columns: 1fr; } }
+  .product-card {
+    background: var(--bone);
+    border: 1px solid var(--rule);
+    padding: 22px 22px 24px;
+    display: flex; flex-direction: column;
+  }
+  .product-card h4 {
+    font-family: var(--serif); font-size: 20px; font-weight: 500;
+    color: var(--ink); margin-bottom: 6px; letter-spacing: -0.01em;
+  }
+  .product-tag {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--forest); margin-bottom: 12px;
+  }
+  .product-card p { font-size: 14px; line-height: 1.6; color: var(--mute); }
+
   .track-foot {
     margin-top: 48px;
     display: flex;
@@ -2188,8 +2237,9 @@
         <h2>High-value <em>partnerships.</em></h2>
       </div>
       <div class="section-head-right">
+        <!-- T3 framing 2026-06: positions this section as strategic partnerships that have proven value. -->
         <p>
-          A small selection of the firm's highest-conviction wins — operating businesses, exits, and projects that have moved from thesis to execution. Each one represents the kind of work, capital structure, and partner network we bring to every position.
+          Strategic partnerships that have proven their value. These are the alliances and positions — operating businesses, realized exits, and long-horizon relationships — where Ramsey's capital, network, and operating experience have already moved companies from thesis to execution. Each reflects the structure and partner network we bring to every position.
         </p>
       </div>
     </div>
@@ -2300,6 +2350,48 @@
               <path d="M1 5h12m0 0L9 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
             </svg>
           </a>
+        </div>
+      </article>
+
+      <!-- ============================================================= -->
+      <!-- T3/T5 2026-06: Yo-Yo Dyne moved into High-Value Partnerships.  -->
+      <!-- One header + two product sub-blocks (AeroShade, Escape Pod).   -->
+      <!-- Intro + product copy are {{DRAFT}}/{{PENDING}} until Megan      -->
+      <!-- supplies the AeroShade and Escape Pod materials.               -->
+      <!-- ============================================================= -->
+      <article class="track-card track-feature track-yoyodyne" tabindex="0" data-project="yoyodyne" data-archived="false" data-featured="pending">
+        <div class="feature-head">
+          <div class="feature-logo" data-todo="yoyodyne-logo">
+            <!-- LOGO SLOT: when the asset is delivered, drop yoyodyne-logo into
+                 assets/portfolio/ and uncomment the <img> below (placeholder shows meanwhile). -->
+            <!-- <img src="assets/portfolio/yoyodyne-logo.png" alt="Yo-Yo Dyne Industries logo" loading="lazy" /> -->
+            <span class="logo-ph">Yo-Yo Dyne<br>logo<br>{{PENDING — LOGO}}</span>
+          </div>
+          <div class="feature-headtext">
+            <div class="track-meta">
+              <span class="track-tag">Aerospace &amp; Defense</span>
+              <span class="track-stage">Strategic Partnership</span>
+            </div>
+            <h3 class="track-name">Yo-Yo Dyne</h3>
+            <p class="feature-intro">
+              {{DRAFT}} Yo-Yo Dyne is the future of aerospace — an aerospace company that develops novel [products].
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-products">
+          <!-- Product sub-block 1: AeroShade -->
+          <div class="product-card" data-product="aeroshade">
+            <div class="product-tag">Product</div>
+            <h4>AeroShade</h4>
+            <p>{{PENDING — MEGAN}} — populate from the AeroShade materials (product description, stage, differentiators).</p>
+          </div>
+          <!-- Product sub-block 2: Escape Pod -->
+          <div class="product-card" data-product="escape-pod">
+            <div class="product-tag">Product</div>
+            <h4>Escape Pod</h4>
+            <p>{{PENDING — MEGAN}} — populate from the Escape Pod materials (product description, stage, differentiators).</p>
+          </div>
         </div>
       </article>
 
