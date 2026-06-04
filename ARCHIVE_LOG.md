@@ -72,3 +72,58 @@ All data records, images, videos, decks, and detail pages remain in the repo.
   `projects/yoyodyne.html` (`../assets/portfolio/yoyodyne-logo.png`); card images
   use `assets/portfolio/Spacefund.jpg` as a temporary placeholder; `[TBC]` glance
   values and `Request Deck` mailto links left as-is.
+
+---
+
+## Renamed (recoverable via comments + git history)
+
+### Section 2 heading: "Proven Track Record / The bets that worked." → "High-Value Partnerships."
+- **Where:** `index.html` `#track-record` section head.
+- **When:** 2026-06 (Task 2). Old eyebrow + heading preserved in adjacent comments.
+- **Note:** The section `id="track-record"` was intentionally **kept** — it is an
+  invisible anchor slug referenced by the nav and by every project-page breadcrumb
+  / back-link (~40 references). Only the visible labels changed.
+
+---
+
+## Greppable placeholders awaiting content
+
+Search the repo for these tokens to find everything that still needs filling:
+
+| Token | Meaning | Locations |
+|---|---|---|
+| `{{PENDING — MEGAN}}` | awaiting Megan | Celestial/Eden/Ahura/Deep-Space glance Vehicles; RSE scaffold copy; NovaSpark + Iran status notes; Yo-Yo Dyne homepage card pending image note |
+| `{{PENDING — RAMSEY}}` | awaiting Ramsey | Gulf Equities glance (Vehicle + Lead Principal, + write-up) |
+| `{{CONFIRM}}` | value present, verify it | Eden Grow Lead Principal (Space Fund); Ahura AI Lead Principal (Bryan Tallebi) |
+| `{{PENDING}}` | generic pending | RSE scaffold stage |
+| `[TBC]` | legacy "to be confirmed" | remaining glance rows on other project pages (pre-existing) |
+| `TODO (Holiday)` | deferred to Holiday | featured cap-6 logic (`portfolio.html`); mailto optimization (`index.html`) |
+
+**Featured six (Task 11):** not locked in — every visible portfolio card carries
+inert `data-featured="pending"`. Holiday implements the cap-6 selection once Megan
+confirms; flip the chosen six to `data-featured="true"`. Do not hard-code.
+
+**Active-raise status (Tasks 7/8):** every card carries inert
+`data-active-raise="pending"`; designation awaits Megan. NovaSpark is the flagged
+candidate (`data-raise-candidate="true"`) for the front-page 6th raise slot.
+
+---
+
+## How to restore any hidden item in one step
+
+Each hidden block is wrapped like:
+
+```
+<!-- ARCHIVED 2026-06 (reason) -->
+<!-- ARCHIVED-BEGIN: <slug>
+   ...original markup...
+ARCHIVED-END: <slug> -->
+```
+
+To restore: delete the three marker lines (`ARCHIVED 2026-06 ...`,
+`ARCHIVED-BEGIN: <slug>`, and `ARCHIVED-END: <slug> -->`). The markup between them
+becomes live again. Slugs: `park-plaza`, `detectachem`, `media-legacy-video`,
+`rse-data-centers`.
+
+**Nothing was deleted.** All changes live on branch `website-rework-2026-06` and
+are recoverable via `git` history regardless of the comment markers.
