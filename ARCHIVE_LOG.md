@@ -200,3 +200,14 @@ outstanding, grep the repo for `data-pending`.
    *"Hear about the legacy of Ramsey Financial Group"* but the embedded iframe is Bart's
    *"Texas Space Revolution: A Once-in-500-Years Opportunity"* talk. Title left untouched
    pending a keep/change decision.
+   - **Resolved 2026-06:** relabeled to "The Texas Space Revolution: A Once-in-500-Years
+     Opportunity" (old title kept in a comment). Leo's bio Park Plaza sentence: kept per decision.
+
+### "MOCKUP V2" dev badge — hidden before go-live
+- **What:** the fixed top-right dev badge (`<div class="mockup-label">`).
+- **Where:** `index.html` ("Mockup v2 · Homepage") and `portfolio.html` ("Mockup v2 · Portfolio
+  Index"), each wrapped in `ARCHIVED-BEGIN: mockup-label` / `ARCHIVED-END: mockup-label` markers.
+- **When:** 2026-06
+- **Why:** Client request — remove the mockup label before the site goes live.
+- **Note:** the `.mockup-label` CSS rule is left dormant (no element uses it). Restore the badge
+  by deleting the surrounding `ARCHIVED-BEGIN: mockup-label` / `ARCHIVED-END: mockup-label` markers.
