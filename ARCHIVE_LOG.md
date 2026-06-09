@@ -100,7 +100,7 @@ Search the repo for these tokens to find everything that still needs filling:
 |---|---|---|
 | `{{PENDING — MEGAN}}` | awaiting Megan | Celestial/Eden/Ahura/Deep-Space glance Vehicles; RSE scaffold copy; NovaSpark + Iran status notes; Yo-Yo Dyne homepage card pending image note |
 | `{{PENDING — RAMSEY}}` | awaiting Ramsey | Gulf Equities glance (Vehicle + Lead Principal, + write-up) |
-| `{{CONFIRM}}` | value present, verify it | Eden Grow Lead Principal (Space Fund); Ahura AI Lead Principal (Bryan Tallebi) |
+| `{{CONFIRM}}` | value present, verify it | Eden Grow Lead Principal (Space Fund); Ahura AI Lead Principal (Bryan Talebi) |
 | `{{PENDING}}` | generic pending | RSE scaffold stage |
 | `[TBC]` | legacy "to be confirmed" | remaining glance rows on other project pages (pre-existing) |
 | `TODO (Holiday)` | deferred to Holiday | featured cap-6 logic (`portfolio.html`); mailto optimization (`index.html`) |
@@ -171,7 +171,7 @@ plus **one machine-readable marker**: a `data-pending` attribute on the `.row` d
 | `data-pending` value | Meaning | Replaces the old token | Displayed text |
 |---|---|---|---|
 | `megan` | awaiting Megan | `{{PENDING — MEGAN}}`, `[TBC]` | "To be confirmed" |
-| `confirm-megan` | real value shown, Megan to confirm | `… {{CONFIRM}}` suffix | the bare value (e.g. "Space Fund", "Bryan Tallebi") |
+| `confirm-megan` | real value shown, Megan to confirm | `… {{CONFIRM}}` suffix | the bare value (e.g. "Space Fund", "Bryan Talebi") |
 | `ramsey-writeup` | awaiting Ramsey's write-up | `{{PENDING — RAMSEY}}` | "To be confirmed" |
 
 **To fill a pending value:** replace the displayed text with the real value and
