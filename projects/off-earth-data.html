@@ -386,6 +386,119 @@
     font-weight: 400;
   }
 
+  /* ---- Off-Earth Data: metrics band ---- */
+  .metrics {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 0 0 36px;
+  }
+  .metrics li {
+    background: var(--bone-soft);
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .metrics strong {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .metrics span {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+  @media (max-width: 560px) {
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ---- Off-Earth Data: subsection heading (indices + capabilities) ---- */
+  .section-sub {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 38px 0 18px;
+  }
+
+  /* ---- Off-Earth Data: five signal indices ---- */
+  .indices {
+    display: grid;
+    margin: 0 0 8px;
+    border-top: 1px solid var(--rule);
+  }
+  .indices .index-row {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .indices dt {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .indices .index-code {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--forest);
+    border: 1px solid var(--forest);
+    padding: 3px 7px;
+    flex-shrink: 0;
+  }
+  .indices dd {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--mute);
+    max-width: 60ch;
+  }
+
+  /* ---- Off-Earth Data: platform capabilities ---- */
+  .capabilities {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+    margin: 0 0 8px;
+  }
+  .capabilities li {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--mute);
+    padding-left: 18px;
+    position: relative;
+    max-width: 62ch;
+  }
+  .capabilities li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 9px;
+    width: 7px; height: 7px;
+    background: var(--forest);
+    transform: rotate(45deg);
+  }
+  .capabilities strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
   .stub-callout {
     margin: 12px 0 36px;
     padding: 24px 28px;
@@ -697,7 +810,7 @@
          rather than as an extractable image, and Meagan still needs to confirm brand-usage rights
          before we host any of their marks. Surface this comment when the asset is ready. -->
     <h1>Off-Earth Data</h1>
-    <p class="page-tagline">Quantitative intelligence for the space economy.</p>
+    <p class="page-tagline">The signal ahead of the capital.</p>
     <div class="meta-row">
       <div class="meta-item">
         <span class="meta-label">Sector</span>
@@ -717,8 +830,49 @@
       <div class="body-left">
         <h2>About this <em>project.</em></h2>
         <p class="lead">Off-Earth Data is building the Bloomberg terminal for the space economy — a real-time intelligence platform that scores commercial viability across the full space-industry stack. As capital floods into a sector still dominated by hype, allocators need a disciplined way to separate execution from ambition. Off-Earth Data provides that signal layer.</p>
-        <p>The platform tracks 3,300+ entities across 26 sectors and 120+ subsectors of the global space economy, integrating real-time data from 70+ sources across 12 spacefaring nations — including SEC EDGAR, SAM.gov, CelesTrak, NASA, JAXA, ISRO, ESA, and ITU satellite filings. Coverage spans launch services, satellite communications, earth observation, navigation and PNT, satellite manufacturing, ground segment, deep space resources, and public equities — from SpaceX and Rocket Lab to Astroscale, Planet Labs, Varda, and Interlune.</p>
-        <p>At the core of the platform are five proprietary signal indices, each quantifying a dimension of execution reality that public markets don't price: the Constellation Fulfillment Index (CFI) measuring satellite deployment against filed plans, the Space Economy Revenue Decomposition (SERD) isolating actual space-derived revenue from mixed-use public-company segments, the Government Contract Velocity Tracker (GCVT) surfacing procurement momentum before market pricing, the Launch Insurance Premium Index (LIPI) using insurance pricing as a leading risk indicator, and the Constellation Deployment Index (CDI) tracking real-time constellation fulfillment across operators. None are published anywhere else.</p>
+
+        <ul class="metrics" aria-label="Off-Earth Data at a glance">
+          <li><strong>$1.2T+</strong><span>Capital tracked</span></li>
+          <li><strong>3,300+</strong><span>Entities tracked</span></li>
+          <li><strong>26 / 120+</strong><span>Sectors / subsectors</span></li>
+          <li><strong>70+ / 12</strong><span>Data sources / nations</span></li>
+          <li><strong>5</strong><span>Proprietary indices</span></li>
+          <li><strong>$4.8T</strong><span>Projected 2045 TAM</span></li>
+        </ul>
+
+        <p>The platform integrates real-time data from sources including SEC EDGAR, SAM.gov, CelesTrak, NASA, JAXA, ISRO, ESA, and ITU satellite filings. Coverage spans launch services, satellite communications, earth observation, navigation and PNT, satellite manufacturing, ground segment, deep space resources, and public equities — from SpaceX and Rocket Lab to Astroscale, Planet Labs, Varda, and Interlune.</p>
+        <h3 class="section-sub">The five signal indices</h3>
+        <p>At the core of the platform are five proprietary indices, each quantifying a dimension of execution reality that public markets don't price. None are published anywhere else.</p>
+        <dl class="indices">
+          <div class="index-row">
+            <dt><span class="index-code">CFI</span> Constellation Fulfillment Index</dt>
+            <dd>Announced vs actually on-orbit satellites. Starlink sits ~84% fulfilled, while Kuiper is near ~10% with its FCC deadline at risk.</dd>
+          </div>
+          <div class="index-row">
+            <dt><span class="index-code">SERD</span> Space Economy Revenue Decomposition</dt>
+            <dd>Isolates true space revenue from mixed-use businesses — Rocket Lab is ~100% space-pure, while only ~12% of Boeing's ~$80B is space.</dd>
+          </div>
+          <div class="index-row">
+            <dt><span class="index-code">GCVT</span> Government Contract Velocity Tracker</dt>
+            <dd>Rate-of-change in federal awards, surfacing policy momentum before the market prices it.</dd>
+          </div>
+          <div class="index-row">
+            <dt><span class="index-code">LIPI</span> Launch Insurance Premium Index</dt>
+            <dd>Insurance pricing the risk equities ignore — premiums ~7.8% (up from 4.5% in 2020), only ~16 underwriters left, ~95% of satellites uninsured.</dd>
+          </div>
+          <div class="index-row">
+            <dt><span class="index-code">CDI</span> Constellation Deployment Index</dt>
+            <dd>Announced vs deployed capacity. OneWeb is ~98% complete, while Starlink sits at ~16% of a planned 42,000.</dd>
+          </div>
+        </dl>
+
+        <h3 class="section-sub">Platform capabilities</h3>
+        <ul class="capabilities">
+          <li><strong>Orbital intelligence</strong> — 10,000+ orbital objects tracked in real time.</li>
+          <li><strong>Global mission intelligence</strong> — 257+ active missions across 12 nations and 15+ agencies.</li>
+          <li><strong>Government contract intelligence</strong> — live SAM.gov integration.</li>
+          <li><strong>Space ETF analytics</strong> — ARKX, UFO, ROKT and 40+ public equities.</li>
+        </ul>
         <p>Ramsey Financial Group holds vested equity in Off-Earth Data through Principal Meagan Crawford, whose two decades of space-venture investing form the empirical basis for the platform's sector taxonomy and scoring methodology. The platform is operational with institutional users actively onboarding.</p>
         <p>Learn more at <a href="https://offearthdata.com" target="_blank" rel="noopener noreferrer" class="link-action">offearthdata.com&nbsp;↗</a></p>
       </div>
