@@ -638,9 +638,10 @@
                 radial-gradient(circle at 70% 30%, rgba(244,239,230,0.12), transparent 30%);
   }
 
-  /* AXE H2O — dark-ink wordmark on transparent PNG, so flip to a light bone gradient
-     with no decorative overlay (matches the Karman / SpacePort Fund treatment). */
-  .port-axe .port-image { background: linear-gradient(135deg, var(--bone) 0%, var(--bone-soft) 100%); }
+  /* AXE H2O — dark forest-green backdrop, matching the other green cards
+     (same gradient as Park Plaza / Iran / Celestial). The logo PNG carries its
+     own light container, so the dark-navy wordmark stays legible. */
+  .port-axe .port-image { background: linear-gradient(135deg, #2A4A38 0%, #1B3A2E 100%); }
 
   /* Karman Line / SpacePort Fund — dark-ink logo on transparent PNG, so flip to a light bone gradient
      with no decorative overlay (the bone-on-dark grid would be invisible on a light backdrop). */
@@ -655,7 +656,8 @@
       repeating-linear-gradient(90deg, transparent 0 28px, rgba(244,239,230,0.06) 28px 29px);
   }
 
-  .port-celestial .port-image { background: linear-gradient(160deg, #5A1F1C 0%, #2A1514 100%); }
+  /* Celestial Cellars — dark forest-green backdrop, matching the other green cards. */
+  .port-celestial .port-image { background: linear-gradient(135deg, #2A4A38 0%, #1B3A2E 100%); }
   .port-celestial .port-image::after {
     content: '';
     position: absolute; inset: 0;
@@ -697,15 +699,23 @@
                 radial-gradient(circle at 50% 80%, rgba(122,46,42,0.20), transparent 40%);
   }
 
-  /* Off-Earth Data — placeholder card visuals (logo pending). */
-  .port-offearth .port-image { background: linear-gradient(160deg, #0D2620 0%, #1B3A2E 50%, #2A5043 100%); }
-  .port-offearth .port-image::after {
-    content: '';
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(circle at 70% 30%, rgba(244,239,230,0.18) 0%, transparent 22%),
-      radial-gradient(circle at 30% 70%, rgba(244,239,230,0.10) 0%, transparent 25%),
-      linear-gradient(115deg, transparent 60%, rgba(244,239,230,0.06) 60%, rgba(244,239,230,0.06) 61%, transparent 61%);
+  /* Off-Earth Data — navy logo plaque centered on the shared dark-green backdrop,
+     matching the other green cards. The PNG keeps its own #0A0E1A field, which reads
+     as a tight dark border around the wordmark; the green frames it. */
+  .port-offearth .port-image {
+    background: linear-gradient(135deg, #2A4A38 0%, #1B3A2E 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .port-offearth .port-image img {
+    position: static;
+    width: auto;
+    height: auto;
+    max-width: 86%;
+    max-height: 74%;
+    object-fit: contain;
+    padding: 0;
   }
 
   .port-ahura .port-image { background: linear-gradient(200deg, #0D2620 0%, #1B3A2E 60%, #2A5043 100%); }
@@ -717,7 +727,8 @@
       linear-gradient(0deg, transparent 49.5%, rgba(244,239,230,0.1) 49.5%, rgba(244,239,230,0.1) 50.5%, transparent 50.5%);
   }
 
-  .port-iran .port-image { background: linear-gradient(140deg, #7A2E2A 0%, #5A1F1C 100%); }
+  /* Iran Reconstruction Fund — dark forest-green backdrop, matching the other green cards. */
+  .port-iran .port-image { background: linear-gradient(135deg, #2A4A38 0%, #1B3A2E 100%); }
   .port-iran .port-image::after {
     content: '';
     position: absolute; inset: 0;
@@ -1629,8 +1640,10 @@ ARCHIVED-END: mockup-label -->
       <!-- TODO: confirm sector-filter assignment with Logan; currently "aerospace" (placeholder) — no
            "space-intelligence" sector filter exists yet. Visible tag below reads "Space · Intelligence". -->
       <a class="port-card port-offearth" data-sector="aerospace" data-featured="pending" data-active-raise="pending" href="projects/off-earth-data.html">
-        <div class="port-image" data-todo="off-earth-data-card-image" role="img" aria-label="Off-Earth Data card thumbnail (pending)">
-          <div class="placeholder"><span>Image pending</span></div>
+        <div class="port-image">
+          <img src="assets/portfolio/Off_Earth_Data-_Black_Logo.png"
+               alt="Off Earth Data"
+               loading="lazy" />
         </div>
         <div class="port-body">
           <div class="port-meta">
