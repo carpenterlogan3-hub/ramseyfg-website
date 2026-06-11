@@ -484,14 +484,6 @@
       radial-gradient(circle at 30% 40%, rgba(244,239,230,0.12) 0%, transparent 40%),
       radial-gradient(circle at 70% 65%, rgba(122,46,42,0.18) 0%, transparent 50%);
   }
-  .hero-video.video-2 .hero-video-thumb {
-    background: linear-gradient(135deg, #1B3A2E 0%, #0D2620 100%);
-  }
-  .hero-video.video-2 .hero-video-thumb::before {
-    background:
-      linear-gradient(to top, rgba(244,239,230,0.06) 1px, transparent 1px) 0 0 / 100% 18px,
-      radial-gradient(ellipse 70% 50% at 50% 60%, rgba(217,207,184,0.12), transparent 70%);
-  }
   .hero-video-play {
     position: absolute;
     top: 50%; left: 50%;
@@ -914,6 +906,15 @@
   }
   .track-deep-space .track-image { background: linear-gradient(180deg, #0D2620 0%, #1B3A2E 60%, #2A5043 100%); }
   .track-deep-space .track-image::after {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(244,239,230,0.20) 0%, transparent 25%),
+                radial-gradient(circle at 70% 70%, rgba(244,239,230,0.12) 0%, transparent 30%);
+  }
+
+  /* Yo-Yo Dyne — same dark-green plaque treatment as Deep Space Industries, so the
+     logo image sits centered/padded on the green backdrop and the two cards match. */
+  .track-yoyodyne .track-image { background: linear-gradient(180deg, #0D2620 0%, #1B3A2E 60%, #2A5043 100%); }
+  .track-yoyodyne .track-image::after {
     content: ''; position: absolute; inset: 0;
     background: radial-gradient(circle at 30% 30%, rgba(244,239,230,0.20) 0%, transparent 25%),
                 radial-gradient(circle at 70% 70%, rgba(244,239,230,0.12) 0%, transparent 30%);
@@ -1850,9 +1851,6 @@ ARCHIVED-END: mockup-label -->
       <aside class="hero-videos" aria-label="Featured videos">
         <div class="hero-video-label">Hear from the principals</div>
 
-        <!-- TODO: Embed Meagan's "Texas space economy ecosystem" speech when
-             the YouTube URL is provided. Showing a placeholder play button in
-             the meantime. -->
         <article class="hero-video video-1">
           <div class="hero-video-thumb">
             <iframe
@@ -1872,11 +1870,18 @@ ARCHIVED-END: mockup-label -->
 
         <article class="hero-video video-2">
           <div class="hero-video-thumb">
-            <div class="hero-video-play" aria-hidden="true"></div>
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/prqZ5pmM6O8?rel=0&modestbranding=1"
+              title="Meagan Crawford — Why Houston is the Future of the Trillion-Dollar Space Economy"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
           </div>
           <div class="hero-video-meta">
             <div class="hero-video-tag">Meagan Crawford · Speech</div>
-            <div class="hero-video-title">Learn about the Texas space economy ecosystem</div>
+            <div class="hero-video-title">Why Houston is the Future of the Trillion-Dollar Space Economy</div>
           </div>
         </article>
       </aside>
@@ -2353,7 +2358,7 @@ ARCHIVED-END: mockup-label -->
         </div>
         <div class="track-body">
           <div class="track-meta">
-            <span class="track-tag">Aerospace · Two Products</span>
+            <span class="track-tag">Aerospace · Atmospheric Systems</span>
             <span class="track-stage">$9.5M Seed</span>
           </div>
           <h3 class="track-name">Yo-Yo Dyne</h3>
