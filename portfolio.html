@@ -699,21 +699,22 @@
                 radial-gradient(circle at 50% 80%, rgba(122,46,42,0.20), transparent 40%);
   }
 
-  /* Off-Earth Data — navy logo plaque centered on the shared dark-green backdrop,
-     matching the other green cards. The PNG keeps its own #0A0E1A field, which reads
-     as a tight dark border around the wordmark; the green frames it. */
+  /* Off-Earth Data — ultra-wide (~5:1) banner logo on a solid black field that matches
+     the banner's own baked-in black background, so it blends seamlessly with no hard
+     black rectangle. Full banner shown via contain (never stretched or cropped),
+     centered with light breathing room. */
   .port-offearth .port-image {
-    background: linear-gradient(135deg, #2A4A38 0%, #1B3A2E 100%);
+    background: #000;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .port-offearth .port-image img {
     position: static;
-    width: auto;
+    width: 92%;
     height: auto;
-    max-width: 86%;
-    max-height: 74%;
+    max-width: 92%;
+    max-height: 100%;
     object-fit: contain;
     padding: 0;
   }
@@ -1641,8 +1642,8 @@ ARCHIVED-END: mockup-label -->
            "space-intelligence" sector filter exists yet. Visible tag below reads "Space · Intelligence". -->
       <a class="port-card port-offearth" data-sector="aerospace" data-featured="pending" data-active-raise="pending" href="projects/off-earth-data.html">
         <div class="port-image">
-          <img src="assets/portfolio/Off_Earth_Data-_Black_Logo.png"
-               alt="Off Earth Data"
+          <img src="assets/portfolio/Off_Earth_Data-_Logo.png"
+               alt="Off Earth Data — Space Economy Intelligence"
                loading="lazy" />
         </div>
         <div class="port-body">
