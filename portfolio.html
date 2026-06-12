@@ -442,7 +442,7 @@
     font-weight: 600;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--burgundy);
+    color: #FFFFFF;   /* rework: Featured Platform · Venture lettering → white (was burgundy) */
   }
   .platform-feature-flag::before {
     content: '';
@@ -643,9 +643,19 @@
      own light container, so the dark-navy wordmark stays legible. */
   .port-axe .port-image { background: linear-gradient(135deg, #2A4A38 0%, #1B3A2E 100%); }
 
-  /* Karman Line / SpacePort Fund — dark-ink logo on transparent PNG, so flip to a light bone gradient
-     with no decorative overlay (the bone-on-dark grid would be invisible on a light backdrop). */
-  .port-karman .port-image { background: linear-gradient(180deg, var(--bone) 0%, var(--bone-soft) 100%); }
+  /* Karman Line / SpacePort Fund — REWORK 2d. Brand-green backdrop to match the
+     other logo cards (was a light bone gradient). The SpacePort mark is a black-ink
+     transparent PNG, so it is inverted to white below to stay legible on green. */
+  .port-karman .port-image {
+    background: linear-gradient(180deg, #0D2620 0%, #1B3A2E 60%, #2A5043 100%);
+  }
+  .port-karman .port-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(244,239,230,0.18) 0%, transparent 28%),
+                radial-gradient(circle at 70% 70%, rgba(244,239,230,0.10) 0%, transparent 32%);
+  }
+  .port-karman .port-image img { filter: invert(1) brightness(1.85); }
 
   .port-eden .port-image { background: linear-gradient(120deg, #2F4F3F 0%, #1B3A2E 100%); }
   .port-eden .port-image::after {
@@ -936,6 +946,25 @@
      contain letterboxing on .port-scs; with cover-fitting the image now
      fills the container, so suppress the overlay to keep the photo clean. */
   .port-card.platform .port-image::after { display: none; }
+
+  /* Monolith (Space Capital Stack) — REWORK 2c. The source is a self-contained
+     16:9 neutral-charcoal render (obelisk + "Monolith" wordmark), not a logo.
+     The previous cover-crop zoomed the centred subject in the tall 45%-width
+     column and clipped its edges (the "distorted/stretched" look). Fix: contain
+     it at natural aspect on a backdrop so the whole mark is visible.
+     Backdrop = dark NEUTRAL charcoal, NOT brand green: the grey render letterboxed
+     onto forest green reads as poor contrast / "too much green", so per the
+     brief's delegated command decision we match the art's own neutral tone for a
+     seamless, intentional frame. Specificity bumped (.port-card.platform.port-scs)
+     to override the platform cover rule above. */
+  .port-scs .port-image {
+    background: linear-gradient(180deg, #34373D 0%, #1E2024 100%);
+  }
+  .port-card.platform.port-scs .port-image img {
+    object-fit: contain;
+    object-position: center;
+    padding: 18px;
+  }
   .port-card.platform .port-body {
     width: 55%;
     padding: 40px 36px;
@@ -1339,16 +1368,16 @@ ARCHIVED-END: mockup-label -->
           </p>
           <div class="platform-feature-meta">
             <div class="platform-feature-stat">
-              <span class="num">[X]</span>
-              <span class="label">Fund I IRR · TBC</span>
+              <span class="num">4.56</span>
+              <span class="label">TVPI · Fund I</span>
             </div>
             <div class="platform-feature-stat">
-              <span class="num">[X]</span>
-              <span class="label">Fund II Multiple · TBC</span>
+              <span class="num">2.5</span>
+              <span class="label">TVPI · Fund II</span>
             </div>
             <div class="platform-feature-stat">
-              <span class="num">[X]</span>
-              <span class="label">Portfolio Companies · TBC</span>
+              <span class="num">21</span>
+              <span class="label">Portfolio Companies</span>
             </div>
           </div>
         </div>
