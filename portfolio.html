@@ -947,17 +947,15 @@
      fills the container, so suppress the overlay to keep the photo clean. */
   .port-card.platform .port-image::after { display: none; }
 
-  /* Monolith (Space Capital Stack) — REWORK 2 (client override: BRAND GREEN, not
-     charcoal). The source is an opaque 16:9 neutral-grey render (obelisk +
-     "Monolith" wordmark); no transparent/SVG alternate exists in /assets/. To put
-     it on the brand-green panel without a clashing grey box, the render is
-     recoloured into the green via mix-blend-mode: luminosity — the panel supplies
-     the green hue while the render supplies the light/shade, so the grey field
-     becomes green, the obelisk stays dark and the "Monolith" wordmark stays light.
-     It is contained (not cover-cropped) with green padding so the wordmark stays
-     fully legible; a soft top/bottom mask dissolves the render's letterbox edges
-     into the panel. Panel green = the exact sibling-card gradient (forest-deep ->
-     forest -> forest-tint), same token as the SpacePort Fund / Karman card. */
+  /* Monolith (Space Capital Stack) — BRAND GREEN panel (client requirement), but
+     the Monolith render itself stays its natural GREY (client request — do not
+     recolour it into the green). The source is an opaque 16:9 grey render (obelisk
+     + "Monolith" wordmark); no transparent/SVG alternate exists in /assets/. It is
+     contained (not cover-cropped) with padding so the wordmark stays fully legible;
+     a soft top/bottom mask dissolves the contain letterbox edges into the panel so
+     the grey sits as a framed render rather than a hard box. Panel green = the exact
+     sibling-card gradient (forest-deep -> forest -> forest-tint), the SpacePort
+     Fund / Karman token. */
   .port-scs .port-image {
     background: linear-gradient(180deg, #0D2620 0%, #1B3A2E 60%, #2A5043 100%);
   }
@@ -965,11 +963,6 @@
     object-fit: contain;
     object-position: center;
     padding: 22px;
-    /* brightness pulls the render's grey field down to the panel's luminance so the
-       luminosity-blended green matches the surround (no lighter rectangle); the
-       vertical mask dissolves the contain letterbox edges into the panel. */
-    filter: brightness(0.6) contrast(1.08);
-    mix-blend-mode: luminosity;
     -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
     mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
   }
