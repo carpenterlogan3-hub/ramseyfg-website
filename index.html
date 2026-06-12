@@ -1240,6 +1240,12 @@
   /* Black-ink transparent logos (e.g. SpacePort Fund) inverted to white so they
      read on the green plaque instead of disappearing into it. */
   .layer-vehicle-logo.is-dark-ink { filter: invert(1) brightness(1.85); }
+  /* Alera Group — a full-colour transparent lockup (cyan ALERA, black GROUP +
+     mark, navy "Rocks to Rockets"). It can't be flattened to one ink, so it sits
+     on a white chip where every colour reads, instead of the green plaque where
+     the dark elements would vanish. Wider so the tagline stays legible. */
+  .layer-logo-plaque.is-light { background: #fff; border-color: rgba(15,26,20,0.12); padding: 7px 11px; }
+  .layer-vehicle-logo.is-color { max-width: 170px; }
 
   @media (max-width: 600px) {
     .layer { grid-template-columns: 40px 1fr; gap: 16px; padding: 22px; }
@@ -2140,7 +2146,7 @@ ARCHIVED-END: mockup-label -->
               <p>The enabler. Making space assets insurable — and therefore financeable.</p>
             </div>
             <div class="layer-vehicle">
-              <span class="layer-logo-plaque"><img class="layer-vehicle-logo" src="assets/portfolio/alera-group-logo.png" alt="Alera Group logo" /></span>
+              <span class="layer-logo-plaque is-light"><img class="layer-vehicle-logo is-color" src="assets/portfolio/alera-group-logo.png" alt="Alera Group — Rocks to Rockets logo" /></span>
             </div>
           </div>
         </div>
