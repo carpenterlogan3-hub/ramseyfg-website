@@ -1218,17 +1218,28 @@
   }
 
   /* Logo variant for layers whose vehicle is a branded asset rather than text.
-     Sits inside .layer-vehicle on a small bone-toned backdrop so a dark-ink
-     transparent PNG reads against the panel's forest-deep background. */
+     The logo sits on a small forest-green plaque (.layer-logo-plaque) so all
+     three marks read consistently against the panel's forest-deep background
+     (brand-green treatment, per the rework brief). The plaque lives on the
+     wrapper — not the <img> — so the .is-dark-ink invert (used to flip the
+     black SpacePort mark to white) affects only the logo pixels, never the
+     plaque fill. */
+  .layer-logo-plaque {
+    display: inline-block;
+    background: var(--forest-tint);
+    border: 1px solid rgba(244,239,230,0.14);
+    padding: 8px 12px;
+    line-height: 0;
+  }
   .layer-vehicle-logo {
     display: block;
     max-width: 130px;
     width: auto;
     height: auto;
-    background: var(--bone);
-    padding: 6px 10px;
-    margin-left: auto;
   }
+  /* Black-ink transparent logos (e.g. SpacePort Fund) inverted to white so they
+     read on the green plaque instead of disappearing into it. */
+  .layer-vehicle-logo.is-dark-ink { filter: invert(1) brightness(1.85); }
 
   @media (max-width: 600px) {
     .layer { grid-template-columns: 40px 1fr; gap: 16px; padding: 22px; }
@@ -2084,7 +2095,9 @@ ARCHIVED-END: mockup-label -->
               <h3>Early-Stage Equity</h3>
               <p>The spark. Pre-seed through Series B venture capital.</p>
             </div>
-            <div class="layer-vehicle">SpaceFund</div>
+            <div class="layer-vehicle">
+              <span class="layer-logo-plaque"><img class="layer-vehicle-logo" src="assets/portfolio/spacefund-logo-plain.png" alt="SpaceFund logo" /></span>
+            </div>
           </div>
           <div class="layer">
             <div class="layer-num">02</div>
@@ -2092,7 +2105,9 @@ ARCHIVED-END: mockup-label -->
               <h3>Private Credit</h3>
               <p>The bridge. Non-dilutive, secured debt for revenue-generating assets.</p>
             </div>
-            <div class="layer-vehicle">Space Finance<br>Company</div>
+            <div class="layer-vehicle">
+              <span class="layer-logo-plaque"><img class="layer-vehicle-logo" src="assets/portfolio/space-finance-company-logo.png" alt="Space Finance Company logo" /></span>
+            </div>
           </div>
           <div class="layer">
             <div class="layer-num">03</div>
@@ -2101,7 +2116,7 @@ ARCHIVED-END: mockup-label -->
               <p>The ground. Workforce housing, labs, and spaceport-adjacent real estate.</p>
             </div>
             <div class="layer-vehicle">
-              <img class="layer-vehicle-logo" src="assets/portfolio/spaceport-fund-logo.png" alt="SpacePort Fund — a Karman Line Company" />
+              <span class="layer-logo-plaque"><img class="layer-vehicle-logo is-dark-ink" src="assets/portfolio/spaceport-fund-logo.png" alt="SpacePort Fund — a Karman Line Company" /></span>
             </div>
           </div>
           <div class="layer accent">
@@ -2316,12 +2331,9 @@ ARCHIVED-END: mockup-label -->
 
       <!-- Card 4: Deep Space Industries — Meagan's exit, an early space-resources/asteroid-mining position -->
       <article class="track-card track-deep-space" tabindex="0" data-project="deep-space">
-        <div class="track-image" data-todo="deep-space-industries-logo">
-          <!-- TODO: swap in a proper Deep Space Industries logo when provided.
-               Using Spacefund.jpg as a thematic placeholder (DSI was a
-               SpaceFund-era exit in Meagan's portfolio). -->
-          <img src="assets/portfolio/Spacefund.jpg"
-               alt="Deep Space Industries — space resources / asteroid mining (placeholder)"
+        <div class="track-image">
+          <img src="assets/portfolio/deep-space-industries-logo.jpg"
+               alt="Deep Space Industries logo"
                loading="lazy" />
         </div>
         <div class="track-body">
@@ -2331,7 +2343,7 @@ ARCHIVED-END: mockup-label -->
           </div>
           <h3 class="track-name">Deep Space Industries</h3>
           <p class="track-summary">
-            An early-stage space resources company and a successful exit in Meagan Crawford's portfolio, acquired as the space economy matured.
+            An early-stage space resources company that was acquired in 2017, marking the second successful exit in Meagan Crawford's portfolio.
           </p>
           <a href="projects/deep-space.html" class="track-more">
             View project
