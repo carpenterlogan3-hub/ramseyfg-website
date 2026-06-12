@@ -1430,9 +1430,11 @@
     max-width: 56ch;
   }
 
+  /* REWORK 3b: four video cards in a single horizontal row on desktop,
+     2-across on tablet, 1-across on mobile. */
   .media-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 28px;
   }
   @media (max-width: 980px) { .media-grid { grid-template-columns: 1fr 1fr; gap: 24px; } }
@@ -1486,6 +1488,18 @@
   }
   .media-card.m-3 .media-thumb::before {
     background: radial-gradient(ellipse at center, rgba(244,239,230,0.14) 0%, transparent 60%);
+  }
+  .media-card.m-4 .media-thumb {
+    background: linear-gradient(135deg, #2A5043 0%, #0D2620 100%);
+  }
+  .media-card.m-4 .media-thumb::before {
+    background: radial-gradient(ellipse 70% 50% at 50% 55%, rgba(217,207,184,0.12), transparent 70%);
+  }
+  .media-card.m-5 .media-thumb {
+    background: linear-gradient(135deg, #1B3A2E 0%, #0D2620 100%);
+  }
+  .media-card.m-5 .media-thumb::before {
+    background: radial-gradient(ellipse at center, rgba(244,239,230,0.12) 0%, transparent 60%);
   }
 
   .media-play {
@@ -2494,6 +2508,42 @@ ARCHIVED-END: mockup-label -->
           <div class="media-tag">Talk · SpaceFund</div>
           <h3 class="media-title">Why Houston is the Future of the Trillion-Dollar Space Economy</h3>
           <p class="media-byline">Meagan Crawford on why Houston is positioned to anchor the trillion-dollar space economy.</p>
+        </div>
+      </article>
+
+      <article class="media-card m-4" tabindex="0">
+        <div class="media-thumb">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/BTjmWwsMeXQ?rel=0&modestbranding=1"
+            title="Cultivate Partner Testimonial: Eden Grow Systems"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="media-body">
+          <div class="media-tag">Interview · Grand Farm</div>
+          <h3 class="media-title">Cultivate Partner Testimonial: Eden Grow Systems</h3>
+          <p class="media-byline">Bart Womack on Eden Grow Systems — an RFG portfolio company — recorded at the Cultivate agriculture-technology conference.</p>
+        </div>
+      </article>
+
+      <article class="media-card m-5" tabindex="0">
+        <div class="media-thumb">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/rOP4KpuTT5Y?rel=0&modestbranding=1"
+            title="Meagan Crawford: Inspiration 4 Launch on Bloomberg TV News Daybreak Asia"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="media-body">
+          <div class="media-tag">Interview · Bloomberg</div>
+          <h3 class="media-title">Meagan Crawford: Inspiration 4 Launch on Bloomberg TV News Daybreak Asia</h3>
+          <p class="media-byline">Meagan Crawford on Bloomberg TV's Daybreak Asia, covering the Inspiration4 launch and the new space economy.</p>
         </div>
       </article>
     </div>
