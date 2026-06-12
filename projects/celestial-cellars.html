@@ -608,6 +608,29 @@
   }
   .footer-bottom .legal { display: flex; gap: 24px; flex-wrap: wrap; }
   .footer-bottom a:hover { color: var(--bone); }
+
+  /* Project prev/next navigation — rework Phase 5 (wrap-around; live project pages only) */
+  .project-nav { background: var(--bone); border-top: 1px solid var(--rule); }
+  .project-nav .wrap {
+    display: flex; justify-content: space-between; align-items: stretch; gap: 24px;
+    padding-top: 30px; padding-bottom: 30px;
+  }
+  .project-nav-link {
+    display: flex; flex-direction: column; gap: 5px; max-width: 48%;
+    text-decoration: none; color: var(--ink); transition: color 0.2s ease;
+  }
+  .project-nav-link.next { text-align: right; align-items: flex-end; margin-left: auto; }
+  .project-nav-link:hover { color: var(--forest); }
+  .project-nav-dir {
+    font-family: var(--sans); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--mute);
+  }
+  .project-nav-link:hover .project-nav-dir { color: var(--forest); }
+  .project-nav-name {
+    font-family: var(--serif); font-size: 19px; font-weight: 500;
+    line-height: 1.2; letter-spacing: -0.01em;
+  }
+  @media (max-width: 520px) { .project-nav-name { font-size: 15px; } .project-nav .wrap { gap: 16px; } }
 </style>
 </head>
 <body>
@@ -722,6 +745,21 @@
     </div>
   </div>
 </section>
+
+
+<!-- Project prev/next navigation (rework Phase 5) -->
+<nav class="project-nav" aria-label="Project navigation">
+  <div class="wrap">
+    <a class="project-nav-link prev" href="off-earth-data.html">
+      <span class="project-nav-dir">&larr; Previous</span>
+      <span class="project-nav-name">Off-Earth Data</span>
+    </a>
+    <a class="project-nav-link next" href="deep-space.html">
+      <span class="project-nav-dir">Next &rarr;</span>
+      <span class="project-nav-name">Deep Space Industries</span>
+    </a>
+  </div>
+</nav>
 
 <footer class="site-footer">
   <div class="wrap">
