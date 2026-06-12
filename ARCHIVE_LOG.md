@@ -99,6 +99,15 @@ All data records, images, videos, decks, and detail pages remain in the repo.
   - `#2` → "Meagan Crawford: Inspiration 4 Launch on Bloomberg TV News Daybreak Asia",
     videoId `rOP4KpuTT5Y` (SpaceFund channel).
 - **When:** 2026-06
+- **Re-upload reconciliation (2026-06, second pass):** these same five files were
+  later re-committed to the repo **root** via the GitHub web UI (origin commit
+  `95a1852`), plus `Alera Group Logo.png` (origin `bcdfc17`). After rebasing the
+  local work onto origin, the three duplicate root logos (already intaken to
+  `assets/portfolio/` with safe names) and the two `Additional Video #*.html`
+  reference captures were removed again with `git rm` — they are unreferenced and
+  their `#`/space filenames would ship as stray broken-URL files. All recoverable
+  via git history. `Alera Group Logo.png` was kept and normalized to
+  `assets/portfolio/alera-group-logo.png` (see capital-stack layer 04).
 
 ---
 
