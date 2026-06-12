@@ -79,6 +79,27 @@ All data records, images, videos, decks, and detail pages remain in the repo.
 - **Still pending:** `[TBC]` glance values (Vehicle, Lead Principal) and `Request Deck`
   mailto links on `projects/yoyodyne.html` are left as-is.
 
+### B. New logo intake + video-embed extraction (2026-06)
+- **What:** Five files supplied from a client working session (delivered via the
+  user's `~/Downloads`, not committed to the repo root).
+- **Logos added to `assets/portfolio/` (history N/A — sources were untracked uploads,
+  not previously-committed files, so a `git mv` was not possible; copied + `git add`):**
+  - `Deep Space Industries Logo.jpg` → `deep-space-industries-logo.jpg`
+    *(note: bytes are actually a PNG, grayscale 600×186; the requested `.jpg`
+    filename was retained per the brief — browsers render it regardless).*
+  - `Space Finance Company Logo.png` → `space-finance-company-logo.png`
+  - `Updated_SpaceFund_Logo.png` → `spacefund-logo-plain.png`
+- **Reference files (NOT shipped):** `Additional Video #1.html` and
+  `Additional Video #2.html` were saved YouTube watch-page captures, not site pages.
+  Their `#` characters break URLs, so they were intentionally **not** added to the
+  repo. Embeds were extracted for the homepage media section, then the files were
+  left in `~/Downloads` only:
+  - `#1` → "Cultivate Partner Testimonial: Eden Grow Systems", videoId `BTjmWwsMeXQ`
+    (Grand Farm channel) — features Bart Womack (CEO, Eden Grow Systems).
+  - `#2` → "Meagan Crawford: Inspiration 4 Launch on Bloomberg TV News Daybreak Asia",
+    videoId `rOP4KpuTT5Y` (SpaceFund channel).
+- **When:** 2026-06
+
 ---
 
 ## Renamed (recoverable via comments + git history)
