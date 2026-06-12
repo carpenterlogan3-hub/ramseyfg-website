@@ -947,23 +947,31 @@
      fills the container, so suppress the overlay to keep the photo clean. */
   .port-card.platform .port-image::after { display: none; }
 
-  /* Monolith (Space Capital Stack) — REWORK 2c. The source is a self-contained
-     16:9 neutral-charcoal render (obelisk + "Monolith" wordmark), not a logo.
-     The previous cover-crop zoomed the centred subject in the tall 45%-width
-     column and clipped its edges (the "distorted/stretched" look). Fix: contain
-     it at natural aspect on a backdrop so the whole mark is visible.
-     Backdrop = dark NEUTRAL charcoal, NOT brand green: the grey render letterboxed
-     onto forest green reads as poor contrast / "too much green", so per the
-     brief's delegated command decision we match the art's own neutral tone for a
-     seamless, intentional frame. Specificity bumped (.port-card.platform.port-scs)
-     to override the platform cover rule above. */
+  /* Monolith (Space Capital Stack) — REWORK 2 (client override: BRAND GREEN, not
+     charcoal). The source is an opaque 16:9 neutral-grey render (obelisk +
+     "Monolith" wordmark); no transparent/SVG alternate exists in /assets/. To put
+     it on the brand-green panel without a clashing grey box, the render is
+     recoloured into the green via mix-blend-mode: luminosity — the panel supplies
+     the green hue while the render supplies the light/shade, so the grey field
+     becomes green, the obelisk stays dark and the "Monolith" wordmark stays light.
+     It is contained (not cover-cropped) with green padding so the wordmark stays
+     fully legible; a soft top/bottom mask dissolves the render's letterbox edges
+     into the panel. Panel green = the exact sibling-card gradient (forest-deep ->
+     forest -> forest-tint), same token as the SpacePort Fund / Karman card. */
   .port-scs .port-image {
-    background: linear-gradient(180deg, #34373D 0%, #1E2024 100%);
+    background: linear-gradient(180deg, #0D2620 0%, #1B3A2E 60%, #2A5043 100%);
   }
   .port-card.platform.port-scs .port-image img {
     object-fit: contain;
     object-position: center;
-    padding: 18px;
+    padding: 22px;
+    /* brightness pulls the render's grey field down to the panel's luminance so the
+       luminosity-blended green matches the surround (no lighter rectangle); the
+       vertical mask dissolves the contain letterbox edges into the panel. */
+    filter: brightness(0.6) contrast(1.08);
+    mix-blend-mode: luminosity;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+    mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
   }
   .port-card.platform .port-body {
     width: 55%;
