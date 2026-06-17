@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — Ramsey Financial Group</title>
+<meta name="description" content="How Ramsey Financial Group, LLC collects, uses, discloses, and protects personal data through ramseyfg.com, and how you can exercise your privacy rights." />
+<link rel="icon" type="image/png" href="assets/Royal_Logo.png" />
+
+<!-- Fonts: Fraunces (serif display) + Inter (geometric sans body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================================
+     RFG LEGAL PAGE — inherits the site design system (tokens,
+     topbar, nav, footer) with a constrained reading measure.
+     ============================================================ */
+  :root {
+    --ink:           #0F1A14;
+    --forest:        #1B3A2E;
+    --forest-deep:   #0D2620;
+    --forest-tint:   #2A5043;
+    --burgundy:      #7A2E2A;
+    --burgundy-deep: #5A1F1C;
+    --bone:          #F4EFE6;
+    --bone-soft:     #EBE4D6;
+    --sand:          #D9CFB8;
+    --rule:          #C4B99D;
+    --mute:          #5A5A52;
+
+    --serif: 'Fraunces', 'Canela', Georgia, serif;
+    --sans:  'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --container: 1280px;
+    --edge-pad:  clamp(20px, 4vw, 56px);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--bone);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  :focus-visible {
+    outline: 2px solid var(--forest);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .wrap {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding-left: var(--edge-pad);
+    padding-right: var(--edge-pad);
+  }
+
+  /* ============ Top Bar ============ */
+  .topbar {
+    background: var(--forest-deep);
+    color: var(--bone);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 10px 0;
+    font-weight: 500;
+  }
+  .topbar .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .topbar span { opacity: 0.75; }
+  .topbar .top-right a { margin-left: 20px; opacity: 0.85; }
+  .topbar .top-right a:hover { opacity: 1; }
+
+  @media (max-width: 680px) {
+    .topbar .top-left { display: none; }
+    .topbar .wrap { justify-content: center; }
+    .topbar .top-right a { margin: 0 10px; }
+  }
+
+  /* ============ Nav ============ */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bone);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    gap: 40px;
+  }
+  .brand {
+    font-family: var(--serif);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-mark {
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid var(--forest);
+    position: relative;
+    transform: rotate(45deg);
+  }
+  .brand-mark::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    background: var(--burgundy);
+  }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.05; }
+  .brand-text .top {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mute);
+    font-family: var(--sans);
+    font-weight: 500;
+  }
+  .brand-text .name {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--forest);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.2s ease;
+  }
+  .nav-links a:hover { color: var(--forest); }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 0;
+    height: 1px;
+    background: var(--burgundy);
+    transition: width 0.25s ease;
+  }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border: 1px solid var(--forest);
+    color: var(--forest);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--forest); color: var(--bone); }
+
+  .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 8px; }
+  .nav-toggle span { display: block; width: 24px; height: 1.5px; background: var(--ink); margin: 5px 0; }
+
+  @media (max-width: 1020px) {
+    .nav-links, .nav-cta { display: none; }
+    .nav-toggle { display: block; }
+  }
+
+  /* ============ Legal page header ============ */
+  .legal-header {
+    padding: clamp(64px, 9vw, 110px) 0 clamp(32px, 4vw, 48px);
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+  .legal-header::before {
+    content: '';
+    position: absolute;
+    right: -8%;
+    top: 12%;
+    width: 380px;
+    height: 380px;
+    border: 1px solid var(--rule);
+    transform: rotate(45deg);
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  .legal-header .wrap { position: relative; z-index: 2; }
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-bottom: 32px;
+    font-weight: 500;
+  }
+  .breadcrumb a { color: var(--mute); transition: color 0.2s ease; }
+  .breadcrumb a:hover { color: var(--forest); }
+  .breadcrumb .sep { color: var(--rule); }
+  .breadcrumb .current { color: var(--ink); }
+  .legal-header h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .legal-meta {
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--mute);
+    margin-top: 20px;
+  }
+  .legal-meta strong { color: var(--ink); font-weight: 600; }
+
+  /* ============ Legal content ============ */
+  .legal-main { padding: clamp(40px, 6vw, 72px) 0 clamp(64px, 9vw, 112px); }
+  .legal { max-width: 760px; margin: 0 auto; }
+  .legal p, .legal li {
+    font-size: 17.5px;
+    line-height: 1.72;
+    color: var(--ink);
+  }
+  .legal p { margin: 0 0 18px; }
+  .legal h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(23px, 3vw, 29px);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--forest);
+    margin: 48px 0 16px;
+  }
+  .legal h3 {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--ink);
+    margin: 32px 0 12px;
+  }
+  .legal ul { margin: 0 0 18px; padding-left: 22px; }
+  .legal li { margin-bottom: 10px; }
+  .legal strong { font-weight: 600; color: var(--ink); }
+  .legal em { font-style: italic; }
+  .legal a {
+    color: var(--forest);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s ease;
+  }
+  .legal a:hover { color: var(--burgundy); }
+  .legal hr { border: 0; border-top: 1px solid var(--rule); margin: 40px 0; }
+
+  .legal-callout {
+    background: var(--forest-deep);
+    color: var(--bone);
+    border-left: 4px solid var(--burgundy);
+    padding: 22px 26px;
+    margin: 28px 0;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .legal-callout strong { color: #fff; font-weight: 600; }
+  .legal-callout a { color: var(--sand); }
+  .legal-callout a:hover { color: #fff; }
+
+  .legal-table-wrap { overflow-x: auto; margin: 24px 0; -webkit-overflow-scrolling: touch; }
+  .legal table { width: 100%; border-collapse: collapse; font-size: 15.5px; }
+  .legal th, .legal td {
+    text-align: left;
+    vertical-align: top;
+    padding: 12px 16px;
+    border: 1px solid var(--rule);
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .legal th[scope="row"] {
+    width: 32%;
+    background: var(--bone-soft);
+    font-weight: 600;
+  }
+  @media (max-width: 560px) {
+    .legal th[scope="row"] { width: 40%; }
+    .legal th, .legal td { padding: 10px 12px; }
+  }
+
+  /* ============ Footer ============ */
+  footer.site-footer {
+    background: var(--forest-deep);
+    color: var(--bone);
+    padding: 80px 0 40px;
+    border-top: 1px solid rgba(244,239,230,0.12);
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(244,239,230,0.12);
+  }
+  @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; } }
+  @media (max-width: 520px) { .footer-top { grid-template-columns: 1fr; } }
+
+  .foot-brand .brand-mark { border-color: var(--bone); }
+  .foot-brand .brand-text .top { color: rgba(244,239,230,0.55); }
+  .foot-brand .brand-text .name { color: var(--bone); }
+  .foot-brand p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgba(244,239,230,0.7);
+    margin-top: 20px;
+    max-width: 36ch;
+  }
+  .foot-address {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(244,239,230,0.55);
+    font-style: normal;
+  }
+  .foot-col h4 {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sand);
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .foot-col a {
+    font-size: 14px;
+    color: rgba(244,239,230,0.75);
+    transition: color 0.2s ease;
+  }
+  .foot-col a:hover { color: var(--bone); }
+  .foot-crest {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(244,239,230,0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+  }
+  .foot-crest-mark { width: 100px; flex-shrink: 0; }
+  .foot-crest-mark img { width: 100%; height: auto; object-fit: contain; display: block; }
+  .foot-crest-text {
+    font-family: var(--serif);
+    font-size: 11px;
+    line-height: 1.5;
+    font-style: italic;
+    color: rgba(244,239,230,0.55);
+    letter-spacing: 0.04em;
+  }
+  .foot-crest-text strong {
+    display: block;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sand);
+    margin-bottom: 4px;
+  }
+  .footer-bottom {
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 12px;
+    color: rgba(244,239,230,0.5);
+  }
+  .footer-bottom .legal { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-bottom a:hover { color: var(--bone); }
+</style>
+</head>
+<body>
+
+<!-- Top utility bar -->
+<div class="topbar">
+  <div class="wrap">
+    <span class="top-left">Houston, Texas · Established 1992 · Manager of the Leo B. Womack Family Trust</span>
+    <div class="top-right">
+      <a href="https://www.linkedin.com/company/ramsey-financial-group/" target="_blank" rel="noopener noreferrer">LinkedIn&nbsp;↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- Main navigation -->
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand" aria-label="Ramsey Financial Group home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">
+        <span class="top">Ramsey</span>
+        <span class="name">Financial Group</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="index.html#scs">Space Capital Stack</a></li>
+      <li><a href="index.html#team">Team</a></li>
+      <li><a href="index.html#tl">Thought Leadership</a></li>
+      <li><a href="index.html#media">Media</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="index.html#contact" class="nav-cta">Request an Introduction</a>
+    <button class="nav-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Page header -->
+<header class="legal-header">
+  <div class="wrap">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">/</span>
+      <span class="current">Privacy Policy</span>
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="legal-meta">Ramsey Financial Group, LLC<br>Effective Date / Last Updated: [EFFECTIVE DATE — e.g., June 16, 2026]</p>
+  </div>
+</header>
+
+<main class="legal-main">
+  <article class="legal wrap">
+        <p>This Privacy Policy explains how Ramsey Financial Group, LLC ("RFG," "we," "us," or "our"), as the controller of your personal data, collects, uses, discloses, and protects personal data in connection with the website at ramseyfg.com and all associated pages, subdomains, project pages, and materials (collectively, the "Site"), and how you can exercise your rights. It is incorporated into our <a href="terms.html">Terms of Use</a> and should be read with our <a href="disclosures.html">Disclosures</a>. By using the Site or submitting information to us, you acknowledge this Privacy Policy.</p>
+        <h2>Notice at Collection (Summary)</h2>
+        <div class="legal-table-wrap"><table><tbody><tr><th scope="row"><strong>Who we are</strong></th><td>Ramsey Financial Group, LLC, 710 N Post Oak Rd, Houston, Texas 77024 — info@ramseyfg.com</td></tr><tr><th scope="row"><strong>What we collect</strong></th><td>Identifiers and contact details; professional/business information; investor-eligibility and verification information you provide; communications and Submissions; and technical/usage data collected automatically</td></tr><tr><th scope="row"><strong>Why</strong></th><td>To respond to inquiries; evaluate prospective relationships and investments; verify eligibility; operate and secure the Site; communicate with you; and comply with law</td></tr><tr><th scope="row"><strong>Do we sell or share it?</strong></th><td><strong>No.</strong> We do not sell personal data and do not process it for targeted advertising or for profiling with legal or similarly significant effects</td></tr><tr><th scope="row"><strong>Your choices</strong></th><td>Access, correct, delete, obtain a copy, and (where applicable) opt out — see "Your Privacy Rights" below</td></tr><tr><th scope="row"><strong>How to reach us</strong></th><td>info@ramseyfg.com (subject line: "Privacy Request")</td></tr></tbody></table></div>
+        <h2>1. Scope</h2>
+        <p>This Privacy Policy applies to personal data we collect through the Site and related communications (such as email inquiries and introduction or executive-summary requests). It does not apply to (a) information collected through any third-party website, platform, or service we do not control, or (b) the confidential information governed by the Offering Documents and subscription agreements for an actual investment, which may be subject to separate privacy terms.</p>
+        <h2>2. Personal Data We Collect</h2>
+        <ul><li><strong>Information you provide directly.</strong> Name, email address, telephone number, company/organization, title, mailing address, and the content of your messages, inquiries, or Submissions. If you seek to participate in an investment, you may provide information relating to your investor status, accreditation, identity, source of funds, and financial circumstances used to verify eligibility and comply with law.</li><li><strong>Information collected automatically.</strong> When you access the Site, we and our service providers may collect IP address, device and browser type, operating system, referring/exit pages, pages viewed, links clicked, approximate location, and date/time stamps, through cookies, server logs, and similar technologies. See Section 6.</li><li><strong>Information from third parties.</strong> We may receive information from analytics providers, identity/accreditation-verification providers, hosting providers, business contacts, and publicly available sources, which we may combine with information collected directly.</li></ul>
+        <p>We do not intentionally collect "sensitive data" through the Site and ask that you not submit it unless we specifically request it for a defined purpose. Where we do process sensitive data, we do so only with your consent or as otherwise permitted by law (see Section 11).</p>
+        <h2>3. Sources and Purposes</h2>
+        <p>We collect personal data from you, automatically through your use of the Site, and from the third-party sources above. We use it only as reasonably necessary and proportionate to:</p>
+        <ul><li>respond to your inquiries and provide requested information;</li><li>evaluate and process introduction requests, Submissions, and prospective investment, partnership, or funding relationships;</li><li>verify investor eligibility, identity, accreditation, and source of funds, and conduct related due diligence and screening (including sanctions and anti-money-laundering checks);</li><li>operate, maintain, secure, analyze, and improve the Site;</li><li>send administrative communications and, where permitted, relevant updates (you may opt out of non-essential communications at any time);</li><li>comply with legal, regulatory, tax, anti-money-laundering, sanctions, and recordkeeping obligations, and establish, exercise, or defend legal claims; and</li><li>detect, prevent, and address fraud, security incidents, and prohibited or unlawful activity.</li></ul>
+        <p>We will not process your personal data for materially different, unrelated, or incompatible purposes without providing notice or obtaining consent where required by law.</p>
+        <h2>4. How We Disclose Personal Data</h2>
+        <p>We may disclose personal data:</p>
+        <ul><li><strong>to service providers/processors</strong> (hosting, analytics, communications, identity/accreditation verification, and professional advisers) under obligations to protect it and use it only to provide services to us;</li><li><strong>to affiliates</strong> and affiliated funds or platforms, for the purposes in this Privacy Policy;</li><li><strong>for legal and compliance reasons</strong>, where necessary to comply with law, regulation, legal process, or governmental or regulatory request, or to protect the rights, property, or safety of RFG, our investors, or others;</li><li><strong>in connection with a business transaction</strong> such as a merger, financing, reorganization, or sale of assets; and</li><li><strong>with your consent or at your direction.</strong></li></ul>
+        <p><strong>We do not sell your personal data, and we do not process it for targeted advertising or for profiling in furtherance of decisions producing legal or similarly significant effects</strong>, as those terms are defined under applicable state privacy laws.</p>
+        <h2>5. Legal Bases (Where Applicable)</h2>
+        <p>Where required, we rely on one or more of: your consent; performance of, or steps taken at your request prior to, a contract; compliance with a legal obligation; and our legitimate interests in operating, securing, and developing our business, provided those interests are not overridden by your rights.</p>
+        <h2>6. Cookies, Tracking, and Universal Opt-Out Signals</h2>
+        <p>The Site may use cookies, pixels, server logs, and similar technologies to operate the Site, remember preferences, measure traffic, and analyze usage. Most browsers let you refuse or delete cookies; disabling them may affect some features. Embedded third-party content (such as privacy-enhanced/no-cookie video and social-media links) may set its own technologies subject to the third party's policies.</p>
+        <p><strong>Universal opt-out / Do Not Track.</strong> Where required by applicable law (including the Texas Data Privacy and Security Act), we honor recognized universal opt-out mechanisms such as the Global Privacy Control (GPC) signal as a request to opt out of any "sale" of personal data and targeted advertising for the relevant browser or device. Because we do not sell personal data or engage in targeted advertising, our practices already align with these preferences. We do not currently respond to other "Do Not Track" browser signals.</p>
+        <h2>7. Third-Party Links and Content</h2>
+        <p>The Site links to and embeds third-party websites, platforms, and services. We are not responsible for their privacy practices and encourage you to review the policies of any third party you access.</p>
+        <h2>8. Data Retention</h2>
+        <p>We retain personal data only as long as reasonably necessary to fulfill the purposes for which it was collected, including responding to inquiries, maintaining relationships, and satisfying legal, regulatory, tax, accounting, and recordkeeping obligations, after which we delete, de-identify, or anonymize it in accordance with our retention practices and applicable law. Retention periods vary by data type and the purpose and legal basis for processing.</p>
+        <h2>9. Data Security and Breach Response</h2>
+        <p>We maintain reasonable administrative, technical, and physical safeguards designed to protect personal data against unauthorized access, use, disclosure, alteration, or destruction, appropriate to the nature of the data. No method of transmission or storage is completely secure, and we cannot guarantee absolute security. In the event of a data breach affecting your personal data, we will notify you and applicable authorities as and to the extent required by law. You are responsible for safeguarding any credentials and the information you transmit to us.</p>
+        <h2>10. Your Privacy Rights</h2>
+        <p>Depending on your state of residence and applicable law, you may have some or all of the following rights:</p>
+        <ul><li>to <strong>confirm</strong> whether we process your personal data and to <strong>access</strong> it;</li><li>to <strong>correct</strong> inaccuracies;</li><li>to <strong>delete</strong> personal data collected from or about you;</li><li>to obtain a <strong>portable copy</strong> of personal data you provided, where applicable;</li><li>to <strong>opt out</strong> of the sale of personal data, targeted advertising, and certain profiling (as noted, we do not engage in these); and</li><li>not to receive <strong>discriminatory treatment</strong> for exercising your rights.</li></ul>
+        <p><strong>How to exercise.</strong> You (or an authorized agent) may submit a request by emailing <strong>info@ramseyfg.com</strong> with the subject line <strong>"Privacy Request."</strong> We will take reasonable steps to verify your identity (and an agent's authority) before responding, and may decline requests as permitted by law. We will respond within the time required by applicable law (generally within 45 days, subject to permitted extensions).</p>
+        <p><strong>Appeals.</strong> If we decline to act on your request, you may appeal by replying to our response or emailing <strong>info@ramseyfg.com</strong> with the subject line <strong>"Privacy Appeal"</strong> within a reasonable time. We will inform you in writing of our decision and reasons. If your appeal is denied, you may submit a complaint to the <strong>Texas Attorney General</strong> (texasattorneygeneral.gov) or the appropriate authority in your jurisdiction.</p>
+        <h2>11. Sensitive and Financial Data</h2>
+        <p>If, in connection with a prospective investment, we request information that constitutes sensitive or financial data (for example, to verify accredited-investor status, identity, or source of funds), we collect and process it only for the stated purpose and, where required by law, with your consent. We treat such information as confidential and limit access accordingly.</p>
+        <h2>12. Children's Privacy</h2>
+        <p>The Site is intended for adults and is not directed to children. We do not knowingly collect personal data from anyone under 18, and we do not knowingly collect personal data from a child under 13 without verifiable parental or guardian consent. If you believe a child provided us personal data, contact us and we will delete it.</p>
+        <h2>13. Residents of Other States; International Users</h2>
+        <p>Residents of states with comprehensive privacy laws (such as California, Virginia, Colorado, Connecticut, Utah, and others) may have additional or specific rights under their applicable laws, which we honor as applicable. California residents: we do not "sell" or "share" personal data as defined under the California Consumer Privacy Act, as amended, and do not use sensitive personal information for purposes requiring a right to limit.</p>
+        <p>If you access the Site from outside the United States, you understand that your information will be collected, transferred to, and processed in the United States, where data-protection laws may differ from those of your jurisdiction. Where the EU/UK GDPR applies, we process personal data on the legal bases in Section 5, you have rights of access, rectification, erasure, restriction, portability, and objection, you may withdraw consent and lodge a complaint with your supervisory authority, and any international transfers are made under an appropriate transfer mechanism.</p>
+        <h2>14. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will post the revised version and update the "Effective Date / Last Updated" above; material changes are effective when posted. Your continued use of the Site after changes are posted constitutes acknowledgment of the revised Privacy Policy.</p>
+        <h2>15. Contact Us</h2>
+        <p>For questions, or to exercise your rights, contact:</p>
+        <p>Ramsey Financial Group, LLC<br>Attn: Privacy<br>710 N Post Oak Rd<br>Houston, Texas 77024<br>Email: info@ramseyfg.com</p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="foot-brand">
+        <a href="index.html" class="brand" style="color: var(--bone);">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">
+            <span class="top">Ramsey</span>
+            <span class="name" style="color: var(--bone);">Financial Group</span>
+          </span>
+        </a>
+        <p>A Houston single-family office co-investing in frontier industries since 1992. Manager of the Leo B. Womack Family Trust.</p>
+        <address class="foot-address">
+          710 N Post Oak Rd<br>
+          Houston, Texas 77024<br>
+          <a href="mailto:bart@ramseyfg.com">bart@ramseyfg.com</a>
+        </address>
+        <div class="foot-crest" aria-label="Ramsey heritage crest">
+          <div class="foot-crest-mark" aria-hidden="true">
+            <img src="assets/Royal_Logo.png" alt="" loading="lazy" />
+          </div>
+          <div class="foot-crest-text">
+            <strong>Ramsey Heritage</strong>
+            Continuity across three decades<br>and three generations of operators.
+          </div>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="index.html#scs">Space Capital Stack</a></li>
+          <li><a href="index.html#team">Team</a></li>
+          <li><a href="index.html#tl">Thought Leadership</a></li>
+          <li><a href="index.html#media">Media</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Platforms</h4>
+        <ul>
+          <li><a href="https://spacefund.com" target="_blank" rel="noopener noreferrer">SpaceFund&nbsp;↗</a></li>
+          <li><a href="https://spacefinancecompany.com" target="_blank" rel="noopener noreferrer">Space Finance Company&nbsp;↗</a></li>
+          <li><a href="https://spaceportfund.com" target="_blank" rel="noopener noreferrer">SpacePort Fund&nbsp;↗</a></li>
+          <li><a href="https://offearthdata.com" target="_blank" rel="noopener noreferrer">Off-Earth Data&nbsp;↗</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/company/ramsey-financial-group/" target="_blank" rel="noopener noreferrer">LinkedIn&nbsp;↗</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Ramsey Financial Group, LLC. All rights reserved.</div>
+      <div class="legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclosures.html">Disclosures</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script defer src="assets/mobile-nav.js"></script>
+</body>
+</html>
