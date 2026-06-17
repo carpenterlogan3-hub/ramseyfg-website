@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Terms of Use — Ramsey Financial Group</title>
+<meta name="description" content="The terms governing your access to and use of the Ramsey Financial Group website, including arbitration, class-action and jury waiver, limitation of liability, and non-reliance provisions." />
+<link rel="icon" type="image/png" href="assets/Royal_Logo.png" />
+
+<!-- Fonts: Fraunces (serif display) + Inter (geometric sans body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================================
+     RFG LEGAL PAGE — inherits the site design system (tokens,
+     topbar, nav, footer) with a constrained reading measure.
+     ============================================================ */
+  :root {
+    --ink:           #0F1A14;
+    --forest:        #1B3A2E;
+    --forest-deep:   #0D2620;
+    --forest-tint:   #2A5043;
+    --burgundy:      #7A2E2A;
+    --burgundy-deep: #5A1F1C;
+    --bone:          #F4EFE6;
+    --bone-soft:     #EBE4D6;
+    --sand:          #D9CFB8;
+    --rule:          #C4B99D;
+    --mute:          #5A5A52;
+
+    --serif: 'Fraunces', 'Canela', Georgia, serif;
+    --sans:  'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --container: 1280px;
+    --edge-pad:  clamp(20px, 4vw, 56px);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--bone);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  :focus-visible {
+    outline: 2px solid var(--forest);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .wrap {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding-left: var(--edge-pad);
+    padding-right: var(--edge-pad);
+  }
+
+  /* ============ Top Bar ============ */
+  .topbar {
+    background: var(--forest-deep);
+    color: var(--bone);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 10px 0;
+    font-weight: 500;
+  }
+  .topbar .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .topbar span { opacity: 0.75; }
+  .topbar .top-right a { margin-left: 20px; opacity: 0.85; }
+  .topbar .top-right a:hover { opacity: 1; }
+
+  @media (max-width: 680px) {
+    .topbar .top-left { display: none; }
+    .topbar .wrap { justify-content: center; }
+    .topbar .top-right a { margin: 0 10px; }
+  }
+
+  /* ============ Nav ============ */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bone);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    gap: 40px;
+  }
+  .brand {
+    font-family: var(--serif);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-mark {
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid var(--forest);
+    position: relative;
+    transform: rotate(45deg);
+  }
+  .brand-mark::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    background: var(--burgundy);
+  }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.05; }
+  .brand-text .top {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mute);
+    font-family: var(--sans);
+    font-weight: 500;
+  }
+  .brand-text .name {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--forest);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.2s ease;
+  }
+  .nav-links a:hover { color: var(--forest); }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 0;
+    height: 1px;
+    background: var(--burgundy);
+    transition: width 0.25s ease;
+  }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border: 1px solid var(--forest);
+    color: var(--forest);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--forest); color: var(--bone); }
+
+  .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 8px; }
+  .nav-toggle span { display: block; width: 24px; height: 1.5px; background: var(--ink); margin: 5px 0; }
+
+  @media (max-width: 1020px) {
+    .nav-links, .nav-cta { display: none; }
+    .nav-toggle { display: block; }
+  }
+
+  /* ============ Legal page header ============ */
+  .legal-header {
+    padding: clamp(64px, 9vw, 110px) 0 clamp(32px, 4vw, 48px);
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+  .legal-header::before {
+    content: '';
+    position: absolute;
+    right: -8%;
+    top: 12%;
+    width: 380px;
+    height: 380px;
+    border: 1px solid var(--rule);
+    transform: rotate(45deg);
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  .legal-header .wrap { position: relative; z-index: 2; }
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-bottom: 32px;
+    font-weight: 500;
+  }
+  .breadcrumb a { color: var(--mute); transition: color 0.2s ease; }
+  .breadcrumb a:hover { color: var(--forest); }
+  .breadcrumb .sep { color: var(--rule); }
+  .breadcrumb .current { color: var(--ink); }
+  .legal-header h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .legal-meta {
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--mute);
+    margin-top: 20px;
+  }
+  .legal-meta strong { color: var(--ink); font-weight: 600; }
+
+  /* ============ Legal content ============ */
+  .legal-main { padding: clamp(40px, 6vw, 72px) 0 clamp(64px, 9vw, 112px); }
+  .legal { max-width: 760px; margin: 0 auto; }
+  .legal p, .legal li {
+    font-size: 17.5px;
+    line-height: 1.72;
+    color: var(--ink);
+  }
+  .legal p { margin: 0 0 18px; }
+  .legal h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(23px, 3vw, 29px);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--forest);
+    margin: 48px 0 16px;
+  }
+  .legal h3 {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--ink);
+    margin: 32px 0 12px;
+  }
+  .legal ul { margin: 0 0 18px; padding-left: 22px; }
+  .legal li { margin-bottom: 10px; }
+  .legal strong { font-weight: 600; color: var(--ink); }
+  .legal em { font-style: italic; }
+  .legal a {
+    color: var(--forest);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s ease;
+  }
+  .legal a:hover { color: var(--burgundy); }
+  .legal hr { border: 0; border-top: 1px solid var(--rule); margin: 40px 0; }
+
+  .legal-callout {
+    background: var(--forest-deep);
+    color: var(--bone);
+    border-left: 4px solid var(--burgundy);
+    padding: 22px 26px;
+    margin: 28px 0;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .legal-callout strong { color: #fff; font-weight: 600; }
+  .legal-callout a { color: var(--sand); }
+  .legal-callout a:hover { color: #fff; }
+
+  .legal-table-wrap { overflow-x: auto; margin: 24px 0; -webkit-overflow-scrolling: touch; }
+  .legal table { width: 100%; border-collapse: collapse; font-size: 15.5px; }
+  .legal th, .legal td {
+    text-align: left;
+    vertical-align: top;
+    padding: 12px 16px;
+    border: 1px solid var(--rule);
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .legal th[scope="row"] {
+    width: 32%;
+    background: var(--bone-soft);
+    font-weight: 600;
+  }
+  @media (max-width: 560px) {
+    .legal th[scope="row"] { width: 40%; }
+    .legal th, .legal td { padding: 10px 12px; }
+  }
+
+  /* ============ Footer ============ */
+  footer.site-footer {
+    background: var(--forest-deep);
+    color: var(--bone);
+    padding: 80px 0 40px;
+    border-top: 1px solid rgba(244,239,230,0.12);
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(244,239,230,0.12);
+  }
+  @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; } }
+  @media (max-width: 520px) { .footer-top { grid-template-columns: 1fr; } }
+
+  .foot-brand .brand-mark { border-color: var(--bone); }
+  .foot-brand .brand-text .top { color: rgba(244,239,230,0.55); }
+  .foot-brand .brand-text .name { color: var(--bone); }
+  .foot-brand p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgba(244,239,230,0.7);
+    margin-top: 20px;
+    max-width: 36ch;
+  }
+  .foot-address {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(244,239,230,0.55);
+    font-style: normal;
+  }
+  .foot-col h4 {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sand);
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .foot-col a {
+    font-size: 14px;
+    color: rgba(244,239,230,0.75);
+    transition: color 0.2s ease;
+  }
+  .foot-col a:hover { color: var(--bone); }
+  .foot-crest {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(244,239,230,0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+  }
+  .foot-crest-mark { width: 100px; flex-shrink: 0; }
+  .foot-crest-mark img { width: 100%; height: auto; object-fit: contain; display: block; }
+  .foot-crest-text {
+    font-family: var(--serif);
+    font-size: 11px;
+    line-height: 1.5;
+    font-style: italic;
+    color: rgba(244,239,230,0.55);
+    letter-spacing: 0.04em;
+  }
+  .foot-crest-text strong {
+    display: block;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sand);
+    margin-bottom: 4px;
+  }
+  .footer-bottom {
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 12px;
+    color: rgba(244,239,230,0.5);
+  }
+  .footer-bottom .legal { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-bottom a:hover { color: var(--bone); }
+</style>
+</head>
+<body>
+
+<!-- Top utility bar -->
+<div class="topbar">
+  <div class="wrap">
+    <span class="top-left">Houston, Texas · Established 1992 · Manager of the Leo B. Womack Family Trust</span>
+    <div class="top-right">
+      <a href="https://www.linkedin.com/company/ramsey-financial-group/" target="_blank" rel="noopener noreferrer">LinkedIn&nbsp;↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- Main navigation -->
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand" aria-label="Ramsey Financial Group home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">
+        <span class="top">Ramsey</span>
+        <span class="name">Financial Group</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="index.html#scs">Space Capital Stack</a></li>
+      <li><a href="index.html#team">Team</a></li>
+      <li><a href="index.html#tl">Thought Leadership</a></li>
+      <li><a href="index.html#media">Media</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="index.html#contact" class="nav-cta">Request an Introduction</a>
+    <button class="nav-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Page header -->
+<header class="legal-header">
+  <div class="wrap">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">/</span>
+      <span class="current">Terms of Use</span>
+    </div>
+    <h1>Terms of Use</h1>
+    <p class="legal-meta">Ramsey Financial Group, LLC<br>Effective Date / Last Updated: [EFFECTIVE DATE — e.g., June 16, 2026]</p>
+  </div>
+</header>
+
+<main class="legal-main">
+  <article class="legal wrap">
+        <aside class="legal-callout"><strong>PLEASE READ THESE TERMS CAREFULLY.</strong> They contain a <strong>binding individual arbitration provision, a class-action and jury waiver</strong> (Section 18), a <strong>limitation of liability</strong> (Section 12), a <strong>non-reliance acknowledgment</strong> (Section 4), and a <strong>shortened time limit for bringing claims</strong> (Section 19). By accessing or using the Site, you agree to be bound by these Terms.</aside>
+        <h2>1. Agreement to These Terms</h2>
+        <p>These Terms of Use ("Terms") form a binding legal agreement between you ("you" or "User") and Ramsey Financial Group, LLC, a Texas limited liability company ("RFG," "we," "us," or "our"), governing your access to and use of the website at ramseyfg.com and all associated pages, subdomains, project pages, white papers, documents, features, and materials (collectively, the "Site").</p>
+        <p>By accessing, browsing, or using the Site, you acknowledge that you have read, understood, and agree to be bound by these Terms, by our <a href="privacy.html">Privacy Policy</a>, and by our <a href="disclosures.html">Disclosures</a>, each of which is incorporated into these Terms by reference. <strong>If you do not agree, you must not access or use the Site.</strong></p>
+        <h2>2. Eligibility</h2>
+        <p>You represent and warrant that you are at least 18 years of age (or the age of majority in your jurisdiction, if higher), that you have the legal capacity and authority to enter into these Terms, and that your use of the Site does not violate any applicable law. If you access the Site on behalf of an entity, you represent that you are authorized to bind that entity, in which case "you" includes that entity. The Site is not directed to, and may not be used by, children.</p>
+        <h2>3. Informational Purpose; No Offer; No Advice; No Fiduciary Duty</h2>
+        <p>The Site is provided for general informational purposes only. <strong>Nothing on the Site is an offer to sell, a solicitation of an offer to buy, or a recommendation regarding any security, fund interest, investment, or financial product, and nothing on the Site is investment, legal, tax, accounting, or other professional advice.</strong> Any offer or solicitation will be made only through definitive confidential offering documents, to verified accredited investors, and in compliance with applicable law, as further described in the <a href="disclosures.html">Disclosures</a>, which you agree to read and by which you agree to be bound. None of RFG, its affiliates, or their respective members, managers, officers, directors, employees, agents, or representatives (the "RFG Parties") acts as your adviser or fiduciary by reason of the Site.</p>
+        <h2>4. Non-Reliance and Assumption of Risk</h2>
+        <p>You acknowledge and agree that: (a) you are not relying, and will not rely, on any content, statement, projection, estimate, or omission on the Site as the basis for any investment or other decision; (b) the RFG Parties make no representation or warranty as to the accuracy, completeness, or reliability of any content on the Site; (c) you assume all risk arising from your access to and use of the Site and any reliance on its content; and (d) you will independently verify any information and obtain independent professional advice before acting. This Section does not exclude any liability for fraud or any other liability that cannot lawfully be excluded.</p>
+        <h2>5. Investor Eligibility; Representations</h2>
+        <p>Access to certain information, materials, or opportunities is limited to persons who qualify as, and are verified as, accredited investors (and, where applicable, qualified purchasers or qualified clients) under applicable law. If you request information, submit an inquiry, or request an introduction in connection with any opportunity, you represent and warrant that all information you provide regarding your identity, status, sophistication, source of funds, and eligibility is true, complete, and accurate, that you will promptly provide verification on request, and that you are not the target of, and your participation would not violate, any applicable sanctions, export-control, or anti-money-laundering law. RFG may verify eligibility and may decline or terminate access in its sole discretion.</p>
+        <h2>6. Intellectual Property</h2>
+        <p>Unless otherwise indicated, the Site and all content on it — including text, graphics, logos, crests, images, photographs, video, audio, page and design layouts, compilations, white papers, and software — are owned by or licensed to RFG and are protected by United States and international copyright, trademark, trade dress, patent, and other intellectual property laws. "Ramsey Financial Group," the RFG crest and logo, and other RFG names and marks are trademarks and/or service marks of RFG. All rights not expressly granted are reserved. Third-party marks and logos are the property of their respective owners and are used for identification and informational purposes only.</p>
+        <h2>7. Limited License and Restrictions</h2>
+        <p>Subject to your compliance with these Terms, RFG grants you a limited, revocable, non-exclusive, non-transferable, non-sublicensable license to access and view the Site for your own personal, non-commercial, informational use only. You may not, and may not authorize or assist any third party to:</p>
+        <ul><li>copy, reproduce, republish, distribute, publicly display or perform, modify, translate, or create derivative works of any portion of the Site, except as expressly permitted;</li><li>use the Site or its content for any commercial purpose or for the benefit of any third party;</li><li>frame, mirror, scrape, harvest, data-mine, or use any robot, spider, crawler, bot, or other automated or manual process to access, extract, index, or copy the Site or its content, or to train any machine-learning or artificial-intelligence model;</li><li>remove, obscure, or alter any proprietary notice;</li><li>attempt to gain unauthorized access to the Site or any related systems, networks, accounts, or data, or probe, scan, or test the vulnerability of any system or network;</li><li>introduce any virus, malware, or harmful code, or interfere with or disrupt the operation, security, or integrity of the Site;</li><li>use the Site to harass, defame, or harm any person, or in violation of any applicable law or third-party right;</li><li>circumvent or attempt to circumvent RFG in respect of any introduction, relationship, opportunity, or transaction made known through the Site; or</li><li>reverse engineer, decompile, or disassemble any part of the Site.</li></ul>
+        <p>RFG may suspend or terminate this license and your access at any time, with or without notice or cause.</p>
+        <h2>8. User Submissions; No Confidentiality; No Circumvention</h2>
+        <p>The Site may permit you to submit inquiries, executive summaries, business plans, pitch materials, communications, or other content (collectively, "Submissions"), including via email links. With respect to any Submission:</p>
+        <ul><li><strong>No confidential or fiduciary relationship.</strong> Unless you and RFG have signed a separate written agreement expressly providing for confidentiality, all Submissions are deemed <strong>non-confidential and non-proprietary</strong>, and the RFG Parties assume <strong>no obligation of any kind</strong> (including any obligation of confidentiality, non-use, non-disclosure, non-circumvention, return, or compensation) with respect to them. <strong>Do not send RFG any information you regard as confidential, trade-secret, or proprietary.</strong></li><li><strong>License to RFG.</strong> You grant RFG a perpetual, irrevocable, worldwide, royalty-free, fully paid-up, transferable, and sublicensable license to use, reproduce, store, modify, evaluate, disclose, and otherwise exploit any Submission for any lawful purpose, without compensation, attribution, or liability to you.</li><li><strong>No obligation; independent development.</strong> RFG is under no obligation to review, respond to, evaluate, pursue, fund, or maintain the confidentiality of any Submission, and is free to develop, acquire, evaluate, fund, or pursue ideas, opportunities, products, companies, or relationships similar to those described in any Submission, from any source, without obligation to you. Many ideas are independently developed or received from multiple sources, and nothing in these Terms restricts the RFG Parties' independent activities.</li><li><strong>Your warranties.</strong> You are solely responsible for your Submissions and represent and warrant that you own or control all rights in them, that they are accurate, and that they do not violate these Terms, any law, or the rights of any third party.</li></ul>
+        <h2>9. Third-Party Links, Content, and Platforms</h2>
+        <p>The Site contains links to, and embedded content from, third-party websites, platforms, services, and media (including affiliated platforms, social media, and video providers). These are provided for convenience and information only. The RFG Parties do not control, endorse, monitor, or assume responsibility for the content, products, services, privacy practices, or availability of any third-party resource, and your use of any third-party resource is at your own risk and subject to that third party's terms and policies.</p>
+        <h2>10. Copyright Complaints</h2>
+        <p>If you believe content on the Site infringes your copyright, please send a written notice with the information required under the Digital Millennium Copyright Act (DMCA) to RFG at info@ramseyfg.com (subject line: "DMCA Notice"), including identification of the work, the allegedly infringing material and its location, your contact information, a statement of good-faith belief, a statement of accuracy under penalty of perjury, and your signature.</p>
+        <h2>11. Disclaimer of Warranties</h2>
+        <p><strong>THE SITE AND ALL CONTENT, MATERIALS, AND INFORMATION ON IT ARE PROVIDED "AS IS" AND "AS AVAILABLE," WITHOUT WARRANTY OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE.</strong> TO THE FULLEST EXTENT PERMITTED BY LAW, THE RFG PARTIES DISCLAIM ALL WARRANTIES, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT, AND ANY WARRANTIES ARISING FROM COURSE OF DEALING OR USAGE OF TRADE. THE RFG PARTIES DO NOT WARRANT THAT THE SITE WILL BE UNINTERRUPTED, TIMELY, SECURE, ERROR-FREE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS, OR THAT ANY CONTENT IS ACCURATE, COMPLETE, CURRENT, OR RELIABLE. YOU ASSUME ALL RISK ARISING FROM YOUR USE OF THE SITE. Some jurisdictions do not allow the exclusion of certain warranties, so some exclusions may not apply to you.</p>
+        <h2>12. Limitation of Liability</h2>
+        <p><strong>TO THE FULLEST EXTENT PERMITTED BY LAW, IN NO EVENT WILL THE RFG PARTIES BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR FOR ANY LOSS OF PROFITS, REVENUE, DATA, GOODWILL, OPPORTUNITY, OR INVESTMENT, ARISING OUT OF OR RELATING TO YOUR ACCESS TO OR USE OF (OR INABILITY TO ACCESS OR USE) THE SITE OR ANY CONTENT, WHETHER BASED ON CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY, STATUTE, OR ANY OTHER THEORY, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND EVEN IF A REMEDY FAILS OF ITS ESSENTIAL PURPOSE.</strong></p>
+        <p><strong>TO THE FULLEST EXTENT PERMITTED BY LAW, THE TOTAL AGGREGATE LIABILITY OF THE RFG PARTIES FOR ALL CLAIMS ARISING OUT OF OR RELATING TO THE SITE OR THESE TERMS WILL NOT EXCEED ONE HUNDRED U.S. DOLLARS (US$100.00).</strong></p>
+        <p>This Section governs your use of the Site only and does not limit the rights or remedies of any investor under the definitive Offering Documents for any actual investment, which contain their own terms and govern that relationship. Nothing in these Terms excludes or limits any liability that cannot be excluded or limited under applicable law, including liability for fraud. Some jurisdictions do not allow certain limitations, so some may not apply to you.</p>
+        <h2>13. Indemnification</h2>
+        <p>You agree to indemnify, defend, and hold harmless the RFG Parties from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees and costs) arising out of or relating to: (a) your access to or use of the Site; (b) your breach of these Terms, the Disclosures, or the Privacy Policy; (c) your Submissions; (d) your violation of any law or any third-party right; or (e) any misrepresentation by you. RFG reserves the right to assume the exclusive defense and control of any matter subject to indemnification, and you agree to cooperate.</p>
+        <h2>14. Forward-Looking Statements and Accuracy</h2>
+        <p>The Site contains forward-looking statements and other information subject to the qualifications, risk warnings, and limitations in the <a href="disclosures.html">Disclosures</a>, which are incorporated into these Terms. You agree not to rely on any forward-looking statement or any projected, targeted, illustrative, or hypothetical result as a guarantee of future performance.</p>
+        <h2>15. Privacy</h2>
+        <p>Your use of the Site is subject to our <a href="privacy.html">Privacy Policy</a>, which is incorporated into these Terms.</p>
+        <h2>16. Electronic Communications and Consent</h2>
+        <p>By using the Site or communicating with RFG electronically, you consent to receive communications and records from RFG in electronic form and agree that all agreements, notices, disclosures, and other communications RFG provides electronically satisfy any legal requirement that they be in writing, to the fullest extent permitted by law.</p>
+        <h2>17. Governing Law and Venue</h2>
+        <p>These Terms, and any dispute or claim arising out of or relating to them or the Site (including non-contractual disputes or claims), are governed by and construed in accordance with the laws of the State of Texas, without regard to conflict-of-laws principles, and excluding any application of the United Nations Convention on Contracts for the International Sale of Goods. Subject to Section 18 (Arbitration), the exclusive venue for any action shall be the state and federal courts located in Harris County, Texas, and you consent to the personal jurisdiction of those courts and waive any objection to venue or to an inconvenient forum.</p>
+        <h2>18. Dispute Resolution; Binding Individual Arbitration; Class-Action and Jury Waiver</h2>
+        <p><strong>Please read this Section carefully. It requires disputes to be resolved by individual arbitration and waives your right to a jury trial and to participate in a class action.</strong></p>
+        <p><strong>(a) Informal resolution first.</strong> Before commencing any arbitration, you agree to first contact RFG at info@ramseyfg.com and provide a written description of the dispute, and the parties will attempt in good faith to resolve it for at least thirty (30) days.</p>
+        <p><strong>(b) Binding arbitration.</strong> Any dispute, claim, or controversy arising out of or relating to these Terms or the Site (a "Dispute") that is not resolved informally shall be resolved by <strong>final and binding arbitration</strong> administered by a recognized, neutral arbitration provider under its rules then in effect, before a single arbitrator, seated in Harris County, Texas, and conducted in English. The Federal Arbitration Act governs the interpretation and enforcement of this Section. Judgment on the award may be entered in any court of competent jurisdiction.</p>
+        <p><strong>(c) Delegation.</strong> The arbitrator has exclusive authority to resolve any dispute relating to the interpretation, applicability, enforceability, or formation of this arbitration agreement, including any claim that it is void or voidable.</p>
+        <p><strong>(d) Class-action and jury waiver.</strong> To the fullest extent permitted by law, you and RFG agree that each may bring claims only in an individual capacity, and <strong>not as a plaintiff or class member in any purported class, collective, consolidated, mass, or representative proceeding.</strong> The arbitrator may not consolidate claims or preside over any representative or class proceeding. <strong>You and RFG waive any right to a trial by jury.</strong></p>
+        <p><strong>(e) Exceptions.</strong> Either party may (i) bring an individual claim in small-claims court, or (ii) seek injunctive or other equitable relief in a court of competent jurisdiction to protect intellectual property or confidential information, without first engaging in informal resolution or arbitration.</p>
+        <p><strong>(f) Scope.</strong> This Section does not apply to, and does not govern, any dispute under the definitive Offering Documents for any actual investment, which contain their own dispute-resolution provisions.</p>
+        <h2>19. Time Limit for Claims</h2>
+        <p>To the fullest extent permitted by law, any claim or cause of action arising out of or relating to the Site or these Terms must be commenced within <strong>one (1) year</strong> after the claim or cause of action accrues; otherwise, it is permanently barred. This Section does not apply to claims that cannot, by law, be contractually shortened, and does not apply to claims under the Offering Documents.</p>
+        <h2>20. Termination</h2>
+        <p>RFG may suspend or terminate your access to the Site at any time, for any reason, with or without notice. Upon termination, the license in Section 7 ends. The provisions that by their nature should survive (including Sections 4, 6, 8, 11, 12, 13, 17, 18, 19, and 21) survive termination.</p>
+        <h2>21. General Provisions</h2>
+        <ul><li><strong>Entire Agreement.</strong> These Terms, together with the Privacy Policy and the Disclosures, constitute the entire agreement between you and RFG regarding the Site and supersede all prior or contemporaneous understandings on that subject.</li><li><strong>Severability.</strong> If any provision is held invalid or unenforceable, it will be enforced to the maximum extent permissible (and, if the class-action waiver in Section 18(d) is held unenforceable as to any claim, that claim will proceed in court and the remainder of Section 18 will continue to apply), and the remaining provisions will remain in full force and effect.</li><li><strong>No Waiver.</strong> No failure or delay in exercising any right is a waiver of it.</li><li><strong>Assignment.</strong> You may not assign or transfer these Terms without RFG's prior written consent; any attempted assignment is void. RFG may assign these Terms freely.</li><li><strong>No Agency.</strong> Nothing in these Terms creates any partnership, joint venture, agency, fiduciary, or employment relationship between you and RFG.</li><li><strong>Force Majeure.</strong> RFG is not liable for any failure or delay resulting from causes beyond its reasonable control.</li><li><strong>Prevailing Party.</strong> In any action or arbitration to enforce these Terms, the prevailing party is entitled to recover its reasonable attorneys' fees and costs, to the extent permitted by law.</li><li><strong>Notices.</strong> Notices to RFG must be sent to the address in Section 22; RFG may provide notice to you by posting on the Site or by email.</li><li><strong>Headings; Interpretation.</strong> Headings are for convenience only. "Including" means "including without limitation."</li><li><strong>Third-Party Beneficiaries.</strong> The RFG Parties (other than RFG) and the indemnified parties are intended third-party beneficiaries of these Terms; there are no other third-party beneficiaries.</li></ul>
+        <h2>22. Contact</h2>
+        <p>Ramsey Financial Group, LLC<br>710 N Post Oak Rd<br>Houston, Texas 77024<br>Email: info@ramseyfg.com</p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="foot-brand">
+        <a href="index.html" class="brand" style="color: var(--bone);">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">
+            <span class="top">Ramsey</span>
+            <span class="name" style="color: var(--bone);">Financial Group</span>
+          </span>
+        </a>
+        <p>A Houston single-family office co-investing in frontier industries since 1992. Manager of the Leo B. Womack Family Trust.</p>
+        <address class="foot-address">
+          710 N Post Oak Rd<br>
+          Houston, Texas 77024<br>
+          <a href="mailto:bart@ramseyfg.com">bart@ramseyfg.com</a>
+        </address>
+        <div class="foot-crest" aria-label="Ramsey heritage crest">
+          <div class="foot-crest-mark" aria-hidden="true">
+            <img src="assets/Royal_Logo.png" alt="" loading="lazy" />
+          </div>
+          <div class="foot-crest-text">
+            <strong>Ramsey Heritage</strong>
+            Continuity across three decades<br>and three generations of operators.
+          </div>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="index.html#scs">Space Capital Stack</a></li>
+          <li><a href="index.html#team">Team</a></li>
+          <li><a href="index.html#tl">Thought Leadership</a></li>
+          <li><a href="index.html#media">Media</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Platforms</h4>
+        <ul>
+          <li><a href="https://spacefund.com" target="_blank" rel="noopener noreferrer">SpaceFund&nbsp;↗</a></li>
+          <li><a href="https://spacefinancecompany.com" target="_blank" rel="noopener noreferrer">Space Finance Company&nbsp;↗</a></li>
+          <li><a href="https://spaceportfund.com" target="_blank" rel="noopener noreferrer">SpacePort Fund&nbsp;↗</a></li>
+          <li><a href="https://offearthdata.com" target="_blank" rel="noopener noreferrer">Off-Earth Data&nbsp;↗</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/company/ramsey-financial-group/" target="_blank" rel="noopener noreferrer">LinkedIn&nbsp;↗</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Ramsey Financial Group, LLC. All rights reserved.</div>
+      <div class="legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclosures.html">Disclosures</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script defer src="assets/mobile-nav.js"></script>
+</body>
+</html>

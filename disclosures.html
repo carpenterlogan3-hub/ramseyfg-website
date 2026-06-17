@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Disclosures — Ramsey Financial Group</title>
+<meta name="description" content="Important legal disclosures for the Ramsey Financial Group website: informational purposes only, not an offer, high degree of risk including possible loss of capital, and verified accredited-investor requirements." />
+<link rel="icon" type="image/png" href="assets/Royal_Logo.png" />
+
+<!-- Fonts: Fraunces (serif display) + Inter (geometric sans body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================================
+     RFG LEGAL PAGE — inherits the site design system (tokens,
+     topbar, nav, footer) with a constrained reading measure.
+     ============================================================ */
+  :root {
+    --ink:           #0F1A14;
+    --forest:        #1B3A2E;
+    --forest-deep:   #0D2620;
+    --forest-tint:   #2A5043;
+    --burgundy:      #7A2E2A;
+    --burgundy-deep: #5A1F1C;
+    --bone:          #F4EFE6;
+    --bone-soft:     #EBE4D6;
+    --sand:          #D9CFB8;
+    --rule:          #C4B99D;
+    --mute:          #5A5A52;
+
+    --serif: 'Fraunces', 'Canela', Georgia, serif;
+    --sans:  'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --container: 1280px;
+    --edge-pad:  clamp(20px, 4vw, 56px);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--bone);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  :focus-visible {
+    outline: 2px solid var(--forest);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .wrap {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding-left: var(--edge-pad);
+    padding-right: var(--edge-pad);
+  }
+
+  /* ============ Top Bar ============ */
+  .topbar {
+    background: var(--forest-deep);
+    color: var(--bone);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 10px 0;
+    font-weight: 500;
+  }
+  .topbar .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .topbar span { opacity: 0.75; }
+  .topbar .top-right a { margin-left: 20px; opacity: 0.85; }
+  .topbar .top-right a:hover { opacity: 1; }
+
+  @media (max-width: 680px) {
+    .topbar .top-left { display: none; }
+    .topbar .wrap { justify-content: center; }
+    .topbar .top-right a { margin: 0 10px; }
+  }
+
+  /* ============ Nav ============ */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bone);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    gap: 40px;
+  }
+  .brand {
+    font-family: var(--serif);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-mark {
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid var(--forest);
+    position: relative;
+    transform: rotate(45deg);
+  }
+  .brand-mark::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    background: var(--burgundy);
+  }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.05; }
+  .brand-text .top {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mute);
+    font-family: var(--sans);
+    font-weight: 500;
+  }
+  .brand-text .name {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--forest);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.2s ease;
+  }
+  .nav-links a:hover { color: var(--forest); }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 0;
+    height: 1px;
+    background: var(--burgundy);
+    transition: width 0.25s ease;
+  }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border: 1px solid var(--forest);
+    color: var(--forest);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--forest); color: var(--bone); }
+
+  .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 8px; }
+  .nav-toggle span { display: block; width: 24px; height: 1.5px; background: var(--ink); margin: 5px 0; }
+
+  @media (max-width: 1020px) {
+    .nav-links, .nav-cta { display: none; }
+    .nav-toggle { display: block; }
+  }
+
+  /* ============ Legal page header ============ */
+  .legal-header {
+    padding: clamp(64px, 9vw, 110px) 0 clamp(32px, 4vw, 48px);
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+  .legal-header::before {
+    content: '';
+    position: absolute;
+    right: -8%;
+    top: 12%;
+    width: 380px;
+    height: 380px;
+    border: 1px solid var(--rule);
+    transform: rotate(45deg);
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  .legal-header .wrap { position: relative; z-index: 2; }
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-bottom: 32px;
+    font-weight: 500;
+  }
+  .breadcrumb a { color: var(--mute); transition: color 0.2s ease; }
+  .breadcrumb a:hover { color: var(--forest); }
+  .breadcrumb .sep { color: var(--rule); }
+  .breadcrumb .current { color: var(--ink); }
+  .legal-header h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .legal-meta {
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--mute);
+    margin-top: 20px;
+  }
+  .legal-meta strong { color: var(--ink); font-weight: 600; }
+
+  /* ============ Legal content ============ */
+  .legal-main { padding: clamp(40px, 6vw, 72px) 0 clamp(64px, 9vw, 112px); }
+  .legal { max-width: 760px; margin: 0 auto; }
+  .legal p, .legal li {
+    font-size: 17.5px;
+    line-height: 1.72;
+    color: var(--ink);
+  }
+  .legal p { margin: 0 0 18px; }
+  .legal h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(23px, 3vw, 29px);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--forest);
+    margin: 48px 0 16px;
+  }
+  .legal h3 {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--ink);
+    margin: 32px 0 12px;
+  }
+  .legal ul { margin: 0 0 18px; padding-left: 22px; }
+  .legal li { margin-bottom: 10px; }
+  .legal strong { font-weight: 600; color: var(--ink); }
+  .legal em { font-style: italic; }
+  .legal a {
+    color: var(--forest);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s ease;
+  }
+  .legal a:hover { color: var(--burgundy); }
+  .legal hr { border: 0; border-top: 1px solid var(--rule); margin: 40px 0; }
+
+  .legal-callout {
+    background: var(--forest-deep);
+    color: var(--bone);
+    border-left: 4px solid var(--burgundy);
+    padding: 22px 26px;
+    margin: 28px 0;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .legal-callout strong { color: #fff; font-weight: 600; }
+  .legal-callout a { color: var(--sand); }
+  .legal-callout a:hover { color: #fff; }
+
+  .legal-table-wrap { overflow-x: auto; margin: 24px 0; -webkit-overflow-scrolling: touch; }
+  .legal table { width: 100%; border-collapse: collapse; font-size: 15.5px; }
+  .legal th, .legal td {
+    text-align: left;
+    vertical-align: top;
+    padding: 12px 16px;
+    border: 1px solid var(--rule);
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .legal th[scope="row"] {
+    width: 32%;
+    background: var(--bone-soft);
+    font-weight: 600;
+  }
+  @media (max-width: 560px) {
+    .legal th[scope="row"] { width: 40%; }
+    .legal th, .legal td { padding: 10px 12px; }
+  }
+
+  /* ============ Footer ============ */
+  footer.site-footer {
+    background: var(--forest-deep);
+    color: var(--bone);
+    padding: 80px 0 40px;
+    border-top: 1px solid rgba(244,239,230,0.12);
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(244,239,230,0.12);
+  }
+  @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; } }
+  @media (max-width: 520px) { .footer-top { grid-template-columns: 1fr; } }
+
+  .foot-brand .brand-mark { border-color: var(--bone); }
+  .foot-brand .brand-text .top { color: rgba(244,239,230,0.55); }
+  .foot-brand .brand-text .name { color: var(--bone); }
+  .foot-brand p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgba(244,239,230,0.7);
+    margin-top: 20px;
+    max-width: 36ch;
+  }
+  .foot-address {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(244,239,230,0.55);
+    font-style: normal;
+  }
+  .foot-col h4 {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sand);
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .foot-col a {
+    font-size: 14px;
+    color: rgba(244,239,230,0.75);
+    transition: color 0.2s ease;
+  }
+  .foot-col a:hover { color: var(--bone); }
+  .foot-crest {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(244,239,230,0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+  }
+  .foot-crest-mark { width: 100px; flex-shrink: 0; }
+  .foot-crest-mark img { width: 100%; height: auto; object-fit: contain; display: block; }
+  .foot-crest-text {
+    font-family: var(--serif);
+    font-size: 11px;
+    line-height: 1.5;
+    font-style: italic;
+    color: rgba(244,239,230,0.55);
+    letter-spacing: 0.04em;
+  }
+  .foot-crest-text strong {
+    display: block;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sand);
+    margin-bottom: 4px;
+  }
+  .footer-bottom {
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 12px;
+    color: rgba(244,239,230,0.5);
+  }
+  .footer-bottom .legal { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-bottom a:hover { color: var(--bone); }
+</style>
+</head>
+<body>
+
+<!-- Top utility bar -->
+<div class="topbar">
+  <div class="wrap">
+    <span class="top-left">Houston, Texas · Established 1992 · Manager of the Leo B. Womack Family Trust</span>
+    <div class="top-right">
+      <a href="https://www.linkedin.com/company/ramsey-financial-group/" target="_blank" rel="noopener noreferrer">LinkedIn&nbsp;↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- Main navigation -->
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand" aria-label="Ramsey Financial Group home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">
+        <span class="top">Ramsey</span>
+        <span class="name">Financial Group</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="index.html#scs">Space Capital Stack</a></li>
+      <li><a href="index.html#team">Team</a></li>
+      <li><a href="index.html#tl">Thought Leadership</a></li>
+      <li><a href="index.html#media">Media</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="index.html#contact" class="nav-cta">Request an Introduction</a>
+    <button class="nav-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Page header -->
+<header class="legal-header">
+  <div class="wrap">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">/</span>
+      <span class="current">Disclosures</span>
+    </div>
+    <h1>Disclosures</h1>
+    <p class="legal-meta">Ramsey Financial Group, LLC<br>Effective Date / Last Updated: [EFFECTIVE DATE — e.g., June 16, 2026]</p>
+  </div>
+</header>
+
+<main class="legal-main">
+  <article class="legal wrap">
+        <aside class="legal-callout"><strong>IMPORTANT — PLEASE READ CAREFULLY.</strong> The information on this website is for general informational purposes only. It is <strong>not</strong> an offer to sell, or a solicitation of an offer to buy, any security, and it is <strong>not</strong> investment, legal, tax, or accounting advice. Any investment described or referenced involves a <strong>high degree of risk, including the possible loss of your entire investment</strong>, and is available <strong>only to verified accredited investors</strong> through definitive confidential offering documents. By using this website you agree to these Disclosures, the <a href="terms.html">Terms of Use</a>, and the <a href="privacy.html">Privacy Policy</a>.</aside>
+        <p>These Disclosures govern your access to and use of the website located at ramseyfg.com and all associated pages, subdomains, project pages, white papers, documents, and materials (collectively, the "Site"). They are incorporated into, and form part of, the Terms of Use. Capitalized terms not defined here have the meaning given in the Terms of Use.</p>
+        <p>In these Disclosures, "RFG," "we," "us," and "our" refer to Ramsey Financial Group, LLC and, where the context requires, its affiliates and their respective members, managers, officers, employees, agents, and representatives (together, the "RFG Parties").</p>
+        <hr>
+        <h2>1. Informational Purposes Only; As-Of Date</h2>
+        <p>All content on the Site is provided for general informational and background purposes only. It reflects RFG's views and information available to RFG <strong>as of the date of publication</strong>, is summary in nature, and is subject to change, correction, supersession, or withdrawal at any time without notice. RFG is under no obligation to update, revise, supplement, or correct any information on the Site, and the continued availability of any content does not imply that the information remains current, complete, or accurate. The Site does not purport to contain all information that a prospective investor may require. Nothing on the Site is intended to be, and nothing on the Site should be relied upon as, investment, financial, legal, accounting, tax, regulatory, or other professional advice.</p>
+        <h2>2. Not an Offer or Solicitation</h2>
+        <p>Nothing on the Site constitutes, forms part of, or should be construed as: (a) an offer to sell or issue, or the solicitation of an offer to buy or subscribe for, any security, fund interest, investment product, or other financial instrument; (b) any inducement, invitation, commitment, or recommendation to enter into any investment activity or transaction; or (c) the basis of, or any reliance in connection with, any contract or investment decision, in each case in any jurisdiction.</p>
+        <p>Any offer, solicitation, or sale of any security, fund interest, or co-investment described or referenced on the Site will be made <strong>only</strong>:</p>
+        <ul><li>to persons who have been individually pre-qualified by RFG and <strong>verified as accredited investors</strong> (and, where applicable, as qualified purchasers and/or qualified clients);</li><li>pursuant to definitive confidential offering documents (which may include a confidential private placement memorandum, subscription agreement, operating or limited partnership agreement, investor questionnaire, and related risk factors and disclosures) (collectively, the "Offering Documents"); and</li><li>in compliance with all applicable securities and other laws.</li></ul>
+        <p>In the event of any conflict or inconsistency between the Site and any Offering Document, <strong>the Offering Document controls in all respects.</strong> Prospective investors must rely solely on the Offering Documents — and not on the Site, any summary, or any oral statement — in evaluating and making any investment decision.</p>
+        <h2>3. Private Offerings; General Solicitation; Verified Accredited Investors Only</h2>
+        <p>Any securities or interests that may be referenced on the Site have not been and will not be registered under the U.S. Securities Act of 1933, as amended (the "Securities Act"), or under the securities laws of any U.S. state or any non-U.S. jurisdiction, and will be offered and sold only in reliance on exemptions from registration. To the extent any information on the Site constitutes a general solicitation or general advertising, any related offering is intended to be conducted in reliance on <strong>Rule 506(c) of Regulation D</strong> under the Securities Act, under which all purchasers must be accredited investors and RFG (or the applicable issuer) must take reasonable steps to verify that each purchaser is an accredited investor (as defined in Rule 501 of Regulation D).</p>
+        <p>Accordingly, <strong>no subscription will be accepted from any person whose accredited-investor status has not been verified</strong> in accordance with applicable requirements, which may include the provision of documentation and/or written representations and a sufficiently high minimum investment commitment. Such securities are subject to substantial restrictions on transfer and resale, have no public trading market, and may require an investor to bear the economic risk of the investment for an indefinite period.</p>
+        <p>These securities have not been approved or disapproved by the U.S. Securities and Exchange Commission (the "SEC"), the Texas State Securities Board, any other state securities regulator, or any other regulatory authority, nor has any such authority passed upon or endorsed the merits of any offering or the accuracy or adequacy of any information on the Site or in any Offering Document. <strong>Any representation to the contrary is a criminal offense.</strong></p>
+        <h2>4. No Investment, Legal, Tax, or Accounting Advice; No Fiduciary Relationship</h2>
+        <p>The Site does not take into account the investment objectives, financial situation, risk tolerance, liquidity needs, or particular circumstances of any person, and no content on the Site is a personalized recommendation. None of the RFG Parties is acting as your adviser or fiduciary, or in any advisory or fiduciary capacity, by reason of the Site or any information on it. Before making any investment decision, you should consult your own attorney, accountant, tax adviser, and investment adviser regarding your particular circumstances. Any decision to invest must be based solely on your own independent investigation, analysis, and judgment and on the Offering Documents.</p>
+        <h2>5. Non-Reliance</h2>
+        <p>By accessing the Site, you acknowledge and agree that: (a) you are not relying, and will not rely, on any information, statement, projection, or omission on the Site as the basis for any investment or other decision; (b) the RFG Parties make no representation or warranty, express or implied, as to the accuracy, completeness, reasonableness, or reliability of any information on the Site; and (c) the RFG Parties shall have no liability arising from any such information or omission, except to the extent any liability cannot lawfully be excluded. Nothing in these Disclosures is intended to limit or exclude any liability for fraud or any other liability that cannot be limited or excluded under applicable law.</p>
+        <h2>6. Forward-Looking Statements</h2>
+        <p>The Site contains "forward-looking statements" — including projections, forecasts, targets, estimates, valuations, pro forma figures, return objectives (such as targeted multiples of invested capital or rates of return), revenue, profit, market-size, payback, distribution, or timeline expectations, and statements regarding anticipated events, strategy, technology, contracts, government relationships, or performance. Forward-looking statements are often identified by words such as "may," "will," "should," "expect," "anticipate," "target," "project," "estimate," "intend," "believe," "potential," "plan," "forecast," "could," or similar expressions, but the absence of such words does not mean a statement is not forward-looking.</p>
+        <p>Forward-looking statements are <strong>not guarantees of future results.</strong> They are based on assumptions, estimates, and current expectations that are inherently uncertain and subject to significant business, economic, market, regulatory, technological, operational, competitive, geopolitical, and other risks and uncertainties, many of which are beyond RFG's control. <strong>Actual results, performance, and events may differ materially — and may be materially less favorable — than those expressed or implied.</strong> Any targeted, projected, illustrative, or hypothetical figures do not reflect actual results, are provided for illustrative purposes only, are subject to numerous assumptions and limitations, and should not be relied upon as a prediction or guarantee of actual performance. RFG undertakes no obligation to update or revise any forward-looking statement.</p>
+        <h2>7. No Guarantee of Performance; Past Performance; Hypothetical Results</h2>
+        <p><strong>Past performance is not indicative of, and is no guarantee of, future results.</strong> Any reference to prior investments, realized exits, acquisitions, fund performance, track record, awards, rankings, or characterizations such as "best-in-class," "top-performing," or similar terms reflects historical events or third-party statements and is not a representation or guarantee that any investment will achieve comparable results or avoid loss. The performance of any one investment or fund is not representative of any other, and individual results vary.</p>
+        <p>Performance information presented on the Site may be unaudited and may be gross of, or net of, fees, expenses, carried interest, and taxes; may reflect the historical experience of particular individuals at other firms or affiliated entities rather than RFG; and may be based on hypothetical, model, targeted, or illustrative assumptions. <strong>Hypothetical and targeted performance has inherent limitations</strong>, does not represent actual trading or results, and is shown for illustrative purposes only. Such information is provided for background purposes and should not be relied upon.</p>
+        <h2>8. Risk of Loss; Suitability</h2>
+        <p><strong>An investment in any opportunity referenced on the Site is speculative, involves a high degree of risk, and may result in the loss of an investor's entire investment.</strong> Such investments are suitable only for sophisticated investors who can independently evaluate the risks, who have no need for liquidity, and who can afford a total loss. Risks include, without limitation:</p>
+        <ul><li><strong>Total loss of capital</strong> and the absence of any assurance of return, distribution, dividend, or profit;</li><li><strong>Illiquidity and lack of a market</strong> — interests are restricted securities with no public market and significant transfer restrictions, and investors may be unable to sell or redeem;</li><li><strong>Long-term and indefinite holding periods</strong>, including multi-year payback or lock-up periods;</li><li><strong>Early-stage, pre-revenue, and development-stage risk</strong> — many opportunities depend on unproven, emerging, or novel technologies that may never achieve commercialization;</li><li><strong>Valuation uncertainty</strong> — valuations are often estimated, may be based on limited information, and may not reflect realizable value;</li><li><strong>Dilution</strong> from future financings;</li><li><strong>Concentration</strong> — investments may be concentrated in particular companies, sectors, or geographies (including space, water, agricultural technology, artificial intelligence, energy, hemp/cannabinoid, real estate, and international or reconstruction finance), each of which carries distinct and significant risks;</li><li><strong>Regulatory, legal, and political risk</strong> — including evolving or adverse regulation, dependence on governmental action, contracts, permits, or relationships, and sector-specific legal regimes (for example, federal and state treatment of hemp/cannabinoids, and U.S. and foreign requirements applicable to cross-border or reconstruction finance);</li><li><strong>Reliance on key persons and third parties</strong> — outcomes depend heavily on the performance of management, founders, partners, and counterparties;</li><li><strong>Leverage, operational, environmental, supply-chain, technology, and execution risk;</strong> and</li><li><strong>Conflicts of interest</strong> (see Section 11).</li></ul>
+        <p>This list is illustrative and not exhaustive. The complete and controlling risk factors for any particular investment will be set forth in the applicable Offering Documents, which a prospective investor must review in full. There can be no assurance that any investment objective will be achieved.</p>
+        <h2>9. Third-Party and Portfolio Company Information</h2>
+        <p>The Site references portfolio companies, prospective portfolio companies, affiliated platforms, partners, founders, and other third parties. Information concerning these entities — including descriptions, financial and pro forma figures, projections, valuations, contract, revenue, or pipeline figures, technology claims, and governmental relationships — has generally been provided by, or derived from, those entities or other third-party sources. The RFG Parties have not independently verified, and make no representation or warranty as to the accuracy, completeness, or reliability of, any such information, and disclaim all liability arising from it. The inclusion of any company, platform, person, or third party on the Site does not constitute an endorsement, recommendation, or guarantee.</p>
+        <p>All trademarks, service marks, trade names, logos, and brand features appearing on the Site that are not owned by RFG are the property of their respective owners and are used for identification and informational purposes only; such use does not imply any affiliation with, sponsorship by, or endorsement by their owners.</p>
+        <h2>10. Regulatory Status</h2>
+        <p>Ramsey Financial Group, LLC operates as a single-family office and manager of the Leo B. Womack Family Trust. RFG is not registered with the SEC or any state as an investment adviser or broker-dealer, and nothing on the Site should be construed as RFG holding itself out as a registered investment adviser, broker-dealer, or municipal advisor. RFG does not provide brokerage services, does not effect transactions in securities for the account of others as a broker or dealer, and does not receive transaction-based compensation for the purchase or sale of securities. <em>(See the integration note accompanying this draft: RFG's single-family-office status relative to the solicitation of outside co-investors should be confirmed and, if necessary, this section conformed by securities counsel.)</em></p>
+        <h2>11. Conflicts of Interest</h2>
+        <p>The RFG Parties may have direct or indirect financial interests in, may serve as managers, directors, officers, founders, sponsors, or advisers of, may have invested in or alongside, and may receive fees, carried interest, or other compensation from, certain companies, funds, platforms, or opportunities referenced on the Site. The RFG Parties may also pursue opportunities for their own account. These relationships create actual and potential conflicts of interest. Material conflicts applicable to a particular investment will be described in the applicable Offering Documents.</p>
+        <h2>12. Testimonials, Speeches, Media, and Third-Party Content</h2>
+        <p>Speeches, interviews, videos, articles, podcasts, media appearances, and similar materials referenced or embedded on the Site (including third-party video content) reflect the views of the individual speakers or authors as of the time they were made, are provided for informational purposes only, and do not necessarily reflect the current views of RFG. They are not testimonials or endorsements regarding any investment, are not representative of any investor's experience, are not a guarantee of future performance or success, and should not be relied upon in making any decision. No compensation was paid for any such statement unless otherwise disclosed.</p>
+        <h2>13. Sanctions, Anti-Money-Laundering, and International Compliance</h2>
+        <p>RFG conducts its activities in compliance with applicable U.S. economic sanctions, export controls, anti-money-laundering, anti-terrorist-financing, anti-bribery, and anti-corruption laws, including those administered by the U.S. Department of the Treasury's Office of Foreign Assets Control ("OFAC"). The Site and any opportunities referenced on it are not directed to, and no investment will be accepted from, any person that is the target of applicable sanctions, that is organized or located in a sanctioned or embargoed jurisdiction, or whose participation would cause any RFG Party to violate applicable law. Any activity involving international, cross-border, or reconstruction finance is subject to all applicable U.S. and foreign legal, licensing, authorization, and regulatory requirements and may be unavailable to certain persons or in certain jurisdictions. <em>(See the integration note accompanying this draft regarding reconstruction-finance activities.)</em></p>
+        <h2>14. Jurisdictional Limitations</h2>
+        <p>The Site is directed only to persons in jurisdictions where its content and any referenced offering may lawfully be published and made available. The Site is not directed to any person in any jurisdiction where (by reason of that person's nationality, residence, domicile, citizenship, or otherwise) the publication or availability of the Site, or any offer or solicitation, would be unlawful or would subject any RFG Party to any registration or licensing requirement. Persons who access the Site do so on their own initiative and are responsible for compliance with applicable local laws.</p>
+        <h2>15. No Warranty; Limitation of Liability</h2>
+        <p>The Site and its content are provided "as is" and "as available" without any representation or warranty of any kind, express, implied, statutory, or otherwise, including as to accuracy, completeness, currency, reliability, non-infringement, or fitness for a particular purpose. To the fullest extent permitted by law, the RFG Parties shall not be liable for any error or omission in, or for any reliance placed on, any content on the Site, or for any direct, indirect, incidental, consequential, special, exemplary, or punitive damages arising from the Site. The disclaimers and limitations of liability set forth in the Terms of Use are incorporated into these Disclosures and apply to your use of the Site. Nothing in these Disclosures excludes or limits any liability that cannot be excluded or limited under applicable law, including liability for fraud.</p>
+        <h2>16. Contact</h2>
+        <p>Questions regarding these Disclosures may be directed to:</p>
+        <p>Ramsey Financial Group, LLC<br>710 N Post Oak Rd<br>Houston, Texas 77024<br>Email: info@ramseyfg.com</p>
+        <hr>
+        <p><em>These Disclosures are part of, and incorporated by reference into, the Terms of Use governing the Site. They should be read together with the Terms of Use and the Privacy Policy.</em></p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="foot-brand">
+        <a href="index.html" class="brand" style="color: var(--bone);">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">
+            <span class="top">Ramsey</span>
+            <span class="name" style="color: var(--bone);">Financial Group</span>
+          </span>
+        </a>
+        <p>A Houston single-family office co-investing in frontier industries since 1992. Manager of the Leo B. Womack Family Trust.</p>
+        <address class="foot-address">
+          710 N Post Oak Rd<br>
+          Houston, Texas 77024<br>
+          <a href="mailto:bart@ramseyfg.com">bart@ramseyfg.com</a>
+        </address>
+        <div class="foot-crest" aria-label="Ramsey heritage crest">
+          <div class="foot-crest-mark" aria-hidden="true">
+            <img src="assets/Royal_Logo.png" alt="" loading="lazy" />
+          </div>
+          <div class="foot-crest-text">
+            <strong>Ramsey Heritage</strong>
+            Continuity across three decades<br>and three generations of operators.
+          </div>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="index.html#scs">Space Capital Stack</a></li>
+          <li><a href="index.html#team">Team</a></li>
+          <li><a href="index.html#tl">Thought Leadership</a></li>
+          <li><a href="index.html#media">Media</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Platforms</h4>
+        <ul>
+          <li><a href="https://spacefund.com" target="_blank" rel="noopener noreferrer">SpaceFund&nbsp;↗</a></li>
+          <li><a href="https://spacefinancecompany.com" target="_blank" rel="noopener noreferrer">Space Finance Company&nbsp;↗</a></li>
+          <li><a href="https://spaceportfund.com" target="_blank" rel="noopener noreferrer">SpacePort Fund&nbsp;↗</a></li>
+          <li><a href="https://offearthdata.com" target="_blank" rel="noopener noreferrer">Off-Earth Data&nbsp;↗</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/company/ramsey-financial-group/" target="_blank" rel="noopener noreferrer">LinkedIn&nbsp;↗</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Ramsey Financial Group, LLC. All rights reserved.</div>
+      <div class="legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclosures.html">Disclosures</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script defer src="assets/mobile-nav.js"></script>
+</body>
+</html>
